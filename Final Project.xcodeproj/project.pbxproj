@@ -13,6 +13,10 @@
 		0402969A2B9B3FD800CEC711 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040296992B9B3FD800CEC711 /* Preview Assets.xcassets */; };
 		044F91C62BA9B104004758DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044F91C52BA9B104004758DA /* GoogleService-Info.plist */; };
 		4DB30826D596A479652485B5 /* Pods_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4951F07E6E8BEBD3CE25A4E /* Pods_Final_Project.framework */; };
+		59C7D2A82BAB163500AECA61 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2A72BAB163500AECA61 /* Message.swift */; };
+		59C7D2AA2BAB166100AECA61 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2A92BAB166100AECA61 /* ChatViewModel.swift */; };
+		59C7D2AC2BAB169C00AECA61 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2AB2BAB169C00AECA61 /* MessageView.swift */; };
+		59C7D2AE2BAB17B500AECA61 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2AD2BAB17B500AECA61 /* ChatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		040296962B9B3FD800CEC711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040296992B9B3FD800CEC711 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		044F91C52BA9B104004758DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		59C7D2A72BAB163500AECA61 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		59C7D2A92BAB166100AECA61 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		59C7D2AB2BAB169C00AECA61 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		59C7D2AD2BAB17B500AECA61 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		60C4565472E78A6CB70FA01B /* Pods-Final Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final Project.debug.xcconfig"; path = "Target Support Files/Pods-Final Project/Pods-Final Project.debug.xcconfig"; sourceTree = "<group>"; };
 		B4951F07E6E8BEBD3CE25A4E /* Pods_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E174BFF3270C987635601D /* Pods-Final Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final Project.release.xcconfig"; path = "Target Support Files/Pods-Final Project/Pods-Final Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +73,10 @@
 				040296942B9B3FD700CEC711 /* ContentView.swift */,
 				040296962B9B3FD800CEC711 /* Assets.xcassets */,
 				040296982B9B3FD800CEC711 /* Preview Content */,
+				59C7D2A72BAB163500AECA61 /* Message.swift */,
+				59C7D2A92BAB166100AECA61 /* ChatViewModel.swift */,
+				59C7D2AD2BAB17B500AECA61 /* ChatView.swift */,
+				59C7D2AB2BAB169C00AECA61 /* MessageView.swift */,
 			);
 			path = "Final Project";
 			sourceTree = "<group>";
@@ -91,7 +103,6 @@
 				60C4565472E78A6CB70FA01B /* Pods-Final Project.debug.xcconfig */,
 				F0E174BFF3270C987635601D /* Pods-Final Project.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -210,8 +221,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59C7D2A82BAB163500AECA61 /* Message.swift in Sources */,
 				040296952B9B3FD700CEC711 /* ContentView.swift in Sources */,
+				59C7D2AA2BAB166100AECA61 /* ChatViewModel.swift in Sources */,
 				040296932B9B3FD700CEC711 /* Final_ProjectApp.swift in Sources */,
+				59C7D2AE2BAB17B500AECA61 /* ChatView.swift in Sources */,
+				59C7D2AC2BAB169C00AECA61 /* MessageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
