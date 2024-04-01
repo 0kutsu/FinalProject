@@ -7,13 +7,25 @@
 
 import SwiftUI
 
+enum Screen {
+    case userView, wordleView, loginView
+}
+
 struct ContentView: View {
+    @State var screen: Screen = .loginView
+    @EnvironmentObject var user: User
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Goodbye, world!")
+            Spacer()
+            if !user.loggedIn {
+                if screen == .loginView {
+                    SignUpView(screen: $screen)
+                }
+            }
+            
+            else {
+                ChatView()
+            }
         }
         .padding()
     }
@@ -22,6 +34,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(User())
     }
 }
  
