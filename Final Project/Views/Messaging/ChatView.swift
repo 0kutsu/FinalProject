@@ -36,8 +36,6 @@ struct ChatView: View {
                         .cornerRadius(50)
                         .padding(.trailing)
                 }
-         
-
             }
             .padding(.top)
             .background(Color(uiColor: .systemGray6))

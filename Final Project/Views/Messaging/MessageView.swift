@@ -59,6 +59,6 @@ struct MessageView: View {
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView(message: Message(userUid: "123", text: "hewo como estas uwu", photoURL: "", createdAt: Date()))
+        MessageView(message: Message(userUid: "123", text: "hewo como estas uwu", createdAt: Date()))
     }
 }

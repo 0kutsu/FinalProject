@@ -11,22 +11,22 @@ class ChatViewModel: ObservableObject {
     @Published var messages = [Message]()
     
     @Published var mockData = [
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", photoURL: "", createdAt: Date())
+        Message(userUid: "12345", text: "text message", createdAt: Date()),
+        Message(userUid: "12345", text: "text message", createdAt: Date()),
+        Message(userUid: "12345", text: "text message", createdAt: Date()),
+        Message(userUid: "12345", text: "text message", createdAt: Date()),
+        Message(userUid: "12345", text: "text message", createdAt: Date()),
+        Message(userUid: "12345", text: "text message", createdAt: Date()),
+        Message(userUid: "12345", text: "text message", createdAt: Date()),
+        Message(userUid: "12345", text: "text message", createdAt: Date()),
+        Message(userUid: "12345", text: "text message", createdAt: Date()),
+        Message(userUid: "12345", text: "text message", createdAt: Date()),
+        Message(userUid: "12345", text: "text message", createdAt: Date()),
+        Message(userUid: "12345", text: "text message", createdAt: Date()),
+        Message(userUid: "12345", text: "text message", createdAt: Date()),
+        Message(userUid: "12345", text: "text message", createdAt: Date()),
+        Message(userUid: "12345", text: "text message", createdAt: Date()),
+        Message(userUid: "12345", text: "text message", createdAt: Date())
     ]
     func sendMessage(text: String) {
         print(text)

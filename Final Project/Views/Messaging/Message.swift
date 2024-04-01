@@ -11,8 +11,16 @@ struct Message: Decodable, Identifiable {
     let id = UUID()
     let userUid: String
     let text: String
-    let photoURL: String
     let createdAt: Date
+    
+//    enum CodingKeys: String, CodingKeys {
+//        case id
+//        case userUid
+//        case text
+//        case photoURL
+//        case createdAt
+//    }
+//
     
     func isFromCurrentUser() -> Bool {
         return false
