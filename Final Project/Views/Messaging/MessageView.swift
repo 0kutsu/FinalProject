@@ -48,7 +48,7 @@ struct MessageView: View {
                 .frame(maxWidth: 260, alignment: .leading)
                 .background(Color(uiColor: .lightGray))
                 .cornerRadius(20)
-                
+
             }
             .frame(maxWidth: 360, alignment: .leading)
         }
@@ -59,6 +59,6 @@ struct MessageView: View {
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView(message: Message(userUid: "123", text: "hewo como estas uwu", photoURL: "", createdAt: Date()))
+        MessageView(message: Message(userUid: "123", text: "hewo como estas uwu", createdAt: Date()))
     }
 }

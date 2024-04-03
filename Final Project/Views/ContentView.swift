@@ -14,6 +14,8 @@ enum Screen {
 struct ContentView: View {
     @State var screen: Screen = .loginView
     @EnvironmentObject var user: User
+    
+    
     var body: some View {
         VStack {
             Spacer()
@@ -21,15 +23,14 @@ struct ContentView: View {
                 if screen == .loginView {
                     SignUpView(screen: $screen)
                 }
-            }
-            
-            else {
+            } else {
                 ChatView()
             }
         }
         .padding()
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

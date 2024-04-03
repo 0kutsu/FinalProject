@@ -15,21 +15,25 @@ struct SignUpView: View {
     var body: some View {
         VStack {
             Spacer()
-            Image("wordle logo")
+            Image("logoImage")
                 .resizable()
                 .scaledToFit()
-                .padding(.all, 30)
+                .padding(.all, 50)
                 .frame(width: 300, height: 300)
             
             TextField("Email Address", text: $user.email)
                 .padding()
+                .padding(.top, 30)
+                .padding(.leading, 30)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
             
             SecureField("Password", text: $user.password)
                 .padding()
+                .padding(.leading, 30)
+                .padding(.bottom, 30)
             
-            Spacer()
+            
             
             Button(action: signUp) {
                 Text("Sign Up")
@@ -45,7 +49,7 @@ struct SignUpView: View {
                 Text("Log In")
                     .padding(.vertical, 10)
                     .frame(width: 300)
-                    .background(user.loggedIn ? Color.black : Color.white)
+                    .background(Color.black)
                     .foregroundColor(Color.white)
                     .cornerRadius(20)
             }
@@ -77,4 +81,11 @@ struct SignUpView: View {
     func signOut() {
         user.signOut()
     }
+}
+    
+    struct SignUpView_Previews: PreviewProvider {
+        static var previews: some View {
+            SignUpView(screen: Binding.constant(.userView))
+                .environmentObject(User())
+        }
 }
