@@ -7,13 +7,16 @@
 
 import SwiftUI
 
+
 struct ChatView: View {
     @StateObject var chatViewModel = ChatViewModel()
     @State var text = ""
+    @EnvironmentObject var user: User
     var body: some View {
         VStack {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 8) {
+//              this needs the message to be identifiable
                     ForEach(chatViewModel.mockData) { message in
                         MessageView(message: message)
                     }
@@ -25,6 +28,7 @@ struct ChatView: View {
                 Button {
                     if text.count > 2 {
                         chatViewModel.sendMessage(text: text)
+                        Message.uploadMessage(Message(userUid: user.uid, text: text, createdAt: Date()))
                         text = ""
                     }
                    
@@ -47,5 +51,6 @@ struct ChatView: View {
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
         ChatView()
+            .environmentObject(User())
     }
 }

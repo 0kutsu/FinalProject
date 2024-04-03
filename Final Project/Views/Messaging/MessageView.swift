@@ -48,7 +48,7 @@ struct MessageView: View {
                 .frame(maxWidth: 260, alignment: .leading)
                 .background(Color(uiColor: .lightGray))
                 .cornerRadius(20)
-                
+
             }
             .frame(maxWidth: 360, alignment: .leading)
         }

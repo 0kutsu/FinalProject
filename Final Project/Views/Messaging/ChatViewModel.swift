@@ -17,15 +17,6 @@ class ChatViewModel: ObservableObject {
         Message(userUid: "12345", text: "text message", createdAt: Date()),
         Message(userUid: "12345", text: "text message", createdAt: Date()),
         Message(userUid: "12345", text: "text message", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", createdAt: Date()),
-        Message(userUid: "12345", text: "text message", createdAt: Date()),
         Message(userUid: "12345", text: "text message", createdAt: Date())
     ]
     func sendMessage(text: String) {
