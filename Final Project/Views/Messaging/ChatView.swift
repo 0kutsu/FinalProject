@@ -36,7 +36,7 @@ struct ChatView: View {
                     Text("send")
                         .padding()
                         .foregroundColor(.white)
-                        .background(.orange)
+                        .background(Color.orangeMain)
                         .cornerRadius(50)
                         .padding(.trailing)
                 }
@@ -44,7 +44,7 @@ struct ChatView: View {
             .padding(.top)
             .background(Color(uiColor: .systemGray6))
              
-        }
+        }.background(.white)
     }
 }
 
