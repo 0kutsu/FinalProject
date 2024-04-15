@@ -24,10 +24,13 @@ struct ContentView: View {
                     SignUpView(screen: $screen)
                 }
             } else {
-                ChatView()
+                HomeView()
             }
+            
+            
+            
         }
-        .padding()
+       // .padding()
     }
 }
 

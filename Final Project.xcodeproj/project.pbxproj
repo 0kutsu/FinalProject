@@ -23,6 +23,8 @@
 		044F91E42BAF9EC0004758DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91E32BAF9EC0004758DA /* User.swift */; };
 		044F91E82BBC3EEF004758DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044F91E72BBC3EEF004758DA /* GoogleService-Info.plist */; };
 		4DB30826D596A479652485B5 /* Pods_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4951F07E6E8BEBD3CE25A4E /* Pods_Final_Project.framework */; };
+		59BBDF072BC8064500767958 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BBDF062BC8064500767958 /* Constants.swift */; };
+		59BBDF092BC968DC00767958 /* HomeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BBDF082BC968DC00767958 /* HomeScrollView.swift */; };
 		59C7D2A82BAB163500AECA61 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2A72BAB163500AECA61 /* Message.swift */; };
 		59C7D2AA2BAB166100AECA61 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2A92BAB166100AECA61 /* ChatViewModel.swift */; };
 		59C7D2AC2BAB169C00AECA61 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2AB2BAB169C00AECA61 /* MessageView.swift */; };
@@ -48,6 +50,8 @@
 		044F91E12BAB1C4E004758DA /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		044F91E32BAF9EC0004758DA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		044F91E72BBC3EEF004758DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		59BBDF062BC8064500767958 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		59BBDF082BC968DC00767958 /* HomeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrollView.swift; sourceTree = "<group>"; };
 		59C7D2A72BAB163500AECA61 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		59C7D2A92BAB166100AECA61 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		59C7D2AB2BAB169C00AECA61 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				044F91E72BBC3EEF004758DA /* GoogleService-Info.plist */,
 				040296962B9B3FD800CEC711 /* Assets.xcassets */,
 				040296982B9B3FD800CEC711 /* Preview Content */,
+				59BBDF062BC8064500767958 /* Constants.swift */,
 			);
 			path = "Final Project";
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 			children = (
 				044F91D02BAB165F004758DA /* Demo?View.swift */,
 				044F91D22BAB1674004758DA /* HomeView.swift */,
+				59BBDF082BC968DC00767958 /* HomeScrollView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59C7D2A82BAB163500AECA61 /* Message.swift in Sources */,
+				59BBDF072BC8064500767958 /* Constants.swift in Sources */,
 				59C7D2B32BAB1C9200AECA61 /* AuthManager.swift in Sources */,
 				040296952B9B3FD700CEC711 /* ContentView.swift in Sources */,
 				59C7D2AA2BAB166100AECA61 /* ChatViewModel.swift in Sources */,
@@ -326,6 +333,7 @@
 				044F91D92BAB1BBC004758DA /* DefinitionCardView.swift in Sources */,
 				044F91CB2BAB1609004758DA /* SignUpView.swift in Sources */,
 				044F91D72BAB16BD004758DA /* MatchingView.swift in Sources */,
+				59BBDF092BC968DC00767958 /* HomeScrollView.swift in Sources */,
 				044F91CF2BAB1646004758DA /* ChooseLanguageView.swift in Sources */,
 				044F91E42BAF9EC0004758DA /* User.swift in Sources */,
 				044F91CD2BAB1625004758DA /* SignUpTextFieldsView.swift in Sources */,
