@@ -29,7 +29,6 @@ struct MessageView: View {
                     .cornerRadius(16)
                     .padding(.bottom, 24)
                     .padding(.leading, 4)
-                
             }
             .frame(maxWidth: 360, alignment: .trailing)
         } else {
