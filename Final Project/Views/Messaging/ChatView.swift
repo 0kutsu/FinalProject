@@ -7,19 +7,35 @@
 
 import SwiftUI
 
+func fetchMessagesInView(chatViewModel: ChatViewModel) {
+    Message.fetchMessages { result in
+        switch result {
+            case .success(let fetchmessages):
+                chatViewModel.messages = fetchmessages
+            case .failure(_):
+                print("error fetching messages")
+        }
+    }
+}
 
 struct ChatView: View {
     @StateObject var chatViewModel = ChatViewModel()
     @State var text = ""
     @EnvironmentObject var user: User
+    
     var body: some View {
+        
         VStack {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 8) {
-//              this needs the message to be identifiable
-                    ForEach(chatViewModel.mockData) { message in
+                    Text("")
+                        .onAppear {
+                            fetchMessagesInView(chatViewModel: chatViewModel)
+                        }
+                    ForEach(chatViewModel.messages) { message in
                         MessageView(message: message)
                     }
+                            
                 }
             }
             HStack {

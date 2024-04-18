@@ -43,8 +43,39 @@ struct Message: Codable, Identifiable {
         }
     }
     
-    static func fetchMessages(completion: @escaping ([Message]) -> Void) {
+    static func fetchMessages(completion: @escaping (Result<[Message], Error>) -> Void) {
+        let messageRef = db.child("section")
         
+        // Observing for changes in the data at the specified database reference
+        messageRef.observe(.value) { snapshot in
+            guard snapshot.exists() else {
+                completion(.success([])) // If there are no messages, return an empty array
+                return
+            }
+            
+            var messages: [Message] = []
+            
+            for child in snapshot.children {
+                // Convert each child snapshot to a dictionary
+                guard let snapshot = child as? DataSnapshot,
+                      let messageDict = snapshot.value as? [String: Any] else {
+                    continue
+                }
+                
+                // Deserialize the dictionary to a Message object
+                if let messageData = try? JSONSerialization.data(withJSONObject: messageDict),
+                   let message = try? JSONDecoder().decode(Message.self, from: messageData) {
+                    messages.append(message)
+                }
+            }
+            
+            // Sort messages by createdAt date
+            messages.sort { $0.createdAt < $1.createdAt }
+            
+            completion(.success(messages))
+        } withCancel: { error in
+            completion(.failure(error)) // If there's an error, pass it through the completion handler
+        }
     }
     
     func isFromCurrentUser() -> Bool {
