@@ -13,12 +13,18 @@ import FirebaseStorage
 class User: ObservableObject {
     @Published var email: String
     @Published var password: String
-    @Published var userName: String = ""
+    @Published var username: String = ""
     @Published var image: UIImage = UIImage(imageLiteralResourceName: "profilePicture")
     @Published var loggedIn: Bool = false
+    
+    
+    
     @Published var uid: String = ""
     
-    init(email: String = "", password: String = "", userName: String = "") {
+    // initializing with sets is temporary
+    @Published var flashCardSets: [FlashCardSet] = [FlashCardSet(name: "Hard Words", cards: [Card]()), FlashCardSet(name: "Mid Words", cards: [Card]()), FlashCardSet(name: "Easy Words", cards: [Card]())]
+    
+    init(email: String = "", password: String = "", username: String = "") {
         self.email = email
         self.password = password
         
