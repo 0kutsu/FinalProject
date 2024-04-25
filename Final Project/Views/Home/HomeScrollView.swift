@@ -9,13 +9,14 @@ import SwiftUI
 
 struct HomeScrollView: View {
     @EnvironmentObject var user: User
-    
+    @State private var startAnimation: Bool = false
+    public var x:CGFloat = 150
+    public var y:CGFloat = 100
     var body: some View {
         VStack {
             ZStack {
                 
                 HStack{
-                    
                     Spacer()
                     Button {
                         
@@ -26,9 +27,6 @@ struct HomeScrollView: View {
                             .clipShape(Circle())
                             .padding([.leading], 340)
                             .padding([.trailing], 16)
-                        
-                        
-                        
                     }
                 }
                 .padding(.bottom, 15)
@@ -41,17 +39,13 @@ struct HomeScrollView: View {
             }
             
             ScrollView(showsIndicators: false) {
-                
-                
                 //flashcardpreview
+                
                 ZStack {
                     Rectangle()
                         .frame(height: 170)
                         .foregroundColor(.white)
                         .cornerRadius(20)
-                    
-                    
-                    
                     VStack {
                         Spacer()
                         HStack {
@@ -73,10 +67,6 @@ struct HomeScrollView: View {
                         }
                     }.padding(.bottom, 20)
                 }
-                
-                
-                
-                
                 //dailygoal
                 
                 ZStack {
@@ -103,8 +93,9 @@ struct HomeScrollView: View {
                 
                 
                 
-            }.padding([.leading, .trailing], 18)
+            }.padding([.leading, .trailing], 15)
                 .background(Color.greyBackground)
+            
             
         }
     }

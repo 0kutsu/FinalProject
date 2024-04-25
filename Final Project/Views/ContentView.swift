@@ -8,29 +8,37 @@
 import SwiftUI
 
 enum Screen {
-    case userView, wordleView, loginView
+    case logoAndButtonView, userView, wordleView, signUpView, logInView, chooseLanguageView
 }
 
-struct ContentView: View {
-    @State var screen: Screen = .loginView
-    @EnvironmentObject var user: User
     
+struct ContentView: View {
+    @State var screen: Screen = .logoAndButtonView
+    @EnvironmentObject var user: User
     
     var body: some View {
         VStack {
-            Spacer()
             if !user.loggedIn {
-                if screen == .loginView {
-                    SignUpView(screen: $screen)
+                if screen == .logoAndButtonView {
+                    LogoAndButtonView(screen: $screen)
                 }
-            } else {
+                if screen == .signUpView {
+                    SignUpTextFieldsView(screen: $screen)
+                }
+                if screen == .logInView {
+                    LogInTextFieldsView(screen: $screen)
+                }
+                if screen == .chooseLanguageView {
+                    ChooseLanguageView()
+                }
+            }
+            else {
                 HomeView()
             }
             
             
             
         }
-       // .padding()
     }
 }
 
