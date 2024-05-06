@@ -10,6 +10,8 @@ import SwiftUI
 extension Color {
     static let greyBackground = Color("greyBackground")
     static let orangeMain = Color("orangeMain")
+    static let orangeFaded50 = Color("orangeFaded50")
+    static let orangeFaded25 = Color("orangeFaded25")
     static let greyText = Color("greyText")
     
 }

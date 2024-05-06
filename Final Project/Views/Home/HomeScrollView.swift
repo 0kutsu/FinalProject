@@ -38,63 +38,97 @@ struct HomeScrollView: View {
                     .frame(width: 130)
             }
             
-            ScrollView(showsIndicators: false) {
-                //flashcardpreview
-                
-                ZStack {
-                    Rectangle()
-                        .frame(height: 170)
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
-                    VStack {
-                        Spacer()
-                        HStack {
-                            Spacer()
-                            
-                            Button {
-                                //  viewState = .flashcards
-                                
-                            } label: {
-                                Text("study")
-                                    .font(.title3)
-                                    .padding([.leading, .trailing], 20)
-                                    .padding([.top, .bottom], 10)
-                                    .background(Color.orangeMain)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(15)
-                                
-                            }.padding(.trailing, 25)
-                        }
-                    }.padding(.bottom, 20)
-                }
-                //dailygoal
-                
-                ZStack {
-                    Rectangle()
-                        .frame(height: 300)
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
+            ZStack {
+//
+                ScrollView(showsIndicators: false) {
+                    //flashcardpreview
                     
-                    Text("Daily Goals")
-                        .foregroundColor(Color.greyText)
-                        .font(.title3)
-                        .padding(.bottom, 220)
-                        .padding(.trailing, 200)
-                }
-                
-                //stats
-                
-                ZStack{
-                    Rectangle()
-                        .frame(height: 300)
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
-                }
-                
-                
-                
-            }.padding([.leading, .trailing], 15)
-                .background(Color.greyBackground)
+                    ZStack {
+                        
+                        
+                        GradientBackground(color1: Color.white, color2: Color.white, opacity: 1)
+                            .frame(height: 170)
+                            .foregroundColor(.white)
+                            .cornerRadius(20)
+//                            .opacity(0.3)
+                            .padding(.vertical, 10)
+                    
+                        VStack {
+                            HStack {
+                                Image("CheesePlaceholderImage")
+                                    .resizable()
+                                    .frame(width: 120, height: 120)
+                                    .cornerRadius(20)
+                                    .padding(10)
+                                    .background(Color.white.opacity(0.5))
+                                    .cornerRadius(30)
+                                
+//                                Spacer()
+                                
+                                VStack {
+                                    Text("QUESO")
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.orangeMain)
+                                        .font(.largeTitle)
+                                        .padding(.top, 10)
+                                    
+                                    Button {
+                                        //  viewState = .flashcards
+                                        
+                                    } label: {
+                                        Text("study")
+                                            .font(.title3)
+                                            .padding([.leading, .trailing], 20)
+                                            .padding([.top, .bottom], 10)
+                                            .background(Color.orangeMain)
+                                            .foregroundColor(.white)
+                                            .cornerRadius(15)
+                                        
+                                    }
+                                    .padding(.leading, 80)
+                                    .padding(.top, 10)
+                                }
+                            }
+                        }
+                    }
+                    //dailygoal
+                    
+                    VStack {
+                        Text("Daily Goals")
+                            .foregroundColor(Color.greyText)
+                            .font(.title3)
+//                            .padding(.bottom, 220)
+                            .padding(.trailing, 200)
+                        
+                        Rectangle()
+                            .frame(height: 300)
+                            .foregroundColor(.white)
+                            .cornerRadius(20)
+                        //                            .opacity(0.6)
+                            .shadow(radius: 5)
+                    }
+
+
+                        
+                        
+                    
+                    
+                    //stats
+                    
+                    ZStack{
+                        Rectangle()
+                            .frame(height: 300)
+                            .foregroundColor(.white)
+                            .cornerRadius(20)
+//                            .opacity(0.8)
+                            .shadow(radius: 5)
+
+                    }
+                    
+                    
+                    
+                }.padding([.leading, .trailing], 15)
+            }
             
             
         }

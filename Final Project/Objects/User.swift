@@ -14,8 +14,16 @@ class User: ObservableObject {
     @Published var email: String
     @Published var password: String
     @Published var username: String = ""
+    @Published var language: Language = Language(name: "", nativeName: "")
+    @Published var learningLevel: String = "New"
+    
+    // statistics
+    @Published var totalWords: Int = 0
+    @Published var individualWords: Int = 0
+    
     @Published var image: UIImage = UIImage(imageLiteralResourceName: "profilePicture")
     @Published var loggedIn: Bool = false
+    
     
     
     

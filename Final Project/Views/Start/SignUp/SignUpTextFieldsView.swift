@@ -17,7 +17,7 @@ struct SignUpTextFieldsView: View {
     var body: some View {
         
         ZStack {
-            // background color gradient
+//             background color gradient
             LinearGradient(
                 colors: [
                     .orangeMain,
@@ -30,32 +30,33 @@ struct SignUpTextFieldsView: View {
                 }
             }
                    .ignoresSafeArea(.all)
+                   .opacity(0.7)
             VStack {
-                Text("Join Us!")
+                Spacer()
+                    .frame(height: 50)
+                Text("Join Us")
                     .font(.system(size: 50))
                     .fontWeight(.black)
                     .foregroundColor(Color.white)
-                    .padding(.trailing, 100)
-                    .padding(.top, 80)
-                    
+                    .padding(.bottom, 1)
+
                 
-                SignUpTextFieldsBoxView(screen: $screen)
+                
+                
+                SignUpTextFieldsBoxView(backgroundOpacity: 0.7, screen: $screen)
                     .cornerRadius(30)
+                    .padding()
                 
                 
                 // progress bar
-                progressStepsView(step: 1)
-                    
+                    .safeAreaInset(edge: .bottom) {
+                        ProgressStepsView(step: 1, white: true)
+                            .foregroundColor(Color.orangeMain)
+                            .frame(height: 80)
+                    }
+
                 }
-            
-                
-                    
-            
-                Spacer()
             }
-        
-//            .background(Color.orangeMain)
-        .edgesIgnoringSafeArea(.all)
         }
     }
 

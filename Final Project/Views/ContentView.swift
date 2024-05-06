@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum Screen {
-    case logoAndButtonView, userView, wordleView, signUpView, logInView, chooseLanguageView
+    case logoAndButtonView, userView, signUpView, logInView, chooseLanguageView, selectLevelView, homeView
 }
 
     
@@ -29,7 +29,10 @@ struct ContentView: View {
                     LogInTextFieldsView(screen: $screen)
                 }
                 if screen == .chooseLanguageView {
-                    ChooseLanguageView()
+                    ChooseLanguageView(screen: $screen)
+                }
+                if screen == .selectLevelView {
+                    SelectLevelView(screen: $screen)
                 }
             }
             else {
