@@ -41,6 +41,7 @@ struct ChatView: View {
             HStack {
                 TextField("send a message", text: $text, axis: .vertical)
                     .padding()
+                    .autocorrectionDisabled()
                 Button {
                     if text.count > 2 {
                         chatViewModel.sendMessage(text: text)
