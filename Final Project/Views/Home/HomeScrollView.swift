@@ -38,63 +38,70 @@ struct HomeScrollView: View {
                     .frame(width: 130)
             }
             
-            ScrollView(showsIndicators: false) {
-                //flashcardpreview
-                
-                ZStack {
-                    Rectangle()
-                        .frame(height: 170)
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
+            ZStack {
+//
+                ScrollView(showsIndicators: false) {
                     VStack {
-                        Spacer()
-                        HStack {
-                            Spacer()
+                        Text("You Words")
+//                            .font(
+                    //flashcardpreview
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 20) {
+                                Button {
+                                    
+                                } label: {
+                                    StudyPreviewCardView(cardImage: Image("CheesePlaceholderImage"))
+                                }
+
+                                
                             
-                            Button {
-                                //  viewState = .flashcards
-                                
-                            } label: {
-                                Text("study")
-                                    .font(.title3)
-                                    .padding([.leading, .trailing], 20)
-                                    .padding([.top, .bottom], 10)
-                                    .background(Color.orangeMain)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(15)
-                                
-                            }.padding(.trailing, 25)
+                            StudyPreviewCardView(cardImage: Image("CheesePlaceholderImage"))
+                            
+                            StudyPreviewCardView(cardImage: Image("CheesePlaceholderImage"))
+                                    .padding(20)
                         }
-                    }.padding(.bottom, 20)
-                }
-                //dailygoal
-                
-                ZStack {
-                    Rectangle()
-                        .frame(height: 300)
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
+                            .padding()
+                            
+                    }
+                        
+                    //dailygoal
                     
-                    Text("Daily Goals")
-                        .foregroundColor(Color.greyText)
-                        .font(.title3)
-                        .padding(.bottom, 220)
-                        .padding(.trailing, 200)
-                }
-                
-                //stats
-                
-                ZStack{
-                    Rectangle()
-                        .frame(height: 300)
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
-                }
-                
-                
-                
-            }.padding([.leading, .trailing], 15)
-                .background(Color.greyBackground)
+                    
+                        Text("Daily Goals")
+                            .foregroundColor(Color.greyText)
+                            .font(.title3)
+//                            .padding(.bottom, 220)
+                            .padding(.trailing, 200)
+                        
+                        Rectangle()
+                            .frame(height: 300)
+                            .foregroundColor(.white)
+                            .cornerRadius(20)
+                        //                            .opacity(0.6)
+                            .shadow(radius: 5)
+                    }
+
+
+                        
+                        
+                    
+                    
+                    //stats
+                    
+                    ZStack{
+                        Rectangle()
+                            .frame(height: 300)
+                            .foregroundColor(.white)
+                            .cornerRadius(20)
+//                            .opacity(0.8)
+                            .shadow(radius: 5)
+
+                    }
+                    
+                    
+                    
+                }.padding([.leading, .trailing], 15)
+            }
             
             
         }

@@ -14,15 +14,23 @@ class User: ObservableObject {
     @Published var email: String
     @Published var password: String
     @Published var username: String = ""
+    @Published var language: Language = Language(name: "", nativeName: "")
+    @Published var learningLevel: String = "New"
+    
+    // statistics
+    @Published var totalWords: Int = 0
+    @Published var individualWords: Int = 0
+    
     @Published var image: UIImage = UIImage(imageLiteralResourceName: "profilePicture")
     @Published var loggedIn: Bool = false
+    
     
     
     
     @Published var uid: String = ""
     
     // initializing with sets is temporary
-    @Published var flashCardSets: [FlashCardSet] = [FlashCardSet(name: "Hard Words", cards: [Card]()), FlashCardSet(name: "Mid Words", cards: [Card]()), FlashCardSet(name: "Easy Words", cards: [Card]())]
+    @Published var flashCardSets: [FlashCardSet] = [FlashCardSet(name: "Hard Words", description: "", cards: [Card]()), FlashCardSet(name: "Mid Words", description: "", cards: [Card]()), FlashCardSet(name: "Easy Words", description: "", cards: [Card]())]
     
     init(email: String = "", password: String = "", username: String = "") {
         self.email = email

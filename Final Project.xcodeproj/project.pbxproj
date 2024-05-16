@@ -18,7 +18,7 @@
 		044F91D32BAB1674004758DA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91D22BAB1674004758DA /* HomeView.swift */; };
 		044F91D72BAB16BD004758DA /* MatchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91D62BAB16BD004758DA /* MatchingView.swift */; };
 		044F91D92BAB1BBC004758DA /* DefinitionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91D82BAB1BBC004758DA /* DefinitionCardView.swift */; };
-		044F91DF2BAB1C0F004758DA /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91DE2BAB1C0F004758DA /* FlashCardView.swift */; };
+		044F91DF2BAB1C0F004758DA /* FlashCardStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91DE2BAB1C0F004758DA /* FlashCardStudyView.swift */; };
 		044F91E42BAF9EC0004758DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91E32BAF9EC0004758DA /* User.swift */; };
 		044F91EA2BD3FBA3004758DA /* SignUpTextFieldsBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91E92BD3FBA3004758DA /* SignUpTextFieldsBoxView.swift */; };
 		044F91EC2BD451D0004758DA /* LogInTextFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91EB2BD451D0004758DA /* LogInTextFieldsView.swift */; };
@@ -26,13 +26,18 @@
 		044F91F32BD45752004758DA /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91EE2BD45751004758DA /* CardView.swift */; };
 		044F91F42BD45752004758DA /* Counting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91EF2BD45751004758DA /* Counting.swift */; };
 		044F91F52BD45752004758DA /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91F02BD45752004758DA /* Card.swift */; };
-		044F91F62BD45752004758DA /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91F12BD45752004758DA /* EditCards.swift */; };
+		044F91F62BD45752004758DA /* EditCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91F12BD45752004758DA /* EditCardsView.swift */; };
 		044F91F82BD45D33004758DA /* FlashCardSetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91F72BD45D33004758DA /* FlashCardSetsView.swift */; };
 		044F91FA2BD46778004758DA /* FlashCardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91F92BD46778004758DA /* FlashCardSet.swift */; };
 		044F91FC2BD7153D004758DA /* ChooseLanguageBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91FB2BD7153D004758DA /* ChooseLanguageBoxView.swift */; };
+		04647B1C2BE129F400D31982 /* SelectLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04647B1B2BE129F400D31982 /* SelectLevelView.swift */; };
+		04647B1E2BE438FD00D31982 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04647B1D2BE438FD00D31982 /* GradientBackground.swift */; };
+		04A1CEAB2BEA6CDA00178A13 /* CreateFlashCardSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1CEAA2BEA6CDA00178A13 /* CreateFlashCardSetView.swift */; };
+		04A1CEB02BEAF76700178A13 /* FlashCardSetInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1CEAF2BEAF76700178A13 /* FlashCardSetInfoView.swift */; };
 		04B024A52BD72AA70014BA19 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B024A42BD72AA70014BA19 /* Language.swift */; };
-		04B024A72BD731700014BA19 /* progressStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B024A62BD731700014BA19 /* progressStepsView.swift */; };
-		3E6E4A512BDFBD9D00D085C9 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6E4A502BDFBD9D00D085C9 /* Translate.swift */; };
+		04B024A72BD731700014BA19 /* ProgressStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B024A62BD731700014BA19 /* ProgressStepsView.swift */; };
+		04F136522BF5027800F9655B /* FlashCardNavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F136512BF5027800F9655B /* FlashCardNavigatorView.swift */; };
+		04F136542BF5808B00F9655B /* StudyPreviewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F136532BF5808B00F9655B /* StudyPreviewCardView.swift */; };
 		4DB30826D596A479652485B5 /* Pods_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4951F07E6E8BEBD3CE25A4E /* Pods_Final_Project.framework */; };
 		593E09AD2BECEF86003889AA /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E09AC2BECEF86003889AA /* DropdownView.swift */; };
 		59BBDF072BC8064500767958 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BBDF062BC8064500767958 /* Constants.swift */; };
@@ -62,7 +67,7 @@
 		044F91D22BAB1674004758DA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		044F91D62BAB16BD004758DA /* MatchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingView.swift; sourceTree = "<group>"; };
 		044F91D82BAB1BBC004758DA /* DefinitionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionCardView.swift; sourceTree = "<group>"; };
-		044F91DE2BAB1C0F004758DA /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
+		044F91DE2BAB1C0F004758DA /* FlashCardStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardStudyView.swift; sourceTree = "<group>"; };
 		044F91E32BAF9EC0004758DA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		044F91E92BD3FBA3004758DA /* SignUpTextFieldsBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextFieldsBoxView.swift; sourceTree = "<group>"; };
 		044F91EB2BD451D0004758DA /* LogInTextFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInTextFieldsView.swift; sourceTree = "<group>"; };
@@ -70,14 +75,18 @@
 		044F91EE2BD45751004758DA /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		044F91EF2BD45751004758DA /* Counting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Counting.swift; sourceTree = "<group>"; };
 		044F91F02BD45752004758DA /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		044F91F12BD45752004758DA /* EditCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
+		044F91F12BD45752004758DA /* EditCardsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCardsView.swift; sourceTree = "<group>"; };
 		044F91F72BD45D33004758DA /* FlashCardSetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardSetsView.swift; sourceTree = "<group>"; };
 		044F91F92BD46778004758DA /* FlashCardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardSet.swift; sourceTree = "<group>"; };
 		044F91FB2BD7153D004758DA /* ChooseLanguageBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageBoxView.swift; sourceTree = "<group>"; };
+		04647B1B2BE129F400D31982 /* SelectLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLevelView.swift; sourceTree = "<group>"; };
+		04647B1D2BE438FD00D31982 /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
+		04A1CEAA2BEA6CDA00178A13 /* CreateFlashCardSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlashCardSetView.swift; sourceTree = "<group>"; };
+		04A1CEAF2BEAF76700178A13 /* FlashCardSetInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardSetInfoView.swift; sourceTree = "<group>"; };
 		04B024A42BD72AA70014BA19 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
-		04B024A62BD731700014BA19 /* progressStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = progressStepsView.swift; sourceTree = "<group>"; };
-		3E6E4A502BDFBD9D00D085C9 /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
-		593E09AC2BECEF86003889AA /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
+		04B024A62BD731700014BA19 /* ProgressStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStepsView.swift; sourceTree = "<group>"; };
+		04F136512BF5027800F9655B /* FlashCardNavigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardNavigatorView.swift; sourceTree = "<group>"; };
+		04F136532BF5808B00F9655B /* StudyPreviewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPreviewCardView.swift; sourceTree = "<group>"; };
 		59BBDF062BC8064500767958 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		59BBDF082BC968DC00767958 /* HomeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrollView.swift; sourceTree = "<group>"; };
 		59C7D2A72BAB163500AECA61 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -153,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				040296942B9B3FD700CEC711 /* ContentView.swift */,
+				04647B1D2BE438FD00D31982 /* GradientBackground.swift */,
 				044F91E02BAB1C36004758DA /* Start */,
 				044F91D42BAB1682004758DA /* Home */,
 				044F91D52BAB16A3004758DA /* Messaging */,
@@ -175,6 +185,7 @@
 				044F91D02BAB165F004758DA /* Demo?View.swift */,
 				044F91D22BAB1674004758DA /* HomeView.swift */,
 				59BBDF082BC968DC00767958 /* HomeScrollView.swift */,
+				04F136532BF5808B00F9655B /* StudyPreviewCardView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -201,12 +212,15 @@
 			children = (
 				044F91F02BD45752004758DA /* Card.swift */,
 				044F91EF2BD45751004758DA /* Counting.swift */,
-				044F91F92BD46778004758DA /* FlashCardSet.swift */,
 				044F91EE2BD45751004758DA /* CardView.swift */,
-				044F91F12BD45752004758DA /* EditCards.swift */,
+				044F91F92BD46778004758DA /* FlashCardSet.swift */,
+				044F91F12BD45752004758DA /* EditCardsView.swift */,
+				04A1CEAA2BEA6CDA00178A13 /* CreateFlashCardSetView.swift */,
 				044F91ED2BD45751004758DA /* SettingsView.swift */,
-				044F91DE2BAB1C0F004758DA /* FlashCardView.swift */,
+				044F91DE2BAB1C0F004758DA /* FlashCardStudyView.swift */,
 				044F91F72BD45D33004758DA /* FlashCardSetsView.swift */,
+				04A1CEAF2BEAF76700178A13 /* FlashCardSetInfoView.swift */,
+				04F136512BF5027800F9655B /* FlashCardNavigatorView.swift */,
 			);
 			path = Flashcards;
 			sourceTree = "<group>";
@@ -215,11 +229,20 @@
 			isa = PBXGroup;
 			children = (
 				044F91CA2BAB1609004758DA /* LogoAndButtonView.swift */,
-				04B024A62BD731700014BA19 /* progressStepsView.swift */,
+				04B024A62BD731700014BA19 /* ProgressStepsView.swift */,
 				04B024A22BD72A7F0014BA19 /* SignUp */,
 				04B024A32BD72A940014BA19 /* ChooseLanguage */,
+				04647B1A2BE1293300D31982 /* Select Level */,
 			);
 			path = Start;
+			sourceTree = "<group>";
+		};
+		04647B1A2BE1293300D31982 /* Select Level */ = {
+			isa = PBXGroup;
+			children = (
+				04647B1B2BE129F400D31982 /* SelectLevelView.swift */,
+			);
+			path = "Select Level";
 			sourceTree = "<group>";
 		};
 		04B024A22BD72A7F0014BA19 /* SignUp */ = {
@@ -384,9 +407,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				044F91F42BD45752004758DA /* Counting.swift in Sources */,
+				04F136522BF5027800F9655B /* FlashCardNavigatorView.swift in Sources */,
 				59C7D2A82BAB163500AECA61 /* Message.swift in Sources */,
 				044F91F52BD45752004758DA /* Card.swift in Sources */,
-				044F91F62BD45752004758DA /* EditCards.swift in Sources */,
+				04647B1C2BE129F400D31982 /* SelectLevelView.swift in Sources */,
+				044F91F62BD45752004758DA /* EditCardsView.swift in Sources */,
+				04647B1E2BE438FD00D31982 /* GradientBackground.swift in Sources */,
+				04A1CEAB2BEA6CDA00178A13 /* CreateFlashCardSetView.swift in Sources */,
 				59BBDF072BC8064500767958 /* Constants.swift in Sources */,
 				593E09AD2BECEF86003889AA /* DropdownView.swift in Sources */,
 				59C7D2B32BAB1C9200AECA61 /* AuthManager.swift in Sources */,
@@ -394,10 +421,11 @@
 				59C7D2AA2BAB166100AECA61 /* ChatViewModel.swift in Sources */,
 				59C7D2AE2BAB17B500AECA61 /* ChatView.swift in Sources */,
 				044F91FA2BD46778004758DA /* FlashCardSet.swift in Sources */,
+				04A1CEB02BEAF76700178A13 /* FlashCardSetInfoView.swift in Sources */,
 				59C7D2AC2BAB169C00AECA61 /* MessageView.swift in Sources */,
 				59C7D2B12BAB1C7100AECA61 /* DatabaseManager.swift in Sources */,
 				044F91FC2BD7153D004758DA /* ChooseLanguageBoxView.swift in Sources */,
-				044F91DF2BAB1C0F004758DA /* FlashCardView.swift in Sources */,
+				044F91DF2BAB1C0F004758DA /* FlashCardStudyView.swift in Sources */,
 				044F91D32BAB1674004758DA /* HomeView.swift in Sources */,
 				044F91D92BAB1BBC004758DA /* DefinitionCardView.swift in Sources */,
 				044F91CB2BAB1609004758DA /* LogoAndButtonView.swift in Sources */,
@@ -408,6 +436,7 @@
 				04B024A52BD72AA70014BA19 /* Language.swift in Sources */,
 				59F04D642BDA9CC800FA7094 /* JoinChatView.swift in Sources */,
 				044F91E42BAF9EC0004758DA /* User.swift in Sources */,
+				04F136542BF5808B00F9655B /* StudyPreviewCardView.swift in Sources */,
 				044F91CD2BAB1625004758DA /* SignUpTextFieldsView.swift in Sources */,
 				3E6E4A512BDFBD9D00D085C9 /* Translate.swift in Sources */,
 				044F91F82BD45D33004758DA /* FlashCardSetsView.swift in Sources */,
@@ -415,8 +444,7 @@
 				59F04D602BDA9B7300FA7094 /* StartMessagingView.swift in Sources */,
 				040296932B9B3FD700CEC711 /* Final_ProjectApp.swift in Sources */,
 				044F91EC2BD451D0004758DA /* LogInTextFieldsView.swift in Sources */,
-				04B024A72BD731700014BA19 /* progressStepsView.swift in Sources */,
-				59F04D622BDA9C9C00FA7094 /* CreateChatView.swift in Sources */,
+				04B024A72BD731700014BA19 /* ProgressStepsView.swift in Sources */,
 				044F91D12BAB165F004758DA /* Demo?View.swift in Sources */,
 				044F91F22BD45752004758DA /* SettingsView.swift in Sources */,
 			);
