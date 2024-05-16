@@ -20,6 +20,7 @@
 		044F91D92BAB1BBC004758DA /* DefinitionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91D82BAB1BBC004758DA /* DefinitionCardView.swift */; };
 		044F91DF2BAB1C0F004758DA /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91DE2BAB1C0F004758DA /* FlashCardView.swift */; };
 		044F91E42BAF9EC0004758DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91E32BAF9EC0004758DA /* User.swift */; };
+		044F91E82BBC3EEF004758DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044F91E72BBC3EEF004758DA /* GoogleService-Info.plist */; };
 		044F91EA2BD3FBA3004758DA /* SignUpTextFieldsBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91E92BD3FBA3004758DA /* SignUpTextFieldsBoxView.swift */; };
 		044F91EC2BD451D0004758DA /* LogInTextFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91EB2BD451D0004758DA /* LogInTextFieldsView.swift */; };
 		044F91F22BD45752004758DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91ED2BD45751004758DA /* SettingsView.swift */; };
@@ -35,6 +36,7 @@
 		3E0D31C32BE28104002649A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E0D31C22BE28104002649A9 /* GoogleService-Info.plist */; };
 		3E6E4A512BDFBD9D00D085C9 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6E4A502BDFBD9D00D085C9 /* Translate.swift */; };
 		4DB30826D596A479652485B5 /* Pods_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4951F07E6E8BEBD3CE25A4E /* Pods_Final_Project.framework */; };
+		593E09AD2BECEF86003889AA /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E09AC2BECEF86003889AA /* DropdownView.swift */; };
 		59BBDF072BC8064500767958 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BBDF062BC8064500767958 /* Constants.swift */; };
 		59BBDF092BC968DC00767958 /* HomeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BBDF082BC968DC00767958 /* HomeScrollView.swift */; };
 		59C7D2A82BAB163500AECA61 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2A72BAB163500AECA61 /* Message.swift */; };
@@ -43,6 +45,9 @@
 		59C7D2AE2BAB17B500AECA61 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2AD2BAB17B500AECA61 /* ChatView.swift */; };
 		59C7D2B12BAB1C7100AECA61 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2B02BAB1C7100AECA61 /* DatabaseManager.swift */; };
 		59C7D2B32BAB1C9200AECA61 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2B22BAB1C9200AECA61 /* AuthManager.swift */; };
+		59F04D602BDA9B7300FA7094 /* StartMessagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F04D5F2BDA9B7300FA7094 /* StartMessagingView.swift */; };
+		59F04D622BDA9C9C00FA7094 /* CreateChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F04D612BDA9C9C00FA7094 /* CreateChatView.swift */; };
+		59F04D642BDA9CC800FA7094 /* JoinChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F04D632BDA9CC800FA7094 /* JoinChatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +79,7 @@
 		04B024A62BD731700014BA19 /* progressStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = progressStepsView.swift; sourceTree = "<group>"; };
 		3E0D31C22BE28104002649A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3E6E4A502BDFBD9D00D085C9 /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
+		593E09AC2BECEF86003889AA /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		59BBDF062BC8064500767958 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		59BBDF082BC968DC00767958 /* HomeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrollView.swift; sourceTree = "<group>"; };
 		59C7D2A72BAB163500AECA61 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -82,6 +88,9 @@
 		59C7D2AD2BAB17B500AECA61 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		59C7D2B02BAB1C7100AECA61 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		59C7D2B22BAB1C9200AECA61 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		59F04D5F2BDA9B7300FA7094 /* StartMessagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMessagingView.swift; sourceTree = "<group>"; };
+		59F04D612BDA9C9C00FA7094 /* CreateChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatView.swift; sourceTree = "<group>"; };
+		59F04D632BDA9CC800FA7094 /* JoinChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinChatView.swift; sourceTree = "<group>"; };
 		60C4565472E78A6CB70FA01B /* Pods-Final Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final Project.debug.xcconfig"; path = "Target Support Files/Pods-Final Project/Pods-Final Project.debug.xcconfig"; sourceTree = "<group>"; };
 		B4951F07E6E8BEBD3CE25A4E /* Pods_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E174BFF3270C987635601D /* Pods-Final Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final Project.release.xcconfig"; path = "Target Support Files/Pods-Final Project/Pods-Final Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +111,7 @@
 		040296862B9B3FD700CEC711 = {
 			isa = PBXGroup;
 			children = (
+				593E09AC2BECEF86003889AA /* DropdownView.swift */,
 				040296912B9B3FD700CEC711 /* Final Project */,
 				040296902B9B3FD700CEC711 /* Products */,
 				D77DB0AE596C5F8F881D52B0 /* Pods */,
@@ -175,6 +185,9 @@
 			children = (
 				59C7D2A72BAB163500AECA61 /* Message.swift */,
 				59C7D2A92BAB166100AECA61 /* ChatViewModel.swift */,
+				59F04D5F2BDA9B7300FA7094 /* StartMessagingView.swift */,
+				59F04D612BDA9C9C00FA7094 /* CreateChatView.swift */,
+				59F04D632BDA9CC800FA7094 /* JoinChatView.swift */,
 				59C7D2AD2BAB17B500AECA61 /* ChatView.swift */,
 				59C7D2AB2BAB169C00AECA61 /* MessageView.swift */,
 				3E6E4A502BDFBD9D00D085C9 /* Translate.swift */,
@@ -376,6 +389,7 @@
 				044F91F52BD45752004758DA /* Card.swift in Sources */,
 				044F91F62BD45752004758DA /* EditCards.swift in Sources */,
 				59BBDF072BC8064500767958 /* Constants.swift in Sources */,
+				593E09AD2BECEF86003889AA /* DropdownView.swift in Sources */,
 				59C7D2B32BAB1C9200AECA61 /* AuthManager.swift in Sources */,
 				040296952B9B3FD700CEC711 /* ContentView.swift in Sources */,
 				59C7D2AA2BAB166100AECA61 /* ChatViewModel.swift in Sources */,
@@ -393,14 +407,17 @@
 				59BBDF092BC968DC00767958 /* HomeScrollView.swift in Sources */,
 				044F91CF2BAB1646004758DA /* ChooseLanguageView.swift in Sources */,
 				04B024A52BD72AA70014BA19 /* Language.swift in Sources */,
+				59F04D642BDA9CC800FA7094 /* JoinChatView.swift in Sources */,
 				044F91E42BAF9EC0004758DA /* User.swift in Sources */,
 				044F91CD2BAB1625004758DA /* SignUpTextFieldsView.swift in Sources */,
 				3E6E4A512BDFBD9D00D085C9 /* Translate.swift in Sources */,
 				044F91F82BD45D33004758DA /* FlashCardSetsView.swift in Sources */,
 				044F91F32BD45752004758DA /* CardView.swift in Sources */,
+				59F04D602BDA9B7300FA7094 /* StartMessagingView.swift in Sources */,
 				040296932B9B3FD700CEC711 /* Final_ProjectApp.swift in Sources */,
 				044F91EC2BD451D0004758DA /* LogInTextFieldsView.swift in Sources */,
 				04B024A72BD731700014BA19 /* progressStepsView.swift in Sources */,
+				59F04D622BDA9C9C00FA7094 /* CreateChatView.swift in Sources */,
 				044F91D12BAB165F004758DA /* Demo?View.swift in Sources */,
 				044F91F22BD45752004758DA /* SettingsView.swift in Sources */,
 			);
