@@ -11,6 +11,7 @@
 		040296952B9B3FD700CEC711 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040296942B9B3FD700CEC711 /* ContentView.swift */; };
 		040296972B9B3FD800CEC711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040296962B9B3FD800CEC711 /* Assets.xcassets */; };
 		0402969A2B9B3FD800CEC711 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040296992B9B3FD800CEC711 /* Preview Assets.xcassets */; };
+		044A6A682BF63FCB00CDCB10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044A6A672BF63FCB00CDCB10 /* GoogleService-Info.plist */; };
 		044F91CB2BAB1609004758DA /* LogoAndButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91CA2BAB1609004758DA /* LogoAndButtonView.swift */; };
 		044F91CD2BAB1625004758DA /* SignUpTextFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91CC2BAB1625004758DA /* SignUpTextFieldsView.swift */; };
 		044F91CF2BAB1646004758DA /* ChooseLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91CE2BAB1646004758DA /* ChooseLanguageView.swift */; };
@@ -39,7 +40,7 @@
 		04F136522BF5027800F9655B /* FlashCardNavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F136512BF5027800F9655B /* FlashCardNavigatorView.swift */; };
 		04F136542BF5808B00F9655B /* StudyPreviewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F136532BF5808B00F9655B /* StudyPreviewCardView.swift */; };
 		4DB30826D596A479652485B5 /* Pods_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4951F07E6E8BEBD3CE25A4E /* Pods_Final_Project.framework */; };
-		593E09AD2BECEF86003889AA /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E09AC2BECEF86003889AA /* DropdownView.swift */; };
+		593E09AD2BECEF86003889AA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		59BBDF072BC8064500767958 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BBDF062BC8064500767958 /* Constants.swift */; };
 		59BBDF092BC968DC00767958 /* HomeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BBDF082BC968DC00767958 /* HomeScrollView.swift */; };
 		59C7D2A82BAB163500AECA61 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2A72BAB163500AECA61 /* Message.swift */; };
@@ -48,9 +49,7 @@
 		59C7D2AE2BAB17B500AECA61 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2AD2BAB17B500AECA61 /* ChatView.swift */; };
 		59C7D2B12BAB1C7100AECA61 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2B02BAB1C7100AECA61 /* DatabaseManager.swift */; };
 		59C7D2B32BAB1C9200AECA61 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2B22BAB1C9200AECA61 /* AuthManager.swift */; };
-		59CBEE892BF63C0E00C6FBDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59CBEE882BF63C0E00C6FBDA /* GoogleService-Info.plist */; };
 		59F04D602BDA9B7300FA7094 /* StartMessagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F04D5F2BDA9B7300FA7094 /* StartMessagingView.swift */; };
-		59F04D622BDA9C9C00FA7094 /* CreateChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F04D612BDA9C9C00FA7094 /* CreateChatView.swift */; };
 		59F04D642BDA9CC800FA7094 /* JoinChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F04D632BDA9CC800FA7094 /* JoinChatView.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +59,7 @@
 		040296942B9B3FD700CEC711 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		040296962B9B3FD800CEC711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040296992B9B3FD800CEC711 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		044A6A672BF63FCB00CDCB10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		044F91CA2BAB1609004758DA /* LogoAndButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAndButtonView.swift; sourceTree = "<group>"; };
 		044F91CC2BAB1625004758DA /* SignUpTextFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextFieldsView.swift; sourceTree = "<group>"; };
 		044F91CE2BAB1646004758DA /* ChooseLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageView.swift; sourceTree = "<group>"; };
@@ -95,7 +95,6 @@
 		59C7D2AD2BAB17B500AECA61 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		59C7D2B02BAB1C7100AECA61 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		59C7D2B22BAB1C9200AECA61 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		59CBEE882BF63C0E00C6FBDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		59F04D5F2BDA9B7300FA7094 /* StartMessagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMessagingView.swift; sourceTree = "<group>"; };
 		59F04D612BDA9C9C00FA7094 /* CreateChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatView.swift; sourceTree = "<group>"; };
 		59F04D632BDA9CC800FA7094 /* JoinChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinChatView.swift; sourceTree = "<group>"; };
@@ -119,7 +118,6 @@
 		040296862B9B3FD700CEC711 = {
 			isa = PBXGroup;
 			children = (
-				593E09AC2BECEF86003889AA /* DropdownView.swift */,
 				040296912B9B3FD700CEC711 /* Final Project */,
 				040296902B9B3FD700CEC711 /* Products */,
 				D77DB0AE596C5F8F881D52B0 /* Pods */,
@@ -143,7 +141,7 @@
 				044F91C92BAB1592004758DA /* Objects */,
 				044F91C82BAB1584004758DA /* Views */,
 				040296962B9B3FD800CEC711 /* Assets.xcassets */,
-				59CBEE882BF63C0E00C6FBDA /* GoogleService-Info.plist */,
+				044A6A672BF63FCB00CDCB10 /* GoogleService-Info.plist */,
 				040296982B9B3FD800CEC711 /* Preview Content */,
 				59BBDF062BC8064500767958 /* Constants.swift */,
 			);
@@ -200,7 +198,6 @@
 				59F04D632BDA9CC800FA7094 /* JoinChatView.swift */,
 				59C7D2AD2BAB17B500AECA61 /* ChatView.swift */,
 				59C7D2AB2BAB169C00AECA61 /* MessageView.swift */,
-				3E6E4A502BDFBD9D00D085C9 /* Translate.swift */,
 				044F91D62BAB16BD004758DA /* MatchingView.swift */,
 				044F91D82BAB1BBC004758DA /* DefinitionCardView.swift */,
 			);
@@ -353,7 +350,7 @@
 			files = (
 				0402969A2B9B3FD800CEC711 /* Preview Assets.xcassets in Resources */,
 				040296972B9B3FD800CEC711 /* Assets.xcassets in Resources */,
-				59CBEE892BF63C0E00C6FBDA /* GoogleService-Info.plist in Resources */,
+				044A6A682BF63FCB00CDCB10 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +412,7 @@
 				04647B1E2BE438FD00D31982 /* GradientBackground.swift in Sources */,
 				04A1CEAB2BEA6CDA00178A13 /* CreateFlashCardSetView.swift in Sources */,
 				59BBDF072BC8064500767958 /* Constants.swift in Sources */,
-				593E09AD2BECEF86003889AA /* DropdownView.swift in Sources */,
+				593E09AD2BECEF86003889AA /* (null) in Sources */,
 				59C7D2B32BAB1C9200AECA61 /* AuthManager.swift in Sources */,
 				040296952B9B3FD700CEC711 /* ContentView.swift in Sources */,
 				59C7D2AA2BAB166100AECA61 /* ChatViewModel.swift in Sources */,
@@ -438,7 +435,6 @@
 				044F91E42BAF9EC0004758DA /* User.swift in Sources */,
 				04F136542BF5808B00F9655B /* StudyPreviewCardView.swift in Sources */,
 				044F91CD2BAB1625004758DA /* SignUpTextFieldsView.swift in Sources */,
-				3E6E4A512BDFBD9D00D085C9 /* Translate.swift in Sources */,
 				044F91F82BD45D33004758DA /* FlashCardSetsView.swift in Sources */,
 				044F91F32BD45752004758DA /* CardView.swift in Sources */,
 				59F04D602BDA9B7300FA7094 /* StartMessagingView.swift in Sources */,
