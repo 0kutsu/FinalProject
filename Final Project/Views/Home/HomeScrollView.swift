@@ -41,59 +41,32 @@ struct HomeScrollView: View {
             ZStack {
 //
                 ScrollView(showsIndicators: false) {
+                    VStack {
+                        Text("You Words")
+//                            .font(
                     //flashcardpreview
-                    
-                    ZStack {
-                        
-                        
-                        GradientBackground(color1: Color.white, color2: Color.white, opacity: 1)
-                            .frame(height: 170)
-                            .foregroundColor(.white)
-                            .cornerRadius(20)
-//                            .opacity(0.3)
-                            .padding(.vertical, 10)
-                    
-                        VStack {
-                            HStack {
-                                Image("CheesePlaceholderImage")
-                                    .resizable()
-                                    .frame(width: 120, height: 120)
-                                    .cornerRadius(20)
-                                    .padding(10)
-                                    .background(Color.white.opacity(0.5))
-                                    .cornerRadius(30)
-                                
-//                                Spacer()
-                                
-                                VStack {
-                                    Text("QUESO")
-                                        .fontWeight(.bold)
-                                        .foregroundColor(Color.orangeMain)
-                                        .font(.largeTitle)
-                                        .padding(.top, 10)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 20) {
+                                Button {
                                     
-                                    Button {
-                                        //  viewState = .flashcards
-                                        
-                                    } label: {
-                                        Text("study")
-                                            .font(.title3)
-                                            .padding([.leading, .trailing], 20)
-                                            .padding([.top, .bottom], 10)
-                                            .background(Color.orangeMain)
-                                            .foregroundColor(.white)
-                                            .cornerRadius(15)
-                                        
-                                    }
-                                    .padding(.leading, 80)
-                                    .padding(.top, 10)
+                                } label: {
+                                    StudyPreviewCardView(cardImage: Image("CheesePlaceholderImage"))
                                 }
-                            }
+
+                                
+                            
+                            StudyPreviewCardView(cardImage: Image("CheesePlaceholderImage"))
+                            
+                            StudyPreviewCardView(cardImage: Image("CheesePlaceholderImage"))
+                                    .padding(20)
                         }
+                            .padding()
+                            
                     }
+                        
                     //dailygoal
                     
-                    VStack {
+                    
                         Text("Daily Goals")
                             .foregroundColor(Color.greyText)
                             .font(.title3)

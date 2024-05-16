@@ -30,7 +30,7 @@ struct SignUpTextFieldsView: View {
                 }
             }
                    .ignoresSafeArea(.all)
-                   .opacity(0.7)
+                   .opacity(1)
             VStack {
                 Spacer()
                     .frame(height: 50)
@@ -43,7 +43,7 @@ struct SignUpTextFieldsView: View {
                 
                 
                 
-                SignUpTextFieldsBoxView(backgroundOpacity: 0.7, screen: $screen)
+                SignUpTextFieldsBoxView(backgroundOpacity: 1, screen: $screen)
                     .cornerRadius(30)
                     .padding()
                 

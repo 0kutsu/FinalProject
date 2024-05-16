@@ -1,4 +1,11 @@
 //
+//  CreateFlashCardSetView.swift
+//  Final Project
+//
+//  Created by Mati Okutsu (student LM) on 5/7/24.
+//
+
+//
 //  EditCards.swift
 //  Flash Cards
 //
@@ -7,15 +14,23 @@
 
 import SwiftUI
 
-struct EditCards: View {
+struct CreateFlashCardSetView: View {
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var user: User
     @State private var cards = [Card]()
+    @State private var setName = ""
+    @State private var setDescription = ""
     @State private var newPrompt = ""
     @State private var newAnswer = ""
 
     var body: some View {
         NavigationView {
             List {
+                Section("Set Description") {
+                    TextField("Name", text: $newPrompt)
+                    TextField("Description", text: $newAnswer)
+                }
+                
                 Section("Add new card") {
                     TextField("Prompt", text: $newPrompt)
                     TextField("Answer", text: $newAnswer)
@@ -35,16 +50,28 @@ struct EditCards: View {
                     .onDelete(perform: removeCards)
                 }
             }
-            .navigationTitle("Edit Cards")
+            .navigationTitle("New Set")
             .toolbar {
+                Button("Back", action: back)
                 Button("Done", action: done)
+                
             }
             .listStyle(.grouped)
             .onAppear(perform: loadData)
         }
     }
-
+    
+    func back() {
+        cards = [Card]()
+        setName = ""
+        setDescription = ""
+        newPrompt = ""
+        newAnswer = ""
+        dismiss()
+    }
+    
     func done() {
+        user.flashCardSets.append(FlashCardSet(name: setName, description: setDescription, cards: cards))
         dismiss()
     }
 
@@ -78,8 +105,9 @@ struct EditCards: View {
     }
 }
 
-struct EditCards_Previews: PreviewProvider {
+struct CreateFlashCardSetView_Previews: PreviewProvider {
     static var previews: some View {
-        EditCards()
+        CreateFlashCardSetView()
+            .environmentObject(User())
     }
 }

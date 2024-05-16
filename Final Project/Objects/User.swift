@@ -30,7 +30,7 @@ class User: ObservableObject {
     @Published var uid: String = ""
     
     // initializing with sets is temporary
-    @Published var flashCardSets: [FlashCardSet] = [FlashCardSet(name: "Hard Words", cards: [Card]()), FlashCardSet(name: "Mid Words", cards: [Card]()), FlashCardSet(name: "Easy Words", cards: [Card]())]
+    @Published var flashCardSets: [FlashCardSet] = [FlashCardSet(name: "Hard Words", description: "", cards: [Card]()), FlashCardSet(name: "Mid Words", description: "", cards: [Card]()), FlashCardSet(name: "Easy Words", description: "", cards: [Card]())]
     
     init(email: String = "", password: String = "", username: String = "") {
         self.email = email

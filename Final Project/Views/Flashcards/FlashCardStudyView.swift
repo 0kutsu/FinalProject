@@ -14,12 +14,15 @@ extension View {
     }
 }
 
-struct FlashCardView: View {
+struct FlashCardStudyView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @Environment(\.accessibilityEnabled) var accessibilityEnabled
     
+    
+    @Binding var currentFlashCardSet: FlashCardSet
+    @Binding var flashCardScreen: FlashCardScreen
+    
     @State private var startAnimation: Bool = false
-    @State private var cards = [Card]()
     @State private var isActive = true
     @State private var timeRemaining = 100
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -67,8 +70,8 @@ struct FlashCardView: View {
 //                    )
              
                 ZStack {
-                    ForEach(0 ..< cards.count, id: \.self) {index in
-                        CardView(card: cards[index]) {
+                    ForEach(0 ..< currentFlashCardSet.cards.count, id: \.self) {index in
+                        CardView(card: currentFlashCardSet.cards[index]) {
                             withAnimation {
                                 if reuseCards {
                                     
@@ -80,14 +83,14 @@ struct FlashCardView: View {
                                 self.errorHaptic()
                             }
                         }
-                        .stacked(at: index, in: self.cards.count)
-                        .allowsHitTesting(index == self.cards.count - 1)
-                        .accessibilityHidden(index < self.cards.count - 1)
+                        .stacked(at: index, in: self.currentFlashCardSet.cards.count)
+                        .allowsHitTesting(index == self.currentFlashCardSet.cards.count - 1)
+                        .accessibilityHidden(index < self.currentFlashCardSet.cards.count - 1)
                     }
                 }
                 .allowsTightening(timeRemaining > 0)
                 
-                if cards.isEmpty {
+                if currentFlashCardSet.cards.isEmpty {
                     Button("Start Again", action: resetCards)
                         .padding()
                         .background(Color.white)
@@ -131,9 +134,9 @@ struct FlashCardView: View {
                                             accessibilityLabel: "Wrong",
                                             accessibilityHint: "Mark your answer as being incorrect") {
                             if reuseCards {
-                                self.pushCardToBack(at: self.cards.count - 1)
+                                self.pushCardToBack(at: self.currentFlashCardSet.cards.count - 1)
                             } else {
-                                self.removeCard(at: self.cards.count - 1)
+                                self.removeCard(at: self.currentFlashCardSet.cards.count - 1)
                             }
                             self.errorHaptic()
                         }
@@ -143,7 +146,7 @@ struct FlashCardView: View {
                         AccessibilityButton(imageName: "checkmark.circle",
                                             accessibilityLabel: "Correct",
                                             accessibilityHint: "Mark your answer as being correct") {
-                            self.removeCard(at: self.cards.count - 1)
+                            self.removeCard(at: self.currentFlashCardSet.cards.count - 1)
                         }
                     }
                     .foregroundColor(.white)
@@ -163,12 +166,12 @@ struct FlashCardView: View {
             self.isActive = false
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-            if cards.isEmpty == false {
+            if currentFlashCardSet.cards.isEmpty == false {
                 self.isActive = true
             }
         }
         .sheet(isPresented: $showingEditScreen, onDismiss: resetCards) {
-            EditCards()
+            EditCardsView(currentFlashCardSet: $currentFlashCardSet)
         }
         .sheet(isPresented: $showingSettingScreen, onDismiss: nil) {
             SettingsView(reuseCards: self.$reuseCards)
@@ -218,18 +221,18 @@ struct FlashCardView: View {
     func removeCard(at index: Int) {
         guard index >= 0 else { return }
         
-        cards.remove(at: index)
+        currentFlashCardSet.cards.remove(at: index)
         
-        if cards.isEmpty {
+        if currentFlashCardSet.cards.isEmpty {
             isActive = false
         }
     }
     
     func pushCardToBack(at index: Int) {
-        let reuseCard = cards.remove(at: index)
-        cards.insert(reuseCard, at: 0)
+        let reuseCard = currentFlashCardSet.cards.remove(at: index)
+        currentFlashCardSet.cards.insert(reuseCard, at: 0)
         
-        if cards.isEmpty {
+        if currentFlashCardSet.cards.isEmpty {
             isActive = false
         }
     }
@@ -243,17 +246,25 @@ struct FlashCardView: View {
     func loadData() {
         if let data = UserDefaults.standard.data(forKey: "Cards") {
             if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
-                self.cards = decoded
+                self.currentFlashCardSet.cards = decoded
             }
         }
     }
 }
 
-struct FlashcardView_Previews: PreviewProvider {
+
+
+// preview
+struct FlashCardStudyView_Preview: PreviewProvider {
     static var previews: some View {
-        FlashCardView()
+        FlashCardStudyView(currentFlashCardSet: Binding.constant(FlashCardSet(name: "Name", description: "Description", cards: [Card(prompt: "???", answer: "Answer"), Card(prompt: "???", answer: "Answer"), Card(prompt: "???", answer: "Answer")])), flashCardScreen: Binding.constant(FlashCardScreen.flashCardSetsView))
     }
 }
+
+
+
+
+
 
 struct DefaultButton: ViewModifier {
     func body(content: Content) -> some View {

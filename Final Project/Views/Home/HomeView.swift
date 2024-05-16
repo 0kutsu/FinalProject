@@ -23,10 +23,10 @@ struct HomeView: View {
                 ChatView()
             }
             else if viewState == .flashcards {
-               FlashCardSetsView()
+                FlashCardNavigatorView()
             }
             else if viewState == .settings {
-                FlashCardView()
+               
             }
             else if viewState == .profile {
                 
