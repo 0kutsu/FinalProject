@@ -33,6 +33,7 @@ enum TabbedItems: Int, CaseIterable{
 struct StartMessagingView: View {
     
     @State var selectedTab = 0
+    @Binding var messagingScreen: MessagingScreen
     
     var body: some View {
         ZStack {
@@ -63,9 +64,21 @@ struct StartMessagingView: View {
                 .cornerRadius(35)
             .padding(.horizontal, 20)
                 Spacer()
+                Button {
+                    messagingScreen = .chatView
+                } label: {
+                    Text("Start")
+                        .font(.title)
+                        .bold()
+                        .foregroundColor(.white)
+                        .padding([.leading, .trailing], 130)
+                        .padding([.top, .bottom], 13)
+                        .background(Color.orangeMain)
+                        .cornerRadius(40)
+                }.padding(.top, 30)
             }.padding(.top, 30)
             
-            
+
            
         }
         
@@ -100,6 +113,6 @@ extension StartMessagingView{
 
 struct StartMessagingView_Previews: PreviewProvider {
     static var previews: some View {
-        StartMessagingView()
+        StartMessagingView(messagingScreen: Binding.constant(.startMessagingView))
     }
 }

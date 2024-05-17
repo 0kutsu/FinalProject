@@ -12,12 +12,14 @@
 		040296972B9B3FD800CEC711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040296962B9B3FD800CEC711 /* Assets.xcassets */; };
 		0402969A2B9B3FD800CEC711 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040296992B9B3FD800CEC711 /* Preview Assets.xcassets */; };
 		044A6A682BF63FCB00CDCB10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044A6A672BF63FCB00CDCB10 /* GoogleService-Info.plist */; };
+		044A6A6A2BF6C6B200CDCB10 /* CreateChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F04D612BDA9C9C00FA7094 /* CreateChatView.swift */; };
+		044A6A6E2BF6C76300CDCB10 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A6A6D2BF6C76300CDCB10 /* Translate.swift */; };
+		044A6A712BF77E2100CDCB10 /* MessagingNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A6A702BF77E2100CDCB10 /* MessagingNavigationView.swift */; };
 		044F91CB2BAB1609004758DA /* LogoAndButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91CA2BAB1609004758DA /* LogoAndButtonView.swift */; };
 		044F91CD2BAB1625004758DA /* SignUpTextFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91CC2BAB1625004758DA /* SignUpTextFieldsView.swift */; };
 		044F91CF2BAB1646004758DA /* ChooseLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91CE2BAB1646004758DA /* ChooseLanguageView.swift */; };
 		044F91D12BAB165F004758DA /* Demo?View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91D02BAB165F004758DA /* Demo?View.swift */; };
 		044F91D32BAB1674004758DA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91D22BAB1674004758DA /* HomeView.swift */; };
-		044F91D72BAB16BD004758DA /* MatchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91D62BAB16BD004758DA /* MatchingView.swift */; };
 		044F91D92BAB1BBC004758DA /* DefinitionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91D82BAB1BBC004758DA /* DefinitionCardView.swift */; };
 		044F91DF2BAB1C0F004758DA /* FlashCardStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91DE2BAB1C0F004758DA /* FlashCardStudyView.swift */; };
 		044F91E42BAF9EC0004758DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F91E32BAF9EC0004758DA /* User.swift */; };
@@ -60,12 +62,13 @@
 		040296962B9B3FD800CEC711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040296992B9B3FD800CEC711 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		044A6A672BF63FCB00CDCB10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		044A6A6D2BF6C76300CDCB10 /* Translate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
+		044A6A702BF77E2100CDCB10 /* MessagingNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingNavigationView.swift; sourceTree = "<group>"; };
 		044F91CA2BAB1609004758DA /* LogoAndButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAndButtonView.swift; sourceTree = "<group>"; };
 		044F91CC2BAB1625004758DA /* SignUpTextFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextFieldsView.swift; sourceTree = "<group>"; };
 		044F91CE2BAB1646004758DA /* ChooseLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageView.swift; sourceTree = "<group>"; };
 		044F91D02BAB165F004758DA /* Demo?View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo?View.swift"; sourceTree = "<group>"; };
 		044F91D22BAB1674004758DA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		044F91D62BAB16BD004758DA /* MatchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingView.swift; sourceTree = "<group>"; };
 		044F91D82BAB1BBC004758DA /* DefinitionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionCardView.swift; sourceTree = "<group>"; };
 		044F91DE2BAB1C0F004758DA /* FlashCardStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardStudyView.swift; sourceTree = "<group>"; };
 		044F91E32BAF9EC0004758DA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -156,6 +159,36 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		044A6A692BF6C65900CDCB10 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				59C7D2A92BAB166100AECA61 /* ChatViewModel.swift */,
+				59C7D2A72BAB163500AECA61 /* Message.swift */,
+				59C7D2AD2BAB17B500AECA61 /* ChatView.swift */,
+				59C7D2AB2BAB169C00AECA61 /* MessageView.swift */,
+			);
+			path = Conversation;
+			sourceTree = "<group>";
+		};
+		044A6A6B2BF6C6D400CDCB10 /* Translation */ = {
+			isa = PBXGroup;
+			children = (
+				044A6A6D2BF6C76300CDCB10 /* Translate.swift */,
+				044F91D82BAB1BBC004758DA /* DefinitionCardView.swift */,
+			);
+			path = Translation;
+			sourceTree = "<group>";
+		};
+		044A6A6C2BF6C70300CDCB10 /* Messaging Home */ = {
+			isa = PBXGroup;
+			children = (
+				59F04D612BDA9C9C00FA7094 /* CreateChatView.swift */,
+				59F04D632BDA9CC800FA7094 /* JoinChatView.swift */,
+				59F04D5F2BDA9B7300FA7094 /* StartMessagingView.swift */,
+			);
+			path = "Messaging Home";
+			sourceTree = "<group>";
+		};
 		044F91C82BAB1584004758DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,15 +224,10 @@
 		044F91D52BAB16A3004758DA /* Messaging */ = {
 			isa = PBXGroup;
 			children = (
-				59C7D2A72BAB163500AECA61 /* Message.swift */,
-				59C7D2A92BAB166100AECA61 /* ChatViewModel.swift */,
-				59F04D5F2BDA9B7300FA7094 /* StartMessagingView.swift */,
-				59F04D612BDA9C9C00FA7094 /* CreateChatView.swift */,
-				59F04D632BDA9CC800FA7094 /* JoinChatView.swift */,
-				59C7D2AD2BAB17B500AECA61 /* ChatView.swift */,
-				59C7D2AB2BAB169C00AECA61 /* MessageView.swift */,
-				044F91D62BAB16BD004758DA /* MatchingView.swift */,
-				044F91D82BAB1BBC004758DA /* DefinitionCardView.swift */,
+				044A6A702BF77E2100CDCB10 /* MessagingNavigationView.swift */,
+				044A6A6C2BF6C70300CDCB10 /* Messaging Home */,
+				044A6A692BF6C65900CDCB10 /* Conversation */,
+				044A6A6B2BF6C6D400CDCB10 /* Translation */,
 			);
 			path = Messaging;
 			sourceTree = "<group>";
@@ -427,11 +455,12 @@
 				044F91D92BAB1BBC004758DA /* DefinitionCardView.swift in Sources */,
 				044F91CB2BAB1609004758DA /* LogoAndButtonView.swift in Sources */,
 				044F91EA2BD3FBA3004758DA /* SignUpTextFieldsBoxView.swift in Sources */,
-				044F91D72BAB16BD004758DA /* MatchingView.swift in Sources */,
 				59BBDF092BC968DC00767958 /* HomeScrollView.swift in Sources */,
 				044F91CF2BAB1646004758DA /* ChooseLanguageView.swift in Sources */,
+				044A6A6A2BF6C6B200CDCB10 /* CreateChatView.swift in Sources */,
 				04B024A52BD72AA70014BA19 /* Language.swift in Sources */,
 				59F04D642BDA9CC800FA7094 /* JoinChatView.swift in Sources */,
+				044A6A712BF77E2100CDCB10 /* MessagingNavigationView.swift in Sources */,
 				044F91E42BAF9EC0004758DA /* User.swift in Sources */,
 				04F136542BF5808B00F9655B /* StudyPreviewCardView.swift in Sources */,
 				044F91CD2BAB1625004758DA /* SignUpTextFieldsView.swift in Sources */,
@@ -440,6 +469,7 @@
 				59F04D602BDA9B7300FA7094 /* StartMessagingView.swift in Sources */,
 				040296932B9B3FD700CEC711 /* Final_ProjectApp.swift in Sources */,
 				044F91EC2BD451D0004758DA /* LogInTextFieldsView.swift in Sources */,
+				044A6A6E2BF6C76300CDCB10 /* Translate.swift in Sources */,
 				04B024A72BD731700014BA19 /* ProgressStepsView.swift in Sources */,
 				044F91D12BAB165F004758DA /* Demo?View.swift in Sources */,
 				044F91F22BD45752004758DA /* SettingsView.swift in Sources */,

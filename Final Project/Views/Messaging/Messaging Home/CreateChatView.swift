@@ -34,7 +34,6 @@ struct CreateChatView: View {
                 Spacer()
             }
             
-            
                 ZStack{
                     Rectangle()
                         .padding(.vertical, 25)
@@ -169,13 +168,7 @@ struct CreateChatView: View {
                 }
                 .padding(.horizontal, 35)
             }
-            
-    
-               
-            
             Spacer()
-           
-            
         }.padding(.top, 120)
         
     }

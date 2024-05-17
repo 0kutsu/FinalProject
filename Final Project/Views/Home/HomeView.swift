@@ -18,108 +18,92 @@ struct HomeView: View {
     var body: some View {
         
         
-        VStack{
-            if viewState == .chat {
-                VStack{
-                    
-                    Spacer()
-                    
-                    StartMessagingView().cornerRadius(30)
-                    
-                    Spacer()
+        ZStack {
+            Circle()
+                .frame(width: 150, height: 150)
+                .offset(x: 200, y: -100)
+                .opacity(0.7)
+                .foregroundColor(Color.orangeA)
+                .blur(radius: 20)
+            
+            VStack{
+                if viewState == .chat {
+                    MessagingNavigationView()
+                }
+                else if viewState == .flashcards {
+                    FlashCardNavigatorView()
+                }
+                else if viewState == .settings {
                    
+                }
+                else if viewState == .profile {
+                    
+                }
+                else if viewState == .home {
+                    HomeScrollView()
+                }
+                else{
+                  //  HomeView()
+                    
+                }
+                
+                Spacer()
+                
+                //bottom bar
+                HStack{
+                    
+                    //home button
                     Button {
-                        ChatView()
+                        viewState = .home
                     } label: {
-                        Text("Start")
+                        Image(systemName: "house")
                             .font(.title)
-                            .bold()
-                            .foregroundColor(.white)
-                            .padding([.leading, .trailing], 130)
-                            .padding([.top, .bottom], 13)
-                            .background(Color.orangeMain)
-                            .cornerRadius(40)
-                    }.padding(.top, 30)
+                            .foregroundColor(Color.orangeMain)
+                            
+                    }
+
+                    Spacer()
+                    
+                    //chat
+                    Button {
+                        viewState = .chat
+                    } label: {
+                        Image(systemName: "message")
+                            .font(.title)
+                            .foregroundColor(Color.orangeMain)
+                            
+                    }
                     
                     Spacer()
-                }.padding([.leading, .trailing], 30)
-                .padding([.top, .bottom], 50)
-            
-                
-            }
-            else if viewState == .flashcards {
-                FlashCardNavigatorView()
-            }
-            else if viewState == .settings {
-               
-            }
-            else if viewState == .profile {
-                
-            }
-            else if viewState == .home {
-                HomeScrollView()
-            }
-            else{
-              //  HomeView()
-                
-            }
-            
-            Spacer()
-            
-            //bottom bar
-            HStack{
-                
-                //home button
-                Button {
-                    viewState = .home
-                } label: {
-                    Image(systemName: "house")
-                        .font(.title)
-                        .foregroundColor(Color.orangeMain)
-                        
-                }
-
-                Spacer()
-                
-                //chat
-                Button {
-                    viewState = .chat
-                } label: {
-                    Image(systemName: "message")
-                        .font(.title)
-                        .foregroundColor(Color.orangeMain)
-                        
-                }
-                
-                Spacer()
-                
-                //flashcards
-                Button {
-                    viewState = .flashcards
-                } label: {
-                    Image(systemName: "archivebox")
-                        .font(.title)
-                        .foregroundColor(Color.orangeMain)
-                        
-                }
-               
-                Spacer()
-                
-                //settings
-                Button {
                     
-                } label: {
-                    Image(systemName: "gear")
-                        .font(.title)
-                        .foregroundColor(Color.orangeMain)
+                    //flashcards
+                    Button {
+                        viewState = .flashcards
+                    } label: {
+                        Image(systemName: "archivebox")
+                            .font(.title)
+                            .foregroundColor(Color.orangeMain)
+                            
+                    }
+                   
+                    Spacer()
+                    
+                    //settings
+                    Button {
                         
-                }
-               
-            }.padding([.leading,.trailing], 50)
-                .padding([.top], 20)
-                .background(.white)
-            
-        }.background(Color.greyBackground)
+                    } label: {
+                        Image(systemName: "gear")
+                            .font(.title)
+                            .foregroundColor(Color.orangeMain)
+                            
+                    }
+                   
+                }.padding([.leading,.trailing], 50)
+                    .padding([.top], 20)
+                    .background(.white)
+                
+            }
+        }
     }
 }
 
