@@ -18,83 +18,35 @@ struct HomeView: View {
     var body: some View {
         
         
-        VStack{
-            if viewState == .chat {
-                ChatView()
-            }
-            else if viewState == .flashcards {
-               FlashCardSetsView()
-            }
-            else if viewState == .settings {
-                FlashCardView()
-            }
-            else if viewState == .profile {
-                
-            }
-            else if viewState == .home {
-                HomeScrollView()
-            }
-            else{
-              //  HomeView()
-                
-            }
-            
-            Spacer()
-            
-            //bottom bar
-            HStack{
-                
-                //home button
-                Button {
-                    viewState = .home
-                } label: {
-                    Image(systemName: "house")
-                        .font(.title)
-                        .foregroundColor(Color.orangeMain)
-                        
+        ZStack {
+            VStack() {
+                if viewState == .chat {
+                    MessagingNavigationView()
                 }
-
-                Spacer()
-                
-                //chat
-                Button {
-                    viewState = .chat
-                } label: {
-                    Image(systemName: "message")
-                        .font(.title)
-                        .foregroundColor(Color.orangeMain)
-                        
+                else if viewState == .flashcards {
+                    FlashCardNavigatorView()
                 }
-                
-                Spacer()
-                
-                //flashcards
-                Button {
-                    viewState = .flashcards
-                } label: {
-                    Image(systemName: "archivebox")
-                        .font(.title)
-                        .foregroundColor(Color.orangeMain)
-                        
+                else if viewState == .settings {
+                   
                 }
-               
-                Spacer()
-                
-                //settings
-                Button {
+                else if viewState == .profile {
                     
-                } label: {
-                    Image(systemName: "gear")
-                        .font(.title)
-                        .foregroundColor(Color.orangeMain)
-                        
                 }
-               
-            }.padding([.leading,.trailing], 50)
-                .padding([.top], 20)
-                .background(.white)
-            
-        }.background(Color.greyBackground)
+                else if viewState == .home {
+                    HomeScrollView()
+                }
+                else{
+                  //  HomeView()
+                    
+                }
+                
+                Spacer()
+                
+                //bottom bar
+                HomeNavigationBarView(viewState: $viewState)
+                
+            }.background(Color.white)
+        }
     }
 }
 

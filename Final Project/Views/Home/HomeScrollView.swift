@@ -10,93 +10,72 @@ import SwiftUI
 struct HomeScrollView: View {
     @EnvironmentObject var user: User
     @State private var startAnimation: Bool = false
-    public var x:CGFloat = 150
-    public var y:CGFloat = 100
+    
     var body: some View {
         VStack {
-            ZStack {
-                
                 HStack{
-                    Spacer()
-                    Button {
-                        
-                    } label: {
-                        Image(uiImage: self.user.image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(Circle())
-                            .padding([.leading], 340)
-                            .padding([.trailing], 16)
-                    }
+                    Image("longLogoOrange")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 130)
                 }
-                .padding(.bottom, 15)
                 .background(.white)
-                
-                Image("longLogoOrange")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 130)
-            }
-            
-            ScrollView(showsIndicators: false) {
-                //flashcardpreview
-                
-                ZStack {
-                    Rectangle()
-                        .frame(height: 170)
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
+
+            ZStack {
+                ScrollView(showsIndicators: false) {
                     VStack {
-                        Spacer()
-                        HStack {
-                            Spacer()
+                        Text("Your Words")
+                            .offset(x: -90)
+                            .font(textFont(name: "Helvetica-Bold", size: 25))
+                            .foregroundColor(Color.blackA)
+                            .bold()
+                        
+                    //flashcardpreview
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 20) {
                             
-                            Button {
-                                //  viewState = .flashcards
-                                
-                            } label: {
-                                Text("study")
-                                    .font(.title3)
-                                    .padding([.leading, .trailing], 20)
-                                    .padding([.top, .bottom], 10)
-                                    .background(Color.orangeMain)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(15)
-                                
-                            }.padding(.trailing, 25)
+                            StudyPreviewCardView(cardImage: Image("CheesePlaceholderImage"))
+                            
+                            StudyPreviewCardView(cardImage: Image("CheesePlaceholderImage"))
                         }
-                    }.padding(.bottom, 20)
-                }
-                //dailygoal
-                
-                ZStack {
-                    Rectangle()
-                        .frame(height: 300)
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
+                            .padding(.horizontal, 20)
+                            
+                    }
+                        
+                    //dailygoal
+                        Text("Daily Goals")
+                            .foregroundColor(Color.greyText)
+                            .font(textFont(name: "Helvetica-Bold", size: 25))
+                            .offset(x: -85)
+                        
+                        Rectangle()
+                            .frame(height: 200)
+                            .foregroundColor(.blueA)
+                            .cornerRadius(20)
+                            .padding(.horizontal, 20)
+                    }
                     
-                    Text("Daily Goals")
-                        .foregroundColor(Color.greyText)
-                        .font(.title3)
-                        .padding(.bottom, 220)
-                        .padding(.trailing, 200)
+                    //stats
+                        Text("Your Stats")
+                            .foregroundColor(Color.greyText)
+                            .font(textFont(name: "Helvetica-Bold", size: 25))
+                            .offset(x: -90)
+                        
+                    ZStack {
+                        Rectangle()
+                            .frame(height: 200)
+                            .foregroundColor(.pinkA)
+                            .cornerRadius(20)
+                            .padding(.horizontal, 20)
+                        //
+                        ChartView()
+                            .frame(height: 200)
+                            .cornerRadius(20)
+                            .padding(.horizontal, 20)
+                    }
+                    
                 }
-                
-                //stats
-                
-                ZStack{
-                    Rectangle()
-                        .frame(height: 300)
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
-                }
-                
-                
-                
-            }.padding([.leading, .trailing], 15)
-                .background(Color.greyBackground)
-            
-            
+            }
         }
     }
 }
