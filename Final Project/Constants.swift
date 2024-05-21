@@ -23,13 +23,21 @@ extension Color {
     static let orangeA = Color("orangeA")
     static let pinkA = Color("pinkA")
     static let redA = Color("redA")
+    static let grayA = Color("grayA")
+    static let lightGrayA = Color("lightGrayA")
     
+    
+    
+
     // black blue green white orange pink red
     
 }
 
+
+func textFont(name: String, size: CGFloat) -> Font {
+    return Font(UIFont(name: name, size: size) ?? UIFont.systemFont(ofSize: 50))
+}
+
 struct Constants {
-    static let textFont: Font = Font(UIFont(name: "HelveticaNeue-Thin", size: 50) ?? UIFont.systemFont(ofSize: 50))
-    
-  
+    static let textFont: Font = Font(UIFont(name: "Helvetica", size: 50) ?? UIFont.systemFont(ofSize: 50))
 }

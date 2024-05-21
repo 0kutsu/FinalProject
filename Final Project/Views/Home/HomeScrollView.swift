@@ -10,100 +10,72 @@ import SwiftUI
 struct HomeScrollView: View {
     @EnvironmentObject var user: User
     @State private var startAnimation: Bool = false
-    public var x:CGFloat = 150
-    public var y:CGFloat = 100
+    
     var body: some View {
         VStack {
-            ZStack {
-                
                 HStack{
-                    Spacer()
-                    Button {
-                        
-                    } label: {
-                        Image(uiImage: self.user.image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(Circle())
-                            .padding([.leading], 340)
-                            .padding([.trailing], 16)
-                    }
+                    Image("longLogoOrange")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 130)
                 }
-                .padding(.bottom, 15)
                 .background(.white)
-                
-                Image("longLogoOrange")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 130)
-            }
-            
+
             ZStack {
-//
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        Text("You Words")
-//                            .font(
+                        Text("Your Words")
+                            .offset(x: -90)
+                            .font(textFont(name: "Helvetica-Bold", size: 25))
+                            .foregroundColor(Color.blackA)
+                            .bold()
+                        
                     //flashcardpreview
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 20) {
-                                Button {
-                                    
-                                } label: {
-                                    StudyPreviewCardView(cardImage: Image("CheesePlaceholderImage"))
-                                }
-
-                                
                             
                             StudyPreviewCardView(cardImage: Image("CheesePlaceholderImage"))
                             
                             StudyPreviewCardView(cardImage: Image("CheesePlaceholderImage"))
-                                    .padding(20)
                         }
-                            .padding()
+                            .padding(.horizontal, 20)
                             
                     }
                         
                     //dailygoal
-                    
-                    
                         Text("Daily Goals")
                             .foregroundColor(Color.greyText)
-                            .font(.title3)
-//                            .padding(.bottom, 220)
-                            .padding(.trailing, 200)
+                            .font(textFont(name: "Helvetica-Bold", size: 25))
+                            .offset(x: -85)
                         
                         Rectangle()
-                            .frame(height: 300)
-                            .foregroundColor(.white)
+                            .frame(height: 200)
+                            .foregroundColor(.blueA)
                             .cornerRadius(20)
-                        //                            .opacity(0.6)
-                            .shadow(radius: 5)
+                            .padding(.horizontal, 20)
                     }
-
-
-                        
-                        
-                    
                     
                     //stats
-                    
-                    ZStack{
+                        Text("Your Stats")
+                            .foregroundColor(Color.greyText)
+                            .font(textFont(name: "Helvetica-Bold", size: 25))
+                            .offset(x: -90)
+                        
+                    ZStack {
                         Rectangle()
-                            .frame(height: 300)
-                            .foregroundColor(.white)
+                            .frame(height: 200)
+                            .foregroundColor(.pinkA)
                             .cornerRadius(20)
-//                            .opacity(0.8)
-                            .shadow(radius: 5)
-
+                            .padding(.horizontal, 20)
+                        //
+                        ChartView()
+                            .frame(height: 200)
+                            .cornerRadius(20)
+                            .padding(.horizontal, 20)
                     }
                     
-                    
-                    
-                }.padding([.leading, .trailing], 15)
+                }
             }
-            
-            
         }
     }
 }

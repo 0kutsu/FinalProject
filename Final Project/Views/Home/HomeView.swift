@@ -19,14 +19,7 @@ struct HomeView: View {
         
         
         ZStack {
-            Circle()
-                .frame(width: 150, height: 150)
-                .offset(x: 200, y: -100)
-                .opacity(0.7)
-                .foregroundColor(Color.orangeA)
-                .blur(radius: 20)
-            
-            VStack{
+            VStack() {
                 if viewState == .chat {
                     MessagingNavigationView()
                 }
@@ -50,59 +43,9 @@ struct HomeView: View {
                 Spacer()
                 
                 //bottom bar
-                HStack{
-                    
-                    //home button
-                    Button {
-                        viewState = .home
-                    } label: {
-                        Image(systemName: "house")
-                            .font(.title)
-                            .foregroundColor(Color.orangeMain)
-                            
-                    }
-
-                    Spacer()
-                    
-                    //chat
-                    Button {
-                        viewState = .chat
-                    } label: {
-                        Image(systemName: "message")
-                            .font(.title)
-                            .foregroundColor(Color.orangeMain)
-                            
-                    }
-                    
-                    Spacer()
-                    
-                    //flashcards
-                    Button {
-                        viewState = .flashcards
-                    } label: {
-                        Image(systemName: "archivebox")
-                            .font(.title)
-                            .foregroundColor(Color.orangeMain)
-                            
-                    }
-                   
-                    Spacer()
-                    
-                    //settings
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "gear")
-                            .font(.title)
-                            .foregroundColor(Color.orangeMain)
-                            
-                    }
-                   
-                }.padding([.leading,.trailing], 50)
-                    .padding([.top], 20)
-                    .background(.white)
+                HomeNavigationBarView(viewState: $viewState)
                 
-            }
+            }.background(Color.white)
         }
     }
 }

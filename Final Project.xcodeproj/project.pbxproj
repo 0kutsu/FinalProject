@@ -41,6 +41,10 @@
 		04B024A72BD731700014BA19 /* ProgressStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B024A62BD731700014BA19 /* ProgressStepsView.swift */; };
 		04F136522BF5027800F9655B /* FlashCardNavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F136512BF5027800F9655B /* FlashCardNavigatorView.swift */; };
 		04F136542BF5808B00F9655B /* StudyPreviewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F136532BF5808B00F9655B /* StudyPreviewCardView.swift */; };
+		04F901F22BF7917A003AF40E /* HomeNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F901F12BF7917A003AF40E /* HomeNavigationBarView.swift */; };
+		04F901F52BFBB991003AF40E /* DailyGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F901F42BFBB991003AF40E /* DailyGoal.swift */; };
+		04F901F82BFBBD49003AF40E /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F901F72BFBBD49003AF40E /* ChartData.swift */; };
+		04F901FA2BFBBD68003AF40E /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F901F92BFBBD68003AF40E /* ChartView.swift */; };
 		4DB30826D596A479652485B5 /* Pods_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4951F07E6E8BEBD3CE25A4E /* Pods_Final_Project.framework */; };
 		593E09AD2BECEF86003889AA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		59BBDF072BC8064500767958 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BBDF062BC8064500767958 /* Constants.swift */; };
@@ -90,6 +94,10 @@
 		04B024A62BD731700014BA19 /* ProgressStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStepsView.swift; sourceTree = "<group>"; };
 		04F136512BF5027800F9655B /* FlashCardNavigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardNavigatorView.swift; sourceTree = "<group>"; };
 		04F136532BF5808B00F9655B /* StudyPreviewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPreviewCardView.swift; sourceTree = "<group>"; };
+		04F901F12BF7917A003AF40E /* HomeNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationBarView.swift; sourceTree = "<group>"; };
+		04F901F42BFBB991003AF40E /* DailyGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoal.swift; sourceTree = "<group>"; };
+		04F901F72BFBBD49003AF40E /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
+		04F901F92BFBBD68003AF40E /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		59BBDF062BC8064500767958 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		59BBDF082BC968DC00767958 /* HomeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrollView.swift; sourceTree = "<group>"; };
 		59C7D2A72BAB163500AECA61 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -144,9 +152,9 @@
 				044F91C92BAB1592004758DA /* Objects */,
 				044F91C82BAB1584004758DA /* Views */,
 				040296962B9B3FD800CEC711 /* Assets.xcassets */,
+				59BBDF062BC8064500767958 /* Constants.swift */,
 				044A6A672BF63FCB00CDCB10 /* GoogleService-Info.plist */,
 				040296982B9B3FD800CEC711 /* Preview Content */,
-				59BBDF062BC8064500767958 /* Constants.swift */,
 			);
 			path = "Final Project";
 			sourceTree = "<group>";
@@ -213,10 +221,13 @@
 		044F91D42BAB1682004758DA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				04F901F62BFBBCDF003AF40E /* Statistics */,
+				04F901F32BFBB975003AF40E /* Daily Goals */,
 				044F91D02BAB165F004758DA /* Demo?View.swift */,
 				044F91D22BAB1674004758DA /* HomeView.swift */,
 				59BBDF082BC968DC00767958 /* HomeScrollView.swift */,
 				04F136532BF5808B00F9655B /* StudyPreviewCardView.swift */,
+				04F901F12BF7917A003AF40E /* HomeNavigationBarView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -288,6 +299,23 @@
 				044F91FB2BD7153D004758DA /* ChooseLanguageBoxView.swift */,
 			);
 			path = ChooseLanguage;
+			sourceTree = "<group>";
+		};
+		04F901F32BFBB975003AF40E /* Daily Goals */ = {
+			isa = PBXGroup;
+			children = (
+				04F901F42BFBB991003AF40E /* DailyGoal.swift */,
+			);
+			path = "Daily Goals";
+			sourceTree = "<group>";
+		};
+		04F901F62BFBBCDF003AF40E /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				04F901F72BFBBD49003AF40E /* ChartData.swift */,
+				04F901F92BFBBD68003AF40E /* ChartView.swift */,
+			);
+			path = Statistics;
 			sourceTree = "<group>";
 		};
 		490DE2919D867DCC5DF92497 /* Frameworks */ = {
@@ -435,6 +463,7 @@
 				04F136522BF5027800F9655B /* FlashCardNavigatorView.swift in Sources */,
 				59C7D2A82BAB163500AECA61 /* Message.swift in Sources */,
 				044F91F52BD45752004758DA /* Card.swift in Sources */,
+				04F901F22BF7917A003AF40E /* HomeNavigationBarView.swift in Sources */,
 				04647B1C2BE129F400D31982 /* SelectLevelView.swift in Sources */,
 				044F91F62BD45752004758DA /* EditCardsView.swift in Sources */,
 				04647B1E2BE438FD00D31982 /* GradientBackground.swift in Sources */,
@@ -454,12 +483,15 @@
 				044F91D32BAB1674004758DA /* HomeView.swift in Sources */,
 				044F91D92BAB1BBC004758DA /* DefinitionCardView.swift in Sources */,
 				044F91CB2BAB1609004758DA /* LogoAndButtonView.swift in Sources */,
+				04F901F52BFBB991003AF40E /* DailyGoal.swift in Sources */,
 				044F91EA2BD3FBA3004758DA /* SignUpTextFieldsBoxView.swift in Sources */,
 				59BBDF092BC968DC00767958 /* HomeScrollView.swift in Sources */,
 				044F91CF2BAB1646004758DA /* ChooseLanguageView.swift in Sources */,
 				044A6A6A2BF6C6B200CDCB10 /* CreateChatView.swift in Sources */,
+				04F901FA2BFBBD68003AF40E /* ChartView.swift in Sources */,
 				04B024A52BD72AA70014BA19 /* Language.swift in Sources */,
 				59F04D642BDA9CC800FA7094 /* JoinChatView.swift in Sources */,
+				04F901F82BFBBD49003AF40E /* ChartData.swift in Sources */,
 				044A6A712BF77E2100CDCB10 /* MessagingNavigationView.swift in Sources */,
 				044F91E42BAF9EC0004758DA /* User.swift in Sources */,
 				04F136542BF5808B00F9655B /* StudyPreviewCardView.swift in Sources */,
