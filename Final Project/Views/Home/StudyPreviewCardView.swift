@@ -37,31 +37,42 @@ struct StudyPreviewCardView: View {
                     .clipShape(TopRoundedRectangle(cornerRadius: 20))
                 
                 ZStack {
-                    VStack {
+                    Rectangle()
+                        .frame(width: 200, height: 120)
+                        .foregroundColor(Color.offWhiteA)
+                        .clipShape(BottomRoundedRectangle(cornerRadius: 20))
+                    
                         Text("Queso")
                             .offset(x: 0, y: -25)
                             .font(.system(size: 25))
                             .fontWeight(.medium)
                             .foregroundColor(Color.blackA)
-                        
-                        
-                    }
-                        
-                    Spacer()
-                        .frame(width: 200, height: 120)
                 }
             }
-            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .shadow(color: Color.blackA.opacity(0.2), radius: 5, x: 0, y: 10)
+            .background(Color.white, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
             
-            Text("Hard Words")
-                .bold()
-                .font(.system(size: 15))
-                .padding()
-                .foregroundColor(Color.white)
-                .background(Color.orangeA.opacity(1))
-                .cornerRadius(20)
-                .offset(y: 100)
+
+           
+            Button {
+                
+            } label: {
+                ZStack {
+                    Text("Hard Words")
+                        .bold()
+                        .font(.system(size: 15))
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 15)
+                        .foregroundColor(Color.orangeA)
+                        .background(Color.offWhiteA.opacity(1))
+                        .cornerRadius(30)
+                    
+                }
+                .padding(3)
+                .background(Color.orangeA)
+                .cornerRadius(30)
+                
+            }
+            .offset(y: 100)
         }
     }
 }
