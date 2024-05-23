@@ -26,6 +26,21 @@ struct PopupCardView: View {
     }
 }
 
+struct FavoriteButton: View {
+    @State private var isFavorited: Bool = false
+
+    var body: some View {
+        Button(action: {
+            isFavorited.toggle()
+        }) {
+            Image(systemName: isFavorited ? "star.fill" : "star")
+                .resizable()
+                .frame(width: 30, height: 30)
+                .foregroundColor(isFavorited ? .yellow : .gray)
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+}
 
 /* import SwiftUI
 
