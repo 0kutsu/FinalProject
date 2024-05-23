@@ -85,19 +85,22 @@ struct MessageView: View {
                                                         PopupCardView(images: $serpApiService.images, isPresented: $isPopupVisible)
                                                     }
                                                     else {
-                                                        VStack {
-                                                            
+                                                        ZStack{
+                                                            VStack {
+                                                                
                                                                 Text("Definition")
                                                                     .font(.title)
                                                                     .foregroundColor(.orange)
                                                                     .padding(.top, 15)
-                                                            Text("You clicked on \(clickedWord), which means ''\(translatedWord)''")
+                                                                Text("You clicked on \(clickedWord), which means ''\(translatedWord)''")
                                                                     .padding([.bottom, .leading, .trailing], 10)
-                                                        
+                                                            }
                                                             
+                                                            FavoriteButton()
+                                                                .offset(x: 109)
+                                                                .padding(.top, -85)
                                                         }
                                                     }
-
                                                 }
                                             }
                                             .frame(height: 200)
@@ -106,7 +109,7 @@ struct MessageView: View {
                                             .padding(.all, 5)
                                             .shadow(radius: 5)
                                             .tabViewStyle(.page)
-                                            .indexViewStyle(.page(backgroundDisplayMode: .never))
+                                            .indexViewStyle(.page(backgroundDisplayMode: .always))
                                         }
                                         
                                     }
@@ -187,19 +190,13 @@ struct MessageView: View {
                                             TabView {
                                                 ForEach(pages, id: \.self) { page in
                                                     if page == .image {
-                                                        ZStack{
-                                                            PopupCardView(images: $serpApiService.images, isPresented: $isPopupVisible)
-                                                                .frame(height: 200)
-                                                        
-                                                            FavoriteButton()
-                                                                //.padding(.leading, 30)
-                                                                //.padding(.top, -10)
-                                                            
-                                                        }
+                                                        PopupCardView(images: $serpApiService.images, isPresented: $isPopupVisible)
+                                                            .frame(height: 200)
                                                     }
                                                     else {
-                                                        ZStack{
+                                                        ZStack {
                                                             VStack {
+                                                                
                                                                 Text("Definition")
                                                                     .font(.title)
                                                                     .foregroundColor(.orange)
@@ -209,9 +206,8 @@ struct MessageView: View {
                                                             }
                                                             
                                                             FavoriteButton()
-                                                                //.padding(.leading, 30)
-                                                                //.padding(.top, -10)
-                                                            
+                                                                .offset(x: 109)
+                                                                .padding(.top, -85)
                                                         }
                                                     }
                                                 }
@@ -222,7 +218,7 @@ struct MessageView: View {
                                             .padding(.all, 5)
                                             .shadow(radius: 5)
                                             .tabViewStyle(.page)
-                                            .indexViewStyle(.page(backgroundDisplayMode: .never))
+                                            .indexViewStyle(.page(backgroundDisplayMode: .always))
                                         }
                                         
                                     }

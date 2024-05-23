@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+
+// Langwoah!
+
 struct HomeScrollView: View {
     @EnvironmentObject var user: User
     @State private var startAnimation: Bool = false
@@ -24,6 +27,42 @@ struct HomeScrollView: View {
             ZStack {
                 ScrollView(showsIndicators: false) {
                     VStack {
+                        ZStack {
+                            Image("spainImage")
+                                .resizable()
+                                .scaledToFit()
+                                .cornerRadius(20)
+                            .padding(20)
+                            
+//                            HStack {
+//                                Text("Hola Amigo")
+//                                    .font(textFont(name: "Helvetica-Bold", size: 25))
+//                                    .foregroundColor(Color.orangeA)
+//                                    .padding(.leading, 20)
+//                                Spacer()
+//                                Image("Spanish")
+//                                    .resizable()
+//                                    .scaledToFit()
+//                                    .cornerRadius(30)
+//                            }
+//                            .padding(.horizontal)
+//                            .padding(.vertical)
+//                            .frame(width: 314, height: 80)
+//                            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 10))
+//                            .background(Color.white.opacity(0.9))
+//                            .cornerRadius(10)
+//                            .offset(y: -40)
+
+                        }
+                            
+                        Text("Daily Goals")
+                            .foregroundColor(Color.greyText)
+                            .font(textFont(name: "Helvetica-Bold", size: 25))
+                            .offset(x: -85)
+                        
+                            DailyGoalListView()
+                                .padding(20)
+                        
                         Text("Your Words")
                             .offset(x: -90)
                             .font(textFont(name: "Helvetica-Bold", size: 25))
@@ -38,21 +77,12 @@ struct HomeScrollView: View {
                             
                             StudyPreviewCardView(cardImage: Image("CheesePlaceholderImage"))
                         }
-                            .padding(.horizontal, 20)
+                            .padding(20)
                             
                     }
                         
                     //dailygoal
-                        Text("Daily Goals")
-                            .foregroundColor(Color.greyText)
-                            .font(textFont(name: "Helvetica-Bold", size: 25))
-                            .offset(x: -85)
-                        
-                        Rectangle()
-                            .frame(height: 200)
-                            .foregroundColor(.blueA)
-                            .cornerRadius(20)
-                            .padding(.horizontal, 20)
+
                     }
                     
                     //stats
@@ -64,7 +94,7 @@ struct HomeScrollView: View {
                     ZStack {
                         Rectangle()
                             .frame(height: 200)
-                            .foregroundColor(.pinkA)
+                            .foregroundColor(.offWhiteA)
                             .cornerRadius(20)
                             .padding(.horizontal, 20)
                         //

@@ -45,9 +45,12 @@
 		04F901F52BFBB991003AF40E /* DailyGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F901F42BFBB991003AF40E /* DailyGoal.swift */; };
 		04F901F82BFBBD49003AF40E /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F901F72BFBBD49003AF40E /* ChartData.swift */; };
 		04F901FA2BFBBD68003AF40E /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F901F92BFBBD68003AF40E /* ChartView.swift */; };
-		04F901FE2BFCC29E003AF40E /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F901FB2BFCC29E003AF40E /* Search.swift */; };
-		04F901FF2BFCC29E003AF40E /* PopupCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F901FC2BFCC29E003AF40E /* PopupCardView.swift */; };
-		04F902002BFCC29E003AF40E /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F901FD2BFCC29E003AF40E /* MessageView.swift */; };
+		04F902022BFCE17D003AF40E /* DailyGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F902012BFCE17D003AF40E /* DailyGoalsView.swift */; };
+		04F902042BFCE3ED003AF40E /* DailyGoalsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F902032BFCE3ED003AF40E /* DailyGoalsList.swift */; };
+		04F902062BFD1A02003AF40E /* DailyGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F902052BFD1A02003AF40E /* DailyGoalView.swift */; };
+		04F9020A2BFF8B97003AF40E /* PopupCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F902072BFF8B97003AF40E /* PopupCardView.swift */; };
+		04F9020B2BFF8B97003AF40E /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F902082BFF8B97003AF40E /* MessageView.swift */; };
+		04F9020C2BFF8B97003AF40E /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F902092BFF8B97003AF40E /* Search.swift */; };
 		4DB30826D596A479652485B5 /* Pods_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4951F07E6E8BEBD3CE25A4E /* Pods_Final_Project.framework */; };
 		593E09AD2BECEF86003889AA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		59BBDF072BC8064500767958 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BBDF062BC8064500767958 /* Constants.swift */; };
@@ -100,9 +103,12 @@
 		04F901F42BFBB991003AF40E /* DailyGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoal.swift; sourceTree = "<group>"; };
 		04F901F72BFBBD49003AF40E /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
 		04F901F92BFBBD68003AF40E /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
-		04F901FB2BFCC29E003AF40E /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
-		04F901FC2BFCC29E003AF40E /* PopupCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupCardView.swift; sourceTree = "<group>"; };
-		04F901FD2BFCC29E003AF40E /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		04F902012BFCE17D003AF40E /* DailyGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalsView.swift; sourceTree = "<group>"; };
+		04F902032BFCE3ED003AF40E /* DailyGoalsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalsList.swift; sourceTree = "<group>"; };
+		04F902052BFD1A02003AF40E /* DailyGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalView.swift; sourceTree = "<group>"; };
+		04F902072BFF8B97003AF40E /* PopupCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupCardView.swift; sourceTree = "<group>"; };
+		04F902082BFF8B97003AF40E /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		04F902092BFF8B97003AF40E /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		59BBDF062BC8064500767958 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		59BBDF082BC968DC00767958 /* HomeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrollView.swift; sourceTree = "<group>"; };
 		59C7D2A72BAB163500AECA61 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -152,8 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				040296922B9B3FD700CEC711 /* Final_ProjectApp.swift */,
+				044F91E32BAF9EC0004758DA /* User.swift */,
 				59C7D2AF2BAB1C5000AECA61 /* Managers */,
-				044F91C92BAB1592004758DA /* Objects */,
 				044F91C82BAB1584004758DA /* Views */,
 				040296962B9B3FD800CEC711 /* Assets.xcassets */,
 				59BBDF062BC8064500767958 /* Constants.swift */,
@@ -174,6 +180,9 @@
 		044A6A692BF6C65900CDCB10 /* Conversation */ = {
 			isa = PBXGroup;
 			children = (
+				04F902082BFF8B97003AF40E /* MessageView.swift */,
+				04F902072BFF8B97003AF40E /* PopupCardView.swift */,
+				04F902092BFF8B97003AF40E /* Search.swift */,
 				59C7D2A92BAB166100AECA61 /* ChatViewModel.swift */,
 				59C7D2A72BAB163500AECA61 /* Message.swift */,
 				59C7D2AD2BAB17B500AECA61 /* ChatView.swift */,
@@ -195,9 +204,6 @@
 			children = (
 				59F04D612BDA9C9C00FA7094 /* CreateChatView.swift */,
 				59F04D632BDA9CC800FA7094 /* JoinChatView.swift */,
-				04F901FD2BFCC29E003AF40E /* MessageView.swift */,
-				04F901FC2BFCC29E003AF40E /* PopupCardView.swift */,
-				04F901FB2BFCC29E003AF40E /* Search.swift */,
 				59F04D5F2BDA9B7300FA7094 /* StartMessagingView.swift */,
 			);
 			path = "Messaging Home";
@@ -214,14 +220,6 @@
 				044F91DD2BAB1BFE004758DA /* Flashcards */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		044F91C92BAB1592004758DA /* Objects */ = {
-			isa = PBXGroup;
-			children = (
-				044F91E32BAF9EC0004758DA /* User.swift */,
-			);
-			path = Objects;
 			sourceTree = "<group>";
 		};
 		044F91D42BAB1682004758DA /* Home */ = {
@@ -311,6 +309,9 @@
 			isa = PBXGroup;
 			children = (
 				04F901F42BFBB991003AF40E /* DailyGoal.swift */,
+				04F902012BFCE17D003AF40E /* DailyGoalsView.swift */,
+				04F902032BFCE3ED003AF40E /* DailyGoalsList.swift */,
+				04F902052BFD1A02003AF40E /* DailyGoalView.swift */,
 			);
 			path = "Daily Goals";
 			sourceTree = "<group>";
@@ -477,18 +478,20 @@
 				59BBDF072BC8064500767958 /* Constants.swift in Sources */,
 				593E09AD2BECEF86003889AA /* (null) in Sources */,
 				59C7D2B32BAB1C9200AECA61 /* AuthManager.swift in Sources */,
-				04F902002BFCC29E003AF40E /* MessageView.swift in Sources */,
+				04F902022BFCE17D003AF40E /* DailyGoalsView.swift in Sources */,
 				040296952B9B3FD700CEC711 /* ContentView.swift in Sources */,
 				59C7D2AA2BAB166100AECA61 /* ChatViewModel.swift in Sources */,
 				59C7D2AE2BAB17B500AECA61 /* ChatView.swift in Sources */,
-				04F901FE2BFCC29E003AF40E /* Search.swift in Sources */,
 				044F91FA2BD46778004758DA /* FlashCardSet.swift in Sources */,
 				04A1CEB02BEAF76700178A13 /* FlashCardSetInfoView.swift in Sources */,
-				04F901FF2BFCC29E003AF40E /* PopupCardView.swift in Sources */,
+				04F902042BFCE3ED003AF40E /* DailyGoalsList.swift in Sources */,
+				04F902062BFD1A02003AF40E /* DailyGoalView.swift in Sources */,
 				59C7D2B12BAB1C7100AECA61 /* DatabaseManager.swift in Sources */,
+				04F9020C2BFF8B97003AF40E /* Search.swift in Sources */,
 				044F91FC2BD7153D004758DA /* ChooseLanguageBoxView.swift in Sources */,
 				044F91DF2BAB1C0F004758DA /* FlashCardStudyView.swift in Sources */,
 				044F91D32BAB1674004758DA /* HomeView.swift in Sources */,
+				04F9020B2BFF8B97003AF40E /* MessageView.swift in Sources */,
 				044F91D92BAB1BBC004758DA /* DefinitionCardView.swift in Sources */,
 				044F91CB2BAB1609004758DA /* LogoAndButtonView.swift in Sources */,
 				04F901F52BFBB991003AF40E /* DailyGoal.swift in Sources */,
@@ -506,6 +509,7 @@
 				044F91CD2BAB1625004758DA /* SignUpTextFieldsView.swift in Sources */,
 				044F91F82BD45D33004758DA /* FlashCardSetsView.swift in Sources */,
 				044F91F32BD45752004758DA /* CardView.swift in Sources */,
+				04F9020A2BFF8B97003AF40E /* PopupCardView.swift in Sources */,
 				59F04D602BDA9B7300FA7094 /* StartMessagingView.swift in Sources */,
 				040296932B9B3FD700CEC711 /* Final_ProjectApp.swift in Sources */,
 				044F91EC2BD451D0004758DA /* LogInTextFieldsView.swift in Sources */,
