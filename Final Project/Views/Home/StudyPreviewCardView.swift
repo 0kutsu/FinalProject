@@ -39,40 +39,45 @@ struct StudyPreviewCardView: View {
                 ZStack {
                     Rectangle()
                         .frame(width: 200, height: 120)
-                        .foregroundColor(Color.offWhiteA)
+                        .foregroundColor(Color.white)
                         .clipShape(BottomRoundedRectangle(cornerRadius: 20))
                     
+                    HStack {
                         Text("Queso")
-                            .offset(x: 0, y: -25)
-                            .font(.system(size: 25))
-                            .fontWeight(.medium)
+                                .offset(x: 0, y: -25)
+                                .font(.system(size: 25))
+                                .fontWeight(.medium)
                             .foregroundColor(Color.blackA)
+                        Spacer()
+                    }
+                    .offset(x: 30)
                 }
             }
-            .background(Color.white, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .shadow(radius: 2, y: 1)
             
 
            
             Button {
                 
             } label: {
-                ZStack {
-                    Text("Hard Words")
-                        .bold()
-                        .font(.system(size: 15))
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 15)
-                        .foregroundColor(Color.orangeA)
-                        .background(Color.offWhiteA.opacity(1))
-                        .cornerRadius(30)
-                    
+                HStack {
+                    ZStack {
+                        Text("Hard Words")
+                            .bold()
+                            .font(.system(size: 15))
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 15)
+                            .foregroundColor(Color.orangeA)
+                            .background(Color.white.opacity(0.8))
+                            .cornerRadius(30)
+                    }
+                    .padding(3)
+                    .background(Color.orangeA)
+                    .cornerRadius(30)
                 }
-                .padding(3)
-                .background(Color.orangeA)
-                .cornerRadius(30)
-                
+                Spacer()
             }
-            .offset(y: 100)
+            .offset(x: 30, y: 100)
         }
     }
 }

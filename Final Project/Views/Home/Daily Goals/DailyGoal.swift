@@ -6,7 +6,16 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct DailyGoal {
+struct DailyGoal: Identifiable {
+    var icon: Image
+    var color: Color
+    var prompt: String
+    var difficulty: String
     
+    var id: String {
+        return prompt
+    }
+
 }

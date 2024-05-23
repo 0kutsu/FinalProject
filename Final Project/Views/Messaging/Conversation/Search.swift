@@ -24,7 +24,11 @@ class SerpApiService: ObservableObject {
     
     func fetchImages(query: String) {
         let apiKey = "27acff5d24141365418bb480c51944d351601db4dd35ba99143fb4acec031004"
-        let urlString = "https://serpapi.com/search?engine=google_images&q=\(query)&num=10&api_key=\(apiKey)"
+        guard let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            print("Invalid query")
+            return
+        }
+        let urlString = "https://serpapi.com/search?engine=google_images&q=\(encodedQuery)&num=10&api_key=\(apiKey)"
         
         guard let url = URL(string: urlString) else {
             print("Invalid URL")
@@ -48,4 +52,5 @@ class SerpApiService: ObservableObject {
         }.resume()
     }
 }
+
 

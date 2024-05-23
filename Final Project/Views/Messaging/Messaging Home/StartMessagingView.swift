@@ -33,20 +33,12 @@ enum TabbedItems: Int, CaseIterable{
 struct StartMessagingView: View {
     
     @State var selectedTab = 0
+    @State var confirmed = false
     @Binding var messagingScreen: MessagingScreen
     
     var body: some View {
-        ZStack {
-            Spacer()
-            
-            TabView(selection: $selectedTab){
-                CreateChatView()
-                    .tag(0)
-                JoinChatView()
-                    .tag(1)
-            }
-            
-            
+        VStack {
+            // tab button
             VStack {
                 ZStack{
                     HStack{
@@ -57,26 +49,48 @@ struct StartMessagingView: View {
                                 CustomTabItem(imageName: item.iconName, title: item.title, isActive: (selectedTab == item.rawValue))
                             }
                         }
-                    }.padding(6)
+                    }.padding(5)
                 }
-
-                .background(Color.orangeMain.opacity(0.25))
+                .background(Color.orangeA.opacity(0.2))
                 .cornerRadius(35)
-            .padding(.horizontal, 20)
+                .padding(.horizontal, 60)
+                
+                // settings
+                
+                TabView(selection: $selectedTab){
+                    CreateChatView(confirmed: $confirmed)
+                        .padding(20)
+                        .background(confirmed ? Color.orangeA.opacity(0.2) : Color.clear)
+                        .animation(.default)
+                        .tag(0)
+                    JoinChatView()
+                        .tag(1)
+                }
+                .frame(height: 500)
+                .cornerRadius(20)
+                .padding(20)
+                .shadow(radius: 2, y: 1)
+
+                
                 Spacer()
+                
                 Button {
                     messagingScreen = .chatView
                 } label: {
-                    Text("Start")
-                        .font(.title)
-                        .bold()
-                        .foregroundColor(.white)
-                        .padding([.leading, .trailing], 130)
-                        .padding([.top, .bottom], 13)
-                        .background(Color.orangeMain)
-                        .cornerRadius(40)
-                }.padding(.top, 30)
-            }.padding(.top, 30)
+                    HStack {
+                        Spacer()
+                        Text(selectedTab == 0 ? "Create Room" : "Join Room")
+                            .font(textFont(name: "helvetica-bold", size: 30))
+                            .foregroundColor(.white)
+                        Spacer()
+                    }
+                    .padding([.top, .bottom], 20)
+                    .background(confirmed ? Color.orangeA : Color.orangeA.opacity(0.2))
+                    .cornerRadius(40)
+                }
+                .disabled(!confirmed)
+                .padding(.horizontal, 20)
+            }
             
 
            
@@ -93,20 +107,19 @@ extension StartMessagingView{
             Spacer()
             Image(systemName: imageName)
                 .font(.system(size: 30))
-                .foregroundColor(isActive ? .white : Color.orangeMain )
+                .foregroundColor(isActive ? .white : Color.orangeA )
             if isActive{
                 Text(title)
                     .font(.system(size: 20))
-                    .foregroundColor(isActive ? .white : Color.orangeMain)
+                    .foregroundColor(isActive ? .white : Color.orangeA)
                     .bold()
             }
             Spacer()
         }
         // return Spacer()
         .frame(width: isActive ? .infinity : 100, height: 60)
-        .background(isActive ? Color.orangeMain.opacity(1) : .clear)
+        .background(isActive ? Color.orangeA.opacity(1) : .clear)
         .cornerRadius(30)
-        
     }
     
 }
