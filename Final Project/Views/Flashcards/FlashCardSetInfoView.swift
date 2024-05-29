@@ -51,6 +51,6 @@ struct FlashCardSetInfoView: View {
 
 struct FlashCardSetInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        FlashCardSetInfoView(currentFlashCardSet: Binding.constant(FlashCardSet(name: "Name", description: "Description", cards: [Card(prompt: "???", answer: "Answer"), Card(prompt: "???", answer: "Answer"), Card(prompt: "???", answer: "Answer")])), flashCardScreen: Binding.constant(FlashCardScreen.flashCardSetInfoView))
+        FlashCardSetInfoView(currentFlashCardSet: Binding.constant(flashCardSetExample), flashCardScreen: Binding.constant(FlashCardScreen.flashCardSetInfoView))
     }
 }

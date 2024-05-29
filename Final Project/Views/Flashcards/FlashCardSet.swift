@@ -14,9 +14,12 @@ class FlashCardSet: ObservableObject, Identifiable {
     var image: Image = Image("")
     var cards: [Card]
     let id = UUID()
-    init(name: String, description: String, cards: [Card]) {
+    init(name: String, description: String, image: Image, cards: [Card]) {
         self.name = name
         self.description = description
+        self.image = image
         self.cards = cards
     }
 }
+
+let flashCardSetExample = FlashCardSet(name: "Name", description: "Description", image: Image("defaultImage"), cards: [Card(prompt: "???", answer: "Answer"), Card(prompt: "???", answer: "Answer"), Card(prompt: "???", answer: "Answer")])

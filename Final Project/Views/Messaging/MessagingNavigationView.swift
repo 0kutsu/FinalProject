@@ -8,16 +8,20 @@
 import SwiftUI
 
 enum MessagingScreen {
-    case startMessagingView, chatView
+    case startMessagingOptionsView, createChatView, joinChatView, chatView
 }
 
 struct MessagingNavigationView: View {
-    @State var messagingScreen: MessagingScreen = .startMessagingView
+    @State var messagingScreen: MessagingScreen = .startMessagingOptionsView
     var body: some View {
-        if messagingScreen == .startMessagingView {
+        if messagingScreen == .startMessagingOptionsView {
+            StartMessagingOptionsView(messagingScreen: $messagingScreen)
+        }
+        
+        else if messagingScreen == .createChatView {
             StartMessagingView(messagingScreen: $messagingScreen)
         }
-        else {
+        else if messagingScreen == .chatView {
             ChatView()
         }
     }

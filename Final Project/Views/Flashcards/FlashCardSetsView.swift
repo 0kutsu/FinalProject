@@ -15,65 +15,51 @@ struct FlashCardSetsView: View {
     @EnvironmentObject var user: User
     var body: some View {
             VStack {
-                ScrollView(showsIndicators: false) {
-                    HStack {
-                        Text("Sets")
-                            .font(.system(size: 40))
-                            .foregroundColor(Color.orangeMain)
-                            .padding(.horizontal, 30)
-                            .padding()
-                        Button {
-                            
-                        } label: {
-                            ZStack {
-                                Rectangle()
-                                    .foregroundColor(Color.orange)
-                                    .frame(height: 100)
-                                    .cornerRadius(30)
-                                    .padding(.horizontal, 30)
-                                
-                                Text("Create Set")
-                                    .foregroundColor(Color.white)
-                                    .font(.system(size: 20))
-                                    .fontWeight(.black)
-                                
-                            }
-                        }
+                HStack {
+//                    Image(uiImage: user.image)
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(height: 40)
+//                        .cornerRadius(20)
+//                        .padding(.trailing)
+                    
+                    Text("Your Sets")
+                        .font(textFont(name: "helvetica-bold", size: 30))
+                        .foregroundColor(Color.white)
+                        .padding(.horizontal, 20)
+                    
+                    Spacer()
+                    
+                    Button {
+                        flashCardScreen = .createFlashCardSetView
+                    } label: {
+                        Image(systemName: "plus")
+                            .resizable()
+                            .foregroundColor(Color.white)
+                            .scaledToFit()
+                            .frame(height: 30)
+                            .bold()
                     }
+                    
+                }
+                .padding(20)
+                .background(Color.blueA)
+                
+                ScrollView(showsIndicators: false) {
+                    
                     ForEach(user.flashCardSets) { flashCardSet in
                         Button {
                             currentFlashCardSet = flashCardSet
                             flashCardScreen = .flashCardSetInfoView
                         } label: {
-                            ZStack {
-                                Rectangle()
-                                    .foregroundColor(Color.orange)
-                                    .frame(height: 100)
-                                    .cornerRadius(30)
-                                    .padding(.horizontal, 30)
-                                HStack {
-                                    Rectangle() // this will be an image later
-                                        .foregroundColor(Color.white)
-                                        .frame(width: 80, height: 80)
-                                        .cornerRadius(20)
-                                        .padding(.trailing, 10)
-                                    VStack(alignment: .leading) {
-                                        Text(flashCardSet.name)
-                                            .foregroundColor(Color.white)
-                                            .font(.system(size: 20))
-                                            .fontWeight(.black)
-                                        
-                                        Text("\(flashCardSet.cards.count) Cards")
-                                            .foregroundColor(Color.white)
-                                        
-                                    }
-                                    Spacer()
-                                }
-                                .padding(.leading, 60)
-                            }
+                            FlashCardSetView(flashCardSet: flashCardSet)
+                                .padding(.horizontal, 20)
+                                .padding(.top, 1)
+        
                         }
                     }
                 }
+                
                 Spacer()
             }
         }
@@ -81,7 +67,7 @@ struct FlashCardSetsView: View {
 
 struct FlashCardSetsView_Previews: PreviewProvider {
     static var previews: some View {
-        FlashCardSetsView(currentFlashCardSet: Binding.constant(FlashCardSet(name: "Name", description: "Description", cards: [Card(prompt: "???", answer: "Answer"), Card(prompt: "???", answer: "Answer"), Card(prompt: "???", answer: "Answer")])), flashCardScreen: Binding.constant(FlashCardScreen.flashCardSetsView))
+        FlashCardSetsView(currentFlashCardSet: Binding.constant(flashCardSetExample), flashCardScreen: Binding.constant(FlashCardScreen.flashCardSetsView))
             .environmentObject(User())
     }
 }

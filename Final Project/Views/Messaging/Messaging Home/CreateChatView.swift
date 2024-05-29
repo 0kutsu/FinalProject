@@ -56,6 +56,7 @@ struct CreateChatView: View {
                                 .shadow(color: difficulty == .easy ? Color.grayA : Color.clear, radius: 2, y: 1)
                         }
                     }
+                    .disabled(confirmed)
                     
                     Spacer()
                     
@@ -72,7 +73,8 @@ struct CreateChatView: View {
                             .cornerRadius(20)
                             .shadow(color: difficulty == .intermediate ? Color.grayA : Color.clear, radius: 2, y: 1)
                     }
-                    
+                    .disabled(confirmed)
+
                     Spacer()
                     
                     Button {
@@ -87,6 +89,8 @@ struct CreateChatView: View {
                             .cornerRadius(20)
                             .shadow(color: difficulty == .advanced ? Color.grayA : Color.clear, radius: 2, y: 1)
                     }
+                    .disabled(confirmed)
+
                 }
                 .padding(.horizontal, 5)
             }
@@ -122,8 +126,9 @@ struct CreateChatView: View {
                             .background(chatType == .classic ? Color.orangeA : .clear)
                             .cornerRadius(20)
                             .shadow(color: chatType == .classic ? Color.grayA : Color.clear, radius: 2, y: 1)
-                        
                     }
+                    .disabled(confirmed)
+
                     
                     Spacer()
                     
@@ -138,8 +143,10 @@ struct CreateChatView: View {
                             .background( chatType == .scenario ? Color.orangeA : .clear)
                             .cornerRadius(20)
                             .shadow(color: chatType == .scenario ? Color.grayA : Color.clear, radius: 2, y: 1)
+
                     }
-                    
+                    .disabled(confirmed)
+
                     Spacer()
                     
                     Button {
@@ -153,17 +160,30 @@ struct CreateChatView: View {
                             .background( chatType == .timed ? Color.orangeA : .clear)
                             .cornerRadius(20)
                             .shadow(color: chatType == .timed ? Color.grayA : Color.clear, radius: 2, y: 1)
+
                     }
                 }
+                .disabled(confirmed)
+
                 .padding(.horizontal, 5)
             }
-            Spacer()
             Button {
                 confirmed.toggle()
             } label: {
-                Text("Confirm")
+                HStack {
+                    Text(confirmed ? "Edit" : "Confirm")
+                        .font(textFont(name: "helvetica-bold", size: 20))
+                    Image(systemName: confirmed ? "lock" : "lock.open")
+                        .bold()
+                }
+                .foregroundColor(confirmed ? Color.white : Color.orangeA)
+                .padding()
+                .background(confirmed ? Color.lightGrayA : Color.orangeA.opacity(0.2))
+                .cornerRadius(20)
+                    
                 
             }
+            .padding(.top, 30)
             
         }
         .padding(.vertical, 20)

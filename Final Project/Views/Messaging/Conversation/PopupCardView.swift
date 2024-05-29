@@ -22,7 +22,7 @@ struct PopupCardView: View {
             }
         }
         .background(Color.white.opacity(isPresented ? 0.8 : 0)) // Fade-in background
-        .animation(.easeInOut(duration: 0.3)) // Fade-in animation
+//        .animation(.easeInOut(duration: 0.3)) // Fade-in animation
     }
 }
 
