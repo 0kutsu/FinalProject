@@ -23,7 +23,7 @@ class SerpApiService: ObservableObject {
     @Published var images: [SerpApiImage] = []
     
     func fetchImages(query: String) {
-        let apiKey = "4757f00111aaa94410ff744e6435793e80d27d3180390228e8725ec7e7eb6740"
+        let apiKey = "27acff5d24141365418bb480c51944d351601db4dd35ba99143fb4acec031004"
         guard let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             print("Invalid query")
             return
