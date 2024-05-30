@@ -35,6 +35,7 @@ class User: ObservableObject {
     init(email: String = "", password: String = "", username: String = "") {
         self.email = email
         self.password = password
+        self.username = username
         
         // Check if user is already logged in
 //        if let currentUser = Auth.auth().currentUser {

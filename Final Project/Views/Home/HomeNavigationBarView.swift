@@ -65,7 +65,7 @@ struct HomeNavigationBarView: View {
             
             //settings
             Button {
-                
+                viewState = .profile
             } label: {
                 VStack {
                     Image(systemName: "gear")

@@ -27,10 +27,10 @@ struct HomeView: View {
                     FlashCardNavigatorView()
                 }
                 else if viewState == .settings {
-                   
+                    ProfileView()
                 }
                 else if viewState == .profile {
-                    
+                    ProfileView()
                 }
                 else if viewState == .home {
                     HomeScrollView()
