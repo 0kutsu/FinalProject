@@ -1,13 +1,10 @@
-//
+
 //  Translate.swift
 //  Final Project
 //
 //  Created by Ivan Xiong (student LM) on 4/29/24.
 //
-
 import Foundation
-
-
 // Define a dictionary mapping Spanish words to English translations: add more/delete some for demo as needed
 let spanishToEnglish: [String: String] = [
     "hola": "hello",
@@ -20,162 +17,233 @@ let spanishToEnglish: [String: String] = [
     "de nada": "you're welcome",
     "si": "yes",
     "no": "no",
+    "mi": "my",
+    "la": "the",
+    "los": "the",
+    "el": "the/he",
+    "un poco": "a little",
+    "un":"a",
+    "de": "of",
+    "espanol": "spanish",
+    "bano": "bathroom",
+    "donde" : "where"
     "como estas": "how are you",
     "estoy bien": "I'm fine",
     "lo siento": "I'm sorry",
     "perdon": "excuse me",
+    "hablo": "I speak",
     "que tal": "how's it going",
-    "mas tarde": "later",
-    "hasta luego": "see you later",
-    "hasta manana": "see you tomorrow",
-    "cuanto cuesta": "how much does it cost",
-    "donde esta el bano": "where is the bathroom",
-    "no entiendo": "I don't understand",
-    "hablo un poco de espanol": "I speak a little Spanish",
-    "puedes ayudarme": "can you help me",
-    "donde estoy": "where am I",
-    "que hora es": "what time is it",
-    "me llamo": "my name is",
     "mucho gusto": "nice to meet you",
     "como te llamas": "what's your name",
     "bienvenido": "welcome",
-    "lo siento, no hablo espanol": "I'm sorry, I don't speak Spanish",
-    "puedo ir al bano": "can I go to the bathroom",
     "que pasa": "what's happening",
-    "estoy perdido": "I'm lost",
-    "necesito ayuda": "I need help",
-    "no lo se": "I don't know",
-    "gracias por su ayuda": "thank you for your help",
-    "puedo pagar con tarjeta": "can I pay with card",
-    "me gustaria un cafe": "I would like a coffee",
-    "no tengo dinero": "I don't have money",
-    "donde puedo comprar un billete": "where can I buy a ticket",
-    "donde puedo encontrar un restaurante": "where can I find a restaurant",
-    "lo siento, no puedo ayudarte": "I'm sorry, I can't help you",
-    "como llego a": "how do I get to",
-    "puedo tener la cuenta, por favor": "can I have the bill, please",
     "no se": "I don't know",
-    "no lo entiendo": "I don't understand",
-    "me gustaria reservar una mesa": "I would like to reserve a table",
-    "cunto tiempo" : "how long",
-    "estoy buscando": "I'm looking for",
     "como se dice": "how do you say",
-    "en espanol": "in spanish",
-    "necesito un medico": "I need a doctor",
-    "tengo hambre": "I'm hungry",
-    "tengo sed": "I'm thirsty",
-    "me duele aqui": "it hurts here",
-    "estoy cansado": "I'm tired",
-    "estoy enfermo": "I'm sick",
-    "no puedo": "I can't",
-    "puedo tener la carta, por favor": "can I have the menu, please",
-    "puedo ayudarte": "I can help you",
-    "que bonito": "how beautiful",
-    "estoy feliz": "I'm happy",
-    "estoy triste": "I'm sad",
-    "me gusta": "I like it",
-    "no me gusta": "I don't like it",
-    "estoy preocupado": "I'm worried",
-    "no me siento bien": "I'm not feeling well",
-    "tengo frio": "I'm cold",
-    "tengo calor": "I'm hot",
-    "me puede recomendar un restaurante": "can you recommend a restaurant",
-    "no hay problema": "no problem",
-    "como se llama esto": "what's this called",
-    "cuanto tiempo lleva": "how long does it take",
-    "estoy aburrido": "I'm bored",
-    "estoy emocionado": "I'm excited",
-    "me encanta": "I love it",
-    "tengo miedo": "I'm scared",
-    "no lo necesito": "I don't need it",
-    "no hay de que": "you're welcome",
-    "es caro": "it's expensive",
-    "es barato": "it's cheap",
-    "esta bien": "it's okay",
-    "salud": "cheers",
-    "feliz cumpleanos": "happy birthday",
     "felicidades": "congratulations",
-    "donde vives": "where do you live",
-    "donde trabaja": "where do you work",
-    "hasta pronto": "see you soon",
-    "hasta la vista": "see you later",
-    "me gusta esto": "I like this",
-    "queso": "cheese"
-
+    "queso": "cheese",
+    "amigo": "friend",
+    "amor": "love",
+    "ano": "year",
+    "casa": "house",
+    "cosa": "thing",
+    "ciudad": "city",
+    "dia": "day",
+    "dinero": "money",
+    "doctor": "doctor",
+    "familia": "family",
+    "forma": "form",
+    "gente": "people",
+    "gobierno": "government",
+    "grupo": "group",
+    "hijo": "son",
+    "historia": "history",
+    "hombre": "man",
+    "hora": "hour",
+    "idea": "idea",
+    "iglesia": "church",
+    "informacion": "information",
+    "juego": "game",
+    "lado": "side",
+    "lugar": "place",
+    "mano": "hand",
+    "mujer": "woman",
+    "mundo": "world",
+    "nino": "child",
+    "noche": "night",
+    "nombre": "name",
+    "numero": "number",
+    "ojo": "eye",
+    "padre": "father",
+    "pais": "country",
+    "palabra": "word",
+    "parte": "part",
+    "persona": "person",
+    "pie": "foot",
+    "pueblo": "town",
+    "punto": "point",
+    "razon": "reason",
+    "semana": "week",
+    "senor": "Mr.",
+    "senora": "Mrs.",
+    "senorita": "Miss",
+    "servicio": "service",
+    "sistema": "system",
+    "sitio": "site",
+    "sociedad": "society",
+    "trabajo": "work",
+    "vida": "life",
+    "voz": "voice",
+    "agua": "water",
+    "aire": "air",
+    "animal": "animal",
+    "arte": "art",
+    "barrio": "neighborhood",
+    "biblioteca": "library",
+    "calle": "street",
+    "cama": "bed",
+    "campo": "field",
+    "carro": "car",
+    "cielo": "sky",
+    "clase": "class",
+    "color": "color",
+    "comida": "food",
+    "cuerpo": "body",
+    "derecho": "right",
+    "edad": "age",
+    "escuela": "school",
+    "fiesta": "party",
+    "flor": "flower",
+    "foto": "photo",
+    "fruta": "fruit",
+    "guerra": "war",
+    "hermano": "brother",
+    "hermana": "sister",
+    "hija": "daughter",
+    "jardin": "garden",
+    "joven": "young person",
+    "luz": "light",
+    "madre": "mother",
+    "mar": "sea",
+    "mesa": "table",
+    "musica": "music",
+    "nacion": "nation",
+    "papa": "potato",
+    "parque": "park",
+    "pelicula": "movie",
+    "plaza": "square",
+    "puerta": "door",
+    "rio": "river",
+    "sabor": "flavor",
+    "salud": "health",
+    "silla": "chair",
+    "sol": "sun",
+    "television": "television",
+    "tierra": "earth",
+    "tren": "train",
+    "ventana": "window",
+    "viaje": "trip",
+    "vino": "wine"
 ]
 
 func translateSpanishToEnglish(_ spanishText: String) -> String {
-    // Attempt to translate individual words
-    let translatedWords = spanishText
-        .folding(options: .diacriticInsensitive, locale: .current)
+    let cleanedText = spanishText
         .lowercased()
-        .split(separator: " ")
-        .compactMap { spanishWord in
-            spanishToEnglish[String(spanishWord)]
-        }
-
-    // If individual words were found and translated, combine them into a single string
-    if !translatedWords.isEmpty {
-        return translatedWords.joined(separator: " ")
+        .folding(options: .diacriticInsensitive, locale: Locale(identifier: "es"))
+    
+    if let translation = spanishToEnglish[cleanedText] {
+        return translation
     }
-
-    // Attempt to translate the entire input text as a phrase
-    if let translatedPhrase = spanishToEnglish[spanishText
-        .folding(options: .diacriticInsensitive, locale: .current)
-        .lowercased()] {
-        return translatedPhrase
+    else {
+        return "you have not learned yet"
     }
-
-    // If translation is not found, return the original text
-    return "you have not learned yet"
 }
 
 func splitStringByDictionaryKeys(_ inputString: String, dictionary: [String: String]) -> [[String]] {
-    var substrings: [[String]] = []
+    var substrings: [[String]] = [[]]
     var currentSubstring: [String] = []
-    let maxSubstringLength = 20  // Adjust as needed
+    let maxSubstringLength = 18
+    var currentIndex = inputString.startIndex
     
-    let sortedKeys = dictionary.keys.sorted { $0.count > $1.count }
-    let words = inputString.components(separatedBy: " ")
-    var currentIndex = 0
-    
-    while currentIndex < words.count {
-        let currentWord = words[currentIndex]
-        var phrase = currentWord
-        var nextIndex = currentIndex + 1
+    // Iterate through input string characters
+    while currentIndex < inputString.endIndex {
+        var foundMatch = false
         
-        while nextIndex < words.count {
-            let newPhrase = phrase + " " + words[nextIndex]
+        // Iterate through dictionary keys
+        for key in dictionary.keys.sorted(by: { $0.count > $1.count }) {
+            // Construct the potential phrase using the current position and subsequent characters
+            let remainingCharacters = inputString[currentIndex...]
+            let potentialPhrase = String(remainingCharacters.prefix(key.count)).lowercased()
             
-            if newPhrase.count > maxSubstringLength {
+            // Normalize the potential phrase and key to ignore accents and spaces
+            let normalizedPotentialPhrase = potentialPhrase.replacingOccurrences(of: " ", with: "").folding(options: .diacriticInsensitive, locale: nil)
+            let normalizedKey = key.lowercased().replacingOccurrences(of: " ", with: "").folding(options: .diacriticInsensitive, locale: nil)
+            
+            // Check if the normalized potential phrase matches any dictionary key
+            if normalizedPotentialPhrase == normalizedKey {
+                currentSubstring.append(potentialPhrase)
+                currentIndex = inputString.index(currentIndex, offsetBy: key.count) // Move currentIndex to the end of the matched phrase
+                foundMatch = true
                 break
             }
-            
-            if let _ = dictionary[newPhrase.lowercased()] {
-                phrase = newPhrase
-                currentIndex = nextIndex
+        }
+        
+        // If no match was found, add the current character and move to the next
+        if !foundMatch {
+            let currentChar = inputString[currentIndex]
+            if currentChar == " " {
+                currentSubstring.append(" ") // Insert space
             } else {
-                break
+                currentSubstring.append(String(currentChar))
             }
-            
-            nextIndex += 1
+            currentIndex = inputString.index(after: currentIndex)
         }
         
-        currentSubstring.append(phrase)
-        
-        if currentSubstring.joined(separator: " ").count >= maxSubstringLength {
-            substrings.append(currentSubstring)
+        // If the current length exceeds the maximum substring length or if it's a space, continue in the current substring
+        if currentSubstring.joined().count >= maxSubstringLength || currentIndex == inputString.endIndex {
+            substrings[substrings.count - 1].append(contentsOf: currentSubstring)
             currentSubstring = []
+            substrings.append([]) // Start a new substring
+        }
+    }
+    
+    // Remove the last empty substring if it exists
+    if substrings.last?.isEmpty ?? false {
+        substrings.removeLast()
+    }
+    
+    // Merge consecutive characters
+    var resultArray: [[String]] = []
+    
+    for row in substrings {
+        var mergedRow: [String] = []
+        var currentString = ""
+        
+        for string in row {
+            // Check if the current string is a single character and not punctuation or space
+            if string.count == 1 && string.rangeOfCharacter(from: CharacterSet.punctuationCharacters.union(CharacterSet.whitespaces)) == nil {
+                // Append the current character to the accumulated characters
+                currentString.append(string)
+            } else {
+                // If the accumulated characters are not empty, append them to mergedRow
+                if !currentString.isEmpty {
+                    mergedRow.append(currentString)
+                    currentString = ""
+                }
+                // Append the current string to mergedRow
+                mergedRow.append(string)
+            }
         }
         
-        currentIndex += 1
+        // Append the accumulated characters at the end of the row
+        if !currentString.isEmpty {
+            mergedRow.append(currentString)
+        }
+        
+        // Append the merged row to the result array
+        resultArray.append(mergedRow)
     }
     
-    if !currentSubstring.isEmpty {
-        substrings.append(currentSubstring)
-    }
-    
-    return substrings
+    return resultArray
 }
 
 func isPunctuation(_ string: String) -> Bool {
@@ -185,4 +253,5 @@ func isPunctuation(_ string: String) -> Bool {
 func isWhitespace(_ string: String) -> Bool {
     return string.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
 }
+
 
