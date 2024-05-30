@@ -10,6 +10,7 @@ import SwiftUI
 struct PopupCardView: View {
     @Binding var images: [SerpApiImage]
     @Binding var isPresented: Bool
+
     
     var body: some View {
         VStack {
@@ -28,10 +29,12 @@ struct PopupCardView: View {
 
 struct FavoriteButton: View {
     @State private var isFavorited: Bool = false
-
+    @Binding var showingAddCardToSetView: Bool
+    
     var body: some View {
         Button(action: {
             isFavorited.toggle()
+            showingAddCardToSetView = true
         }) {
             Image(systemName: isFavorited ? "star.fill" : "star")
                 .resizable()
