@@ -37,16 +37,18 @@ func addOrRemoveSet(flashCardSet: FlashCardSet, selectedFlashCardSets: inout [Fl
 }
 
 struct AddCardToSetView: View {
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var user: User
     @State var selectedFlashCardSets: [FlashCardSet] = []
-    @Binding var showingAddToSetView: Bool
+    
+    @Binding var showingAddCardToSetView: Bool
     
     var body: some View {
         VStack {
             ZStack {
                 HStack {
                     Button {
-                    showingAddToSetView = false
+                        dismiss()
                     } label: {
                         Text("Cancel")
                             .font(textFont(name: "helvetica", size: 20))
@@ -66,6 +68,7 @@ struct AddCardToSetView: View {
                     Spacer()
                 }
             }
+            .padding(.horizontal, 20)
             .background(Color.orangeA)
             
             
@@ -78,15 +81,18 @@ struct AddCardToSetView: View {
                     } label: {
                         if isIncluded(flashCardSet: flashCardSet, selectedFlashCardSets: selectedFlashCardSets) {
                             SelectedFlashCardSetView(flashCardSet: flashCardSet)
+                                .padding(.horizontal, 20)
                                 .padding(.top, 1)
                         }
                         else {
                             UnselectedFlashCardSetView(flashCardSet: flashCardSet)
+                                .padding(.horizontal, 20)
                                 .padding(.top, 1)
                         }
                     }
                 }
             }
+            
             
             Button {
                 
@@ -105,7 +111,7 @@ struct AddCardToSetView: View {
 
 struct AddCardToSetView_Previews: PreviewProvider {
     static var previews: some View {
-        AddCardToSetView(showingAddToSetView: Binding.constant(true))
+        AddCardToSetView(showingAddCardToSetView: Binding.constant(true))
             .environmentObject(User())
     }
 }
