@@ -26,7 +26,7 @@ let spanishToEnglish: [String: String] = [
     "de": "of",
     "espanol": "spanish",
     "bano": "bathroom",
-    "donde" : "where"
+    "donde" : "where",
     "como estas": "how are you",
     "estoy bien": "I'm fine",
     "lo siento": "I'm sorry",
