@@ -66,7 +66,8 @@ struct StartMessagingView: View {
                     JoinChatView()
                         .tag(1)
                 }
-                .frame(height: 500)
+                
+//                .frame(height: 500)
                 .cornerRadius(20)
                 .padding(20)
                 .shadow(radius: 2, y: 1)
@@ -80,7 +81,7 @@ struct StartMessagingView: View {
                     HStack {
                         Spacer()
                         Text(selectedTab == 0 ? "Create Room" : "Join Room")
-                            .font(textFont(name: "helvetica-bold", size: 30))
+                            .font(textFont(name: "helvetica-bold", size: 20))
                             .foregroundColor(.white)
                         Spacer()
                     }
@@ -89,7 +90,7 @@ struct StartMessagingView: View {
                     .cornerRadius(40)
                 }
                 .disabled(!confirmed)
-                .padding(.horizontal, 20)
+                .padding(20)
             }
             
 
@@ -126,6 +127,6 @@ extension StartMessagingView{
 
 struct StartMessagingView_Previews: PreviewProvider {
     static var previews: some View {
-        StartMessagingView(messagingScreen: Binding.constant(.startMessagingView))
+        StartMessagingView(messagingScreen: Binding.constant(.startMessagingOptionsView))
     }
 }

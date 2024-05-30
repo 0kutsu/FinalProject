@@ -19,12 +19,16 @@ struct MessageView: View {
     @State private var isPopupVisible = false
     private let pages: [showView] = [.image, .text]
     
-    init(message: Message) {
+    @Binding var showingAddCardToSetView: Bool
+    
+    
+    init(message: Message, showingAddCardToSetView: Binding<Bool>) {
         self.message = message
         let words = splitStringByDictionaryKeys(message.text, dictionary: spanishToEnglish)
         self._buttonStates = State(initialValue: words.map { Array(repeating: -1, count: $0.count) })
-        
+        self._showingAddCardToSetView = showingAddCardToSetView
     }
+    
     var body: some View {
         if message.isFromCurrentUser() {
             HStack{
@@ -96,7 +100,7 @@ struct MessageView: View {
                                                                     .padding([.bottom, .leading, .trailing], 10)
                                                             }
                                                             
-                                                            FavoriteButton()
+                                                            FavoriteButton(showingAddCardToSetView: $showingAddCardToSetView)
                                                                 .offset(x: 109)
                                                                 .padding(.top, -85)
                                                         }
@@ -205,7 +209,7 @@ struct MessageView: View {
                                                                     .padding([.bottom, .leading, .trailing], 10)
                                                             }
                                                             
-                                                            FavoriteButton()
+                                                            FavoriteButton(showingAddCardToSetView: $showingAddCardToSetView)
                                                                 .offset(x: 109)
                                                                 .padding(.top, -85)
                                                         }
@@ -238,7 +242,7 @@ struct MessageView: View {
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView(message: Message(userUid: "123", text: "hewo donde esta uwu hola hola hola hola mano", createdAt: Date()))
+        MessageView(message: Message(userUid: "123", text: "hewo como estas uwu hola hola hola hola", createdAt: Date()), showingAddCardToSetView: Binding.constant(false))
     }
 }
 

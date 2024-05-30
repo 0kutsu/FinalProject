@@ -257,7 +257,7 @@ struct FlashCardStudyView: View {
 // preview
 struct FlashCardStudyView_Preview: PreviewProvider {
     static var previews: some View {
-        FlashCardStudyView(currentFlashCardSet: Binding.constant(FlashCardSet(name: "Name", description: "Description", cards: [Card(prompt: "???", answer: "Answer"), Card(prompt: "???", answer: "Answer"), Card(prompt: "???", answer: "Answer")])), flashCardScreen: Binding.constant(FlashCardScreen.flashCardSetsView))
+        FlashCardStudyView(currentFlashCardSet: Binding.constant(flashCardSetExample), flashCardScreen: Binding.constant(FlashCardScreen.flashCardSetsView))
     }
 }
 

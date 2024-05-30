@@ -20,15 +20,20 @@ struct CreateFlashCardSetView: View {
     @State private var cards = [Card]()
     @State private var setName = ""
     @State private var setDescription = ""
+    @State private var image = Image("")
     @State private var newPrompt = ""
     @State private var newAnswer = ""
+    
+    @Binding var currentFlashCardSet: FlashCardSet
+    @Binding var flashCardScreen: FlashCardScreen
+    
 
     var body: some View {
         NavigationView {
             List {
                 Section("Set Description") {
-                    TextField("Name", text: $newPrompt)
-                    TextField("Description", text: $newAnswer)
+                    TextField("Name", text: $setName)
+                    TextField("Description", text: $setDescription)
                 }
                 
                 Section("Add new card") {
@@ -66,13 +71,15 @@ struct CreateFlashCardSetView: View {
         setName = ""
         setDescription = ""
         newPrompt = ""
+        image = Image("")
         newAnswer = ""
         dismiss()
     }
     
     func done() {
-        user.flashCardSets.append(FlashCardSet(name: setName, description: setDescription, cards: cards))
-        dismiss()
+        user.flashCardSets.append(FlashCardSet(name: setName, description: setDescription, image: image, cards: cards))
+        currentFlashCardSet = FlashCardSet(name: setName, description: setDescription, image: image, cards: cards)
+        flashCardScreen = .flashCardSetInfoView
     }
 
     func loadData() {
@@ -107,7 +114,7 @@ struct CreateFlashCardSetView: View {
 
 struct CreateFlashCardSetView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateFlashCardSetView()
+        CreateFlashCardSetView(currentFlashCardSet: Binding.constant(flashCardSetExample), flashCardScreen: Binding.constant(FlashCardScreen.flashCardSetInfoView))
             .environmentObject(User())
     }
 }

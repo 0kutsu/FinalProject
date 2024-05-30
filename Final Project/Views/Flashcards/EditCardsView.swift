@@ -80,6 +80,7 @@ struct EditCardsView: View {
 
 struct EditCardsView_Previews: PreviewProvider {
     static var previews: some View {
-        EditCardsView(currentFlashCardSet: Binding.constant(FlashCardSet(name: "Name", description: "Description", cards: [Card(prompt: "???", answer: "Answer"), Card(prompt: "???", answer: "Answer"), Card(prompt: "???", answer: "Answer")])))
+        EditCardsView(currentFlashCardSet: Binding.constant(FlashCardSet(name: "Name", description: "Description", image: Image("defaultImage"), cards: [Card(prompt: "???", answer: "Answer"), Card(prompt: "???", answer: "Answer"), Card(prompt: "???", answer: "Answer")])))
+
     }
 }
