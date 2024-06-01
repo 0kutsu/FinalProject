@@ -19,24 +19,11 @@ struct ChooseLanguageView: View {
         
         ZStack {
 //                         background color gradient
-            LinearGradient(
-                colors: [
-                    .orangeMain,
-                    .orange],
-                startPoint: startAnimation ? .topLeading : .bottomLeading,
-                endPoint: startAnimation ? .bottomTrailing : .topTrailing
-            ).onAppear {
-                withAnimation(.linear(duration: 5.0).repeatForever()) {
-                    startAnimation.toggle()
-                }
-            }
-            .ignoresSafeArea(.all)
-            .opacity(0.7)
-            
+            GradientBackground(color1: Color.orangeA, color2: Color.pinkA, opacity: 1)
             ZStack {
                 VStack {
                     Spacer()
-                        .frame(height: 50)
+
                     HStack {
                         Image(systemName: "arrow.right.square.fill")
                             .resizable()
@@ -44,25 +31,19 @@ struct ChooseLanguageView: View {
                             .frame(width: 30, height: 30)
                             .padding(.horizontal, 5)
                         Text("Select Language")
-                            .font(Font(UIFont(name: "HelveticaNeue-Thin", size: 30) ?? UIFont.systemFont(ofSize: 50)))
-                            .fontWeight(.heavy)
+                            .font(textFont(name: "helvetica-bold", size: 30))
                             .foregroundColor(Color.white)
-
-                            .multilineTextAlignment(.center)
-                            .padding(.bottom, 1)
-                        
-                        .frame(height: 60)
                     }
-                    
-                    ChooseLanguageBoxView(buttonOpacity: 1, backgroundOpacity: 0.6, screen: $screen)
-                        .cornerRadius(30)
-                        .padding(.horizontal)
+
+                    ChooseLanguageBoxView(screen: $screen)
+                        .cornerRadius(20)
+//                        .shadow(color: Color.white, radius: 5)
+                        .padding(20)
                     
                     // progress bar
                         .safeAreaInset(edge: .bottom) {
                             ProgressStepsView(step: 2, white: true)
                                 .foregroundColor(Color.orangeMain)
-                                .frame(height: 80)
                         }
                 }
             }

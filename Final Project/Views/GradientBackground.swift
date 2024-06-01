@@ -22,7 +22,7 @@ struct GradientBackground: View {
             startPoint: startAnimation ? .topLeading : .bottomLeading,
             endPoint: startAnimation ? .bottomTrailing : .topTrailing
         ).onAppear {
-            withAnimation(.linear(duration: 5.0).repeatForever()) {
+            withAnimation(.linear(duration: 10).repeatForever()) {
                 startAnimation.toggle()
             }
         }

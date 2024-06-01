@@ -11,6 +11,7 @@
 		040296952B9B3FD700CEC711 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040296942B9B3FD700CEC711 /* ContentView.swift */; };
 		040296972B9B3FD800CEC711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040296962B9B3FD800CEC711 /* Assets.xcassets */; };
 		0402969A2B9B3FD800CEC711 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040296992B9B3FD800CEC711 /* Preview Assets.xcassets */; };
+		040D009F2C0A99EC00540FE3 /* SelectLevelButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D009E2C0A99EC00540FE3 /* SelectLevelButtonView.swift */; };
 		044A6A682BF63FCB00CDCB10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044A6A672BF63FCB00CDCB10 /* GoogleService-Info.plist */; };
 		044A6A6A2BF6C6B200CDCB10 /* CreateChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F04D612BDA9C9C00FA7094 /* CreateChatView.swift */; };
 		044A6A6E2BF6C76300CDCB10 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A6A6D2BF6C76300CDCB10 /* Translate.swift */; };
@@ -74,6 +75,7 @@
 		040296942B9B3FD700CEC711 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		040296962B9B3FD800CEC711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040296992B9B3FD800CEC711 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		040D009E2C0A99EC00540FE3 /* SelectLevelButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLevelButtonView.swift; sourceTree = "<group>"; };
 		044A6A672BF63FCB00CDCB10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		044A6A6D2BF6C76300CDCB10 /* Translate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		044A6A702BF77E2100CDCB10 /* MessagingNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingNavigationView.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				04647B1B2BE129F400D31982 /* SelectLevelView.swift */,
+				040D009E2C0A99EC00540FE3 /* SelectLevelButtonView.swift */,
 			);
 			path = "Select Level";
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				044F91DF2BAB1C0F004758DA /* FlashCardStudyView.swift in Sources */,
 				044F91D32BAB1674004758DA /* HomeView.swift in Sources */,
 				04F9020B2BFF8B97003AF40E /* MessageView.swift in Sources */,
+				040D009F2C0A99EC00540FE3 /* SelectLevelButtonView.swift in Sources */,
 				044F91CB2BAB1609004758DA /* LogoAndButtonView.swift in Sources */,
 				04F901F52BFBB991003AF40E /* DailyGoal.swift in Sources */,
 				044F91EA2BD3FBA3004758DA /* SignUpTextFieldsBoxView.swift in Sources */,

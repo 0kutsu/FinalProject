@@ -19,12 +19,12 @@ struct LogoAndButtonView: View {
         ZStack {
             LinearGradient(
                 colors: [
-                    .orangeMain,
-                    .orange],
+                    .orangeA,
+                    .pinkA],
                 startPoint: startAnimation ? .topLeading : .bottomLeading,
                 endPoint: startAnimation ? .bottomTrailing : .topTrailing
             ).onAppear {
-                withAnimation(.linear(duration: 5.0).repeatForever()) {
+                withAnimation(.linear(duration: 10).repeatForever()) {
                     startAnimation.toggle()
                 }
             }
@@ -35,31 +35,26 @@ struct LogoAndButtonView: View {
                 Image("appLogoTransparent")
                     .resizable()
                     .scaledToFit()
-                    .padding(40)
-                    .frame(width: 475, height: 500)
+                    .padding(10)
                 
                 Spacer()
-                
-                
                 
                 Button {
                     screen = .signUpView
                 } label: {
                         HStack {
                             Text("Get Started")
-                            Image(systemName: "arrow.right")
+                                .font(textFont(name: "helvetica-bold", size: 30))
                         }
-                            .font(.system(size: 30))
-                            .fontWeight(.black)
-                            .padding()
-                            .frame(width: 300)
+                            .padding(20)
                             .background(Color.white)
-                            .foregroundColor(Color.orange)
-                            .cornerRadius(30)
-                        .disabled(user.email.isEmpty || user.password.isEmpty)
-                        
+                            .foregroundColor(Color.orangeA)
+                            .cornerRadius(20)
+                    
+                            
                         // background color gradient
                 }
+                .shadow(color: Color.white, radius: 5)
                 Spacer()
             }
 //            .background(Color.orangeMain)
