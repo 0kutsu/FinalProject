@@ -19,7 +19,7 @@ func fetchMessagesInView(chatViewModel: ChatViewModel) {
 }
 
 struct ChatView: View {
-    @StateObject var chatViewModel = ChatViewModel()
+    @StateObject var chatViewModel = ChatViewModel()    
     @State var text = ""
     @EnvironmentObject var user: User
     @State var showingAddCardToSetView: Bool = false
@@ -29,12 +29,15 @@ struct ChatView: View {
         VStack {
             VStack {
                 ScrollView(showsIndicators: false) {
-                    VStack(spacing: 8) {
+                    VStack() {
                         Text("")
                             .onAppear {
                                 fetchMessagesInView(chatViewModel: chatViewModel)
                             }
+                        // real
                         ForEach(chatViewModel.messages) { message in
+                        // testing
+//                        ForEach(chatViewModel.mockData) { message in
                             MessageView(message: message, showingAddCardToSetView: $showingAddCardToSetView)
                         }
                                 
@@ -52,16 +55,19 @@ struct ChatView: View {
                         }
                         
                     } label: {
-                        Text("send")
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(Color.orangeMain)
-                            .cornerRadius(50)
-                            .padding(.trailing)
+                        Image(systemName: "arrow.up.circle.fill")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .foregroundColor(.blueA)
+                            .background(Color.white)
+                            .cornerRadius(20)
+                            .shadow(radius: 2, y: 1)
                     }
+                    .padding(.horizontal, 7)
+
                 }
-                .padding(.top)
-                .background(Color(uiColor: .systemGray6))
+                .background(Color(uiColor: .systemGray6), in: RoundedRectangle(cornerRadius: 30))
+                .padding(.horizontal, 20)
                 
             }
             .background(.white)

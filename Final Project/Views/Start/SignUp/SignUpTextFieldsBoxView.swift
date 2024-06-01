@@ -13,47 +13,52 @@ struct SignUpTextFieldsBoxView: View {
     @Binding var screen: Screen
     var body: some View {
         
-        ZStack {
-            Rectangle()
-                .foregroundColor(Color.white)
-                .opacity(backgroundOpacity)
-                .cornerRadius(0.3)
+        
             VStack {
-                Text("Username")
-                    .bold()
-                    .padding(.trailing, 210)
-                    .foregroundColor(Color.orangeMain)
-                TextField("", text: $user.username)
-                    .textFieldStyle(.roundedBorder)
-                    .border(Color.orangeMain)
-                    .frame(width: 290)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-                    .padding(.bottom, 20)
-                    .padding(.horizontal, 30)
+                VStack {
+                    HStack {
+                        Text("Username")
+                            .font(textFont(name: "helvetica", size: 20))
+                            .foregroundColor(Color.orangeA)
+                        Spacer()
+                    }
+                    TextField("", text: $user.username)
+                        .textFieldStyle(.roundedBorder)
+                        .border(Color.orangeA)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                        .padding(.bottom, 20)
+                    
+                    
+                    HStack {
+                        Text("Email Address")
+                            .font(textFont(name: "helvetica", size: 20))
+                            .foregroundColor(Color.orangeA)
+                        Spacer()
+                    }
+                    TextField("", text: $user.email)
+                        .border(Color.orangeA)
+                        .textFieldStyle(.roundedBorder)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                        .padding(.bottom, 20)
+                    
+                    
+                    HStack {
+                        Text("Password")
+                            .font(textFont(name: "helvetica", size: 20))
+                            .foregroundColor(Color.orangeA)
+                        Spacer()
+                    }
+                    
+                    SecureField("", text: $user.password)
+                        .textFieldStyle(.roundedBorder)
+                        .border(Color.orangeA)
+                        .padding(.bottom, 40)
+                    
+                }
+                .padding(.horizontal, 40)
                 
-                Text("Email Address")
-                    .bold()
-                    .padding(.trailing, 180)
-                    .foregroundColor(Color.orangeMain)
-                TextField("", text: $user.email)
-                    .textFieldStyle(.roundedBorder)
-                    .border(Color.orangeMain)
-                    .frame(width: 290)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-                    .padding(.bottom, 20)
-                
-                Text("Password")
-                    .bold()
-                    .padding(.trailing, 210)
-                    .foregroundColor(Color.orangeMain)
-                
-                SecureField("", text: $user.password)
-                    .textFieldStyle(.roundedBorder)
-                    .border(Color.orangeMain)
-                    .frame(width: 290)
-                    .padding(.bottom, 40)
                 
                 Button {
     //                signUp()
@@ -61,43 +66,48 @@ struct SignUpTextFieldsBoxView: View {
                     
                 } label: {
                     Text("Create Account")
+                        .font(textFont(name: "helvetica", size: 20))
                         .padding(.vertical, 10)
                         .frame(width: 290)
-                        .background(Color.orange)
+                        .background(Color.orangeA)
                         .foregroundColor(Color.white)
                         .cornerRadius(20)
                         .disabled(user.email.isEmpty || user.password.isEmpty)
-                        .bold()
+                        .shadow(radius: 2, y: 1)
                 }
                 HStack {
                     Image(systemName: "circle.fill")
-                        .foregroundColor(Color.orangeMain)
+                        .foregroundColor(Color.orangeA)
                         .opacity(0.5)
                     Image(systemName: "triangle.fill")
-                        .foregroundColor(Color.orangeMain)
+                        .foregroundColor(Color.orangeA)
                         .opacity(0.4)
                     Image(systemName: "square.fill")
-                        .foregroundColor(Color.orangeMain)
+                        .foregroundColor(Color.orangeA)
                         .opacity(0.3)
                 }
-                .padding()
-                .padding(.bottom, 15)
+                .padding(20)
+                .padding(.bottom, 20)
                 
                 VStack {
                     Text("Already have an account?")
+                        .font(textFont(name: "helvetica", size: 20))
+                        .foregroundColor(Color.blackA)
+
                     
                     Button {
                         screen = .logInView
                     } label: {
                         Text("Log In")
-                            .foregroundColor(.orange)
+                            .font(textFont(name: "helvetica", size: 20))
+                            .foregroundColor(.orangeA)
                     }
                 }
             }
             .padding(.vertical, 40)
+                .background(Color.white)
         }
-//        .background(Color.white)
-    }
+
     
     func signUp() {
         user.signUp()
@@ -114,7 +124,7 @@ struct SignUpTextFieldsBoxView: View {
 
 struct SignUpTextFieldsBoxView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpTextFieldsBoxView(backgroundOpacity: 0.7, screen: Binding.constant(.userView))
+        SignUpTextFieldsBoxView(backgroundOpacity: 1, screen: Binding.constant(.userView))
             .environmentObject(User())
     }
 }

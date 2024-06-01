@@ -20,17 +20,16 @@ struct SignUpTextFieldsView: View {
 //             background color gradient
             LinearGradient(
                 colors: [
-                    .orangeMain,
-                    .orange],
+                    .orangeA,
+                    .pinkA],
                 startPoint: startAnimation ? .topLeading : .bottomLeading,
                 endPoint: startAnimation ? .bottomTrailing : .topTrailing
             ).onAppear {
-                withAnimation(.linear(duration: 5.0).repeatForever()) {
+                withAnimation(.linear(duration: 10.0).repeatForever()) {
                     startAnimation.toggle()
                 }
             }
                    .ignoresSafeArea(.all)
-                   .opacity(1)
             VStack {
                 Spacer()
                     .frame(height: 50)
@@ -44,21 +43,17 @@ struct SignUpTextFieldsView: View {
                 
                 
                 SignUpTextFieldsBoxView(backgroundOpacity: 1, screen: $screen)
-                    .cornerRadius(30)
-                    .padding()
-                
+                    .cornerRadius(20)
+                    .padding(20)
+//                    .shadow(color: Color.white, radius: 5)
                 
                 // progress bar
-                    .safeAreaInset(edge: .bottom) {
-                        ProgressStepsView(step: 1, white: true)
-                            .foregroundColor(Color.orangeMain)
-                            .frame(height: 80)
-                    }
-
-                }
+                ProgressStepsView(step: 1, white: true)
+                    .foregroundColor(Color.orangeA)
             }
         }
     }
+}
 
 struct SignUpTextFieldsView_Previews: PreviewProvider {
     static var previews: some View {

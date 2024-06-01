@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ChooseLanguageBoxView: View {
-    @State var buttonOpacity: Double
-    @State var backgroundOpacity: Double
     @Binding var screen: Screen
     @EnvironmentObject var user: User
     @State var selectedLanguage: String = "none"
@@ -18,12 +16,9 @@ struct ChooseLanguageBoxView: View {
     var body: some View {
         
         ZStack {
-            Rectangle()
-                .foregroundColor(Color.white)
-                .opacity(backgroundOpacity)
-                .cornerRadius(0.3)
             VStack {
                     HStack {
+                        Spacer()
                         VStack {
                             ForEach(languages1) { language in
                                 Button {
@@ -37,13 +32,12 @@ struct ChooseLanguageBoxView: View {
                                     ZStack {
                                         Rectangle()
                                             .frame(width: 133, height: 133)
-                                            .cornerRadius(25)
+                                            .cornerRadius(20)
                                             .foregroundColor(Color.white)
                                             .padding(5)
-                                            .background(selectedLanguage == language.name ? Color.orange : Color.clear)
-                                            .cornerRadius(30)
-                                            .opacity(buttonOpacity)
-//                                            .shadow(radius: 2)
+                                            .background(selectedLanguage == language.name ? Color.orangeA : Color.clear)
+                                            .cornerRadius(25)
+                                            .shadow(radius: 2, y: 1)
                                         
                                         VStack {
                                             language.flag
@@ -52,17 +46,16 @@ struct ChooseLanguageBoxView: View {
                                                 .cornerRadius(10)
                                             Text(language.name)
                                                 .fontWeight(.heavy)
-                                                .foregroundColor(selectedLanguage == language.name ? Color.orange : Color.gray)
+                                                .foregroundColor(selectedLanguage == language.name ? Color.orangeA : Color.grayA)
                                             Text(language.nativeName)
-                                                .foregroundColor(selectedLanguage == language.name ? Color.orange : Color.gray)
+                                                .foregroundColor(selectedLanguage == language.name ? Color.orangeA : Color.grayA)
                                         }
                                     }
                                     
                                 }
                             }
                         }
-                        .padding(.horizontal, 2.5)
-                        
+                        Spacer()
                         VStack {
                             ForEach(languages2) { language in
                                 Button {
@@ -76,13 +69,12 @@ struct ChooseLanguageBoxView: View {
                                     ZStack {
                                         Rectangle()
                                             .frame(width: 133, height: 133)
-                                            .cornerRadius(25)
+                                            .cornerRadius(20)
                                             .foregroundColor(Color.white)
                                             .padding(5)
-                                            .background(selectedLanguage == language.name ? Color.orange : Color.clear)
-                                            .cornerRadius(30)
-                                            .opacity(buttonOpacity)
-//                                            .shadow(radius: 2)
+                                            .background(selectedLanguage == language.name ? Color.orangeA : Color.clear)
+                                            .cornerRadius(25)
+                                            .shadow(radius: 2, y: 1)
                                         
                                         VStack {
                                             language.flag
@@ -91,18 +83,17 @@ struct ChooseLanguageBoxView: View {
                                                 .cornerRadius(10)
                                             Text(language.name)
                                                 .fontWeight(.heavy)
-                                                .foregroundColor(selectedLanguage == language.name ? Color.orange : Color.gray)
+                                                .foregroundColor(selectedLanguage == language.name ? Color.orangeA : Color.grayA)
                                             Text(language.nativeName)
-                                                .foregroundColor(selectedLanguage == language.name ? Color.orange : Color.gray)
+                                                .foregroundColor(selectedLanguage == language.name ? Color.orangeA : Color.grayA)
                                         }
                                     }
                                 }
                             }
                         }
-                        .padding(.horizontal, 2.5)
-
+                        Spacer()
                     }
-                    .padding()
+                    .padding(.vertical, 20)
                     
                     Button {
                         screen = .selectLevelView
@@ -120,18 +111,20 @@ struct ChooseLanguageBoxView: View {
                     } label: {
                         Text("Select")
                             .padding(.vertical, 10)
-                            
                             .frame(width: 290)
-                            .background(selectedLanguage == "none" ? Color.orangeFaded50 : Color.orange)
+                            .background(selectedLanguage == "none" ? Color.orangeA.opacity(0.5) : Color.orangeA)
                             .foregroundColor(Color.white)
                             .cornerRadius(20)
                             .bold()
-                            .opacity(buttonOpacity)
-//                            .shadow(radius: 2)
+                            .shadow(radius: 2, y: 1)
+
                     }
                     .disabled(selectedLanguage == "none")
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 40)
             }
+//            .background(Color.orangeA)
+            .background(Color.white)
+
         }
 
             
@@ -142,7 +135,7 @@ struct ChooseLanguageBoxView: View {
     
     struct ChooseLanguageBoxView_Previews: PreviewProvider {
         static var previews: some View {
-            ChooseLanguageBoxView(buttonOpacity: 1, backgroundOpacity: 0.3, screen: Binding.constant(.userView))
+            ChooseLanguageBoxView(screen: Binding.constant(.userView))
                     .environmentObject(User())
                
         }
