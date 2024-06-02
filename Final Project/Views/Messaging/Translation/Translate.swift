@@ -15,6 +15,7 @@ let spanishToEnglish: [String: String] = [
     "por favor": "please",
     "gracias": "thank you",
     "de nada": "you're welcome",
+    "me": "I",
     "si": "yes",
     "no": "no",
     "mi": "my",
@@ -142,116 +143,123 @@ let spanishToEnglish: [String: String] = [
     "tren": "train",
     "ventana": "window",
     "viaje": "trip",
-    "vino": "wine"
+    "vino": "wine",
+    "hablar": "to speak",
+    "comer": "to eat",
+    "beber": "to drink",
+    "vivir": "to live",
+    "amar": "to love",
+    "trabajar": "to work",
+    "estudiar": "to study",
+    "aprender": "to learn",
+    "jugar": "to play",
+    "correr": "to run",
+    "saltar": "to jump",
+    "dormir": "to sleep",
+    "mirar": "to look",
+    "escuchar": "to listen",
+    "entender": "to understand",
+    "querer": "to want",
+    "necesitar": "to need",
+    "ayudar": "to help",
+    "buscar": "to search",
+    "encontrar": "to find",
+    "bueno": "good",
+    "malo": "bad",
+    "grande": "big",
+    "pequeño": "small",
+    "alto": "tall",
+    "bajo": "short",
+    "nuevo": "new",
+    "viejo": "old",
+    "feliz": "happy",
+    "triste": "sad",
+    "contento": "content",
+    "cansado": "tired",
+    "listo": "smart",
+    "tonto": "silly",
+    "rápido": "fast",
+    "lento": "slow",
+    "caliente": "hot",
+    "frío": "cold",
+    "bonito": "pretty",
+    "feo": "ugly"
 ]
 
 func translateSpanishToEnglish(_ spanishText: String) -> String {
-    let cleanedText = spanishText
+    // Attempt to translate individual words
+    let translatedWords = spanishText
+        .folding(options: .diacriticInsensitive, locale: .current)
         .lowercased()
-        .folding(options: .diacriticInsensitive, locale: Locale(identifier: "es"))
-    
-    if let translation = spanishToEnglish[cleanedText] {
-        return translation
+        .split(separator: " ")
+        .compactMap { spanishWord in
+            spanishToEnglish[String(spanishWord)]
+        }
+
+    // If individual words were found and translated, combine them into a single string
+    if !translatedWords.isEmpty {
+        return translatedWords.joined(separator: " ")
     }
-    else {
-        return "you have not learned yet"
+
+    // Attempt to translate the entire input text as a phrase
+    if let translatedPhrase = spanishToEnglish[spanishText
+        .folding(options: .diacriticInsensitive, locale: .current)
+        .lowercased()] {
+        return translatedPhrase
     }
+
+    // If translation is not found, return the original text
+    return "you have not learned yet"
 }
 
 func splitStringByDictionaryKeys(_ inputString: String, dictionary: [String: String]) -> [[String]] {
-    var substrings: [[String]] = [[]]
+    var substrings: [[String]] = []
     var currentSubstring: [String] = []
-    let maxSubstringLength = 18
-    var currentIndex = inputString.startIndex
-    
-    // Iterate through input string characters
-    while currentIndex < inputString.endIndex {
-        var foundMatch = false
-        
-        // Iterate through dictionary keys
-        for key in dictionary.keys.sorted(by: { $0.count > $1.count }) {
-            // Construct the potential phrase using the current position and subsequent characters
-            let remainingCharacters = inputString[currentIndex...]
-            let potentialPhrase = String(remainingCharacters.prefix(key.count)).lowercased()
-            
-            // Normalize the potential phrase and key to ignore accents and spaces
-            let normalizedPotentialPhrase = potentialPhrase.replacingOccurrences(of: " ", with: "").folding(options: .diacriticInsensitive, locale: nil)
-            let normalizedKey = key.lowercased().replacingOccurrences(of: " ", with: "").folding(options: .diacriticInsensitive, locale: nil)
-            
-            // Check if the normalized potential phrase matches any dictionary key
-            if normalizedPotentialPhrase == normalizedKey {
-                currentSubstring.append(potentialPhrase)
-                currentIndex = inputString.index(currentIndex, offsetBy: key.count) // Move currentIndex to the end of the matched phrase
-                foundMatch = true
+    let maxSubstringLength = 20  // Adjust as needed
+
+    let sortedKeys = dictionary.keys.sorted { $0.count > $1.count }
+    let words = inputString.components(separatedBy: " ")
+    var currentIndex = 0
+
+    while currentIndex < words.count {
+        let currentWord = words[currentIndex]
+        var phrase = currentWord
+        var nextIndex = currentIndex + 1
+
+        while nextIndex < words.count {
+            let newPhrase = phrase + " " + words[nextIndex]
+
+            if newPhrase.count > maxSubstringLength {
                 break
             }
-        }
-        
-        // If no match was found, add the current character and move to the next
-        if !foundMatch {
-            let currentChar = inputString[currentIndex]
-            if currentChar == " " {
-                currentSubstring.append(" ") // Insert space
+
+            if let _ = dictionary[newPhrase.lowercased()] {
+                phrase = newPhrase
+                currentIndex = nextIndex
             } else {
-                currentSubstring.append(String(currentChar))
+                break
             }
-            currentIndex = inputString.index(after: currentIndex)
+
+            nextIndex += 1
         }
-        
-        // If the current length exceeds the maximum substring length or if it's a space, continue in the current substring
-        if currentSubstring.joined().count >= maxSubstringLength || currentIndex == inputString.endIndex {
-            substrings[substrings.count - 1].append(contentsOf: currentSubstring)
+
+        currentSubstring.append(phrase)
+
+        if currentSubstring.joined(separator: " ").count >= maxSubstringLength {
+            substrings.append(currentSubstring)
             currentSubstring = []
-            substrings.append([]) // Start a new substring
         }
+
+        currentIndex += 1
     }
-    
-    // Remove the last empty substring if it exists
-    if substrings.last?.isEmpty ?? false {
-        substrings.removeLast()
+
+    if !currentSubstring.isEmpty {
+        substrings.append(currentSubstring)
     }
-    
-    // Merge consecutive characters
-    var resultArray: [[String]] = []
-    
-    for row in substrings {
-        var mergedRow: [String] = []
-        var currentString = ""
-        
-        for string in row {
-            // Check if the current string is a single character and not punctuation or space
-            if string.count == 1 && string.rangeOfCharacter(from: CharacterSet.punctuationCharacters.union(CharacterSet.whitespaces)) == nil {
-                // Append the current character to the accumulated characters
-                currentString.append(string)
-            } else {
-                // If the accumulated characters are not empty, append them to mergedRow
-                if !currentString.isEmpty {
-                    mergedRow.append(currentString)
-                    currentString = ""
-                }
-                // Append the current string to mergedRow
-                mergedRow.append(string)
-            }
-        }
-        
-        // Append the accumulated characters at the end of the row
-        if !currentString.isEmpty {
-            mergedRow.append(currentString)
-        }
-        
-        // Append the merged row to the result array
-        resultArray.append(mergedRow)
-    }
-    
-    return resultArray
+
+    return substrings
 }
 
 func isPunctuation(_ string: String) -> Bool {
-    let punctuationCharacters = CharacterSet.punctuationCharacters
-    return string.rangeOfCharacter(from: punctuationCharacters) != nil && string.rangeOfCharacter(from: CharacterSet.alphanumerics) == nil
-}
-func isWhitespace(_ string: String) -> Bool {
     return string.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
 }
-
-

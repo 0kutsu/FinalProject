@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+func colorOpacity(color: Color, opacity: CGFloat) -> Color {
+    return color.opacity(opacity)
+}
+
 extension Color {
     // og colors
     static let greyBackground = Color("greyBackground")
@@ -25,6 +29,8 @@ extension Color {
     static let redA = Color("redA")
     static let grayA = Color("grayA")
     static let lightGrayA = Color("lightGrayA")
+    
+    static let greenAFaded25 = Color("greenAFaded25")
     
     
     
