@@ -49,7 +49,7 @@ struct LogoAndButtonView: View {
                             .padding(20)
                             .background(Color.white)
                             .foregroundColor(Color.orangeA)
-                            .cornerRadius(20)
+                            .cornerRadius(40)
                     
                             
                         // background color gradient

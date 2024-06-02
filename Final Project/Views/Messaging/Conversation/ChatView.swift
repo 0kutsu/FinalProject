@@ -27,6 +27,8 @@ struct ChatView: View {
     var body: some View {
         
         VStack {
+            ChatToolBarView()
+                .frame(height: 50)
             VStack {
                 ScrollView(showsIndicators: false) {
                     VStack() {

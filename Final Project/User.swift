@@ -20,6 +20,7 @@ class User: ObservableObject {
     // statistics
     @Published var totalWords: Int = 0
     @Published var differentWords: Int = 0
+    @Published var totalChats: Int = 0
     
     @Published var image: UIImage = UIImage(imageLiteralResourceName: "profilePicture")
     @Published var loggedIn: Bool = false
