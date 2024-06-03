@@ -46,7 +46,8 @@ struct LogoAndButtonView: View {
                             Text("Get Started")
                                 .font(textFont(name: "helvetica-bold", size: 30))
                         }
-                            .padding(20)
+                        .padding(.vertical, 20)
+                        .padding(.horizontal, 40)
                             .background(Color.white)
                             .foregroundColor(Color.orangeA)
                             .cornerRadius(40)
@@ -54,7 +55,7 @@ struct LogoAndButtonView: View {
                             
                         // background color gradient
                 }
-                .shadow(color: Color.white, radius: 5)
+                .shadow(radius: 2, y: 1)
                 Spacer()
             }
 //            .background(Color.orangeMain)

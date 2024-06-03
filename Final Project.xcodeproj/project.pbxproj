@@ -16,6 +16,8 @@
 		040D00A32C0BFB1700540FE3 /* CompletedDailyGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D00A22C0BFB1700540FE3 /* CompletedDailyGoalView.swift */; };
 		040D00A52C0CAD7200540FE3 /* DailyGoal2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D00A42C0CAD7200540FE3 /* DailyGoal2View.swift */; };
 		040D00A82C0CF3A500540FE3 /* DailyGoal3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D00A72C0CF3A500540FE3 /* DailyGoal3View.swift */; };
+		040D00AA2C0DE7E100540FE3 /* CardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D00A92C0DE7E100540FE3 /* CardInfoView.swift */; };
+		040D00AD2C0E5A6100540FE3 /* UnderLineTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D00AC2C0E5A6100540FE3 /* UnderLineTextFieldView.swift */; };
 		044A6A682BF63FCB00CDCB10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044A6A672BF63FCB00CDCB10 /* GoogleService-Info.plist */; };
 		044A6A6A2BF6C6B200CDCB10 /* CreateChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F04D612BDA9C9C00FA7094 /* CreateChatView.swift */; };
 		044A6A6E2BF6C76300CDCB10 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A6A6D2BF6C76300CDCB10 /* Translate.swift */; };
@@ -84,6 +86,8 @@
 		040D00A22C0BFB1700540FE3 /* CompletedDailyGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedDailyGoalView.swift; sourceTree = "<group>"; };
 		040D00A42C0CAD7200540FE3 /* DailyGoal2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoal2View.swift; sourceTree = "<group>"; };
 		040D00A72C0CF3A500540FE3 /* DailyGoal3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoal3View.swift; sourceTree = "<group>"; };
+		040D00A92C0DE7E100540FE3 /* CardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoView.swift; sourceTree = "<group>"; };
+		040D00AC2C0E5A6100540FE3 /* UnderLineTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextFieldView.swift; sourceTree = "<group>"; };
 		044A6A672BF63FCB00CDCB10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		044A6A6D2BF6C76300CDCB10 /* Translate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		044A6A702BF77E2100CDCB10 /* MessagingNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingNavigationView.swift; sourceTree = "<group>"; };
@@ -180,7 +184,6 @@
 				59C7D2AF2BAB1C5000AECA61 /* Managers */,
 				044F91C82BAB1584004758DA /* Views */,
 				040296962B9B3FD800CEC711 /* Assets.xcassets */,
-				59BBDF062BC8064500767958 /* Constants.swift */,
 				044A6A672BF63FCB00CDCB10 /* GoogleService-Info.plist */,
 				040296982B9B3FD800CEC711 /* Preview Content */,
 			);
@@ -204,6 +207,15 @@
 				040D00A22C0BFB1700540FE3 /* CompletedDailyGoalView.swift */,
 			);
 			path = "DailyGoal#Views";
+			sourceTree = "<group>";
+		};
+		040D00AB2C0DE7F300540FE3 /* FlashCardInfoViews */ = {
+			isa = PBXGroup;
+			children = (
+				04A1CEAF2BEAF76700178A13 /* FlashCardSetInfoView.swift */,
+				040D00A92C0DE7E100540FE3 /* CardInfoView.swift */,
+			);
+			path = FlashCardInfoViews;
 			sourceTree = "<group>";
 		};
 		044A6A692BF6C65900CDCB10 /* Conversation */ = {
@@ -245,10 +257,12 @@
 			children = (
 				040296942B9B3FD700CEC711 /* ContentView.swift */,
 				04647B1D2BE438FD00D31982 /* GradientBackground.swift */,
+				59BBDF062BC8064500767958 /* Constants.swift */,
 				044F91E02BAB1C36004758DA /* Start */,
 				044F91D42BAB1682004758DA /* Home */,
 				044F91D52BAB16A3004758DA /* Messaging */,
 				044F91DD2BAB1BFE004758DA /* Flashcards */,
+				040D00AC2C0E5A6100540FE3 /* UnderLineTextFieldView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -292,7 +306,7 @@
 				044F91DE2BAB1C0F004758DA /* FlashCardStudyView.swift */,
 				044F91F72BD45D33004758DA /* FlashCardSetsView.swift */,
 				04F902152C07528B003AF40E /* FlashCardSetViews */,
-				04A1CEAF2BEAF76700178A13 /* FlashCardSetInfoView.swift */,
+				040D00AB2C0DE7F300540FE3 /* FlashCardInfoViews */,
 			);
 			path = Flashcards;
 			sourceTree = "<group>";
@@ -550,6 +564,7 @@
 				04F902122C00199A003AF40E /* FlashCardSetView.swift in Sources */,
 				044A6A6A2BF6C6B200CDCB10 /* CreateChatView.swift in Sources */,
 				04F901FA2BFBBD68003AF40E /* ChartView.swift in Sources */,
+				040D00AD2C0E5A6100540FE3 /* UnderLineTextFieldView.swift in Sources */,
 				04B024A52BD72AA70014BA19 /* Language.swift in Sources */,
 				59F04D642BDA9CC800FA7094 /* JoinChatView.swift in Sources */,
 				04F902142C074A20003AF40E /* AddCardToSetView.swift in Sources */,
@@ -568,6 +583,7 @@
 				04B024A72BD731700014BA19 /* ProgressStepsView.swift in Sources */,
 				044F91D12BAB165F004758DA /* Demo?View.swift in Sources */,
 				044F91F22BD45752004758DA /* SettingsView.swift in Sources */,
+				040D00AA2C0DE7E100540FE3 /* CardInfoView.swift in Sources */,
 				040D00A82C0CF3A500540FE3 /* DailyGoal3View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,12 +16,6 @@ struct FlashCardSetsView: View {
     var body: some View {
             VStack {
                 HStack {
-//                    Image(uiImage: user.image)
-//                        .resizable()
-//                        .scaledToFit()
-//                        .frame(height: 40)
-//                        .cornerRadius(20)
-//                        .padding(.trailing)
                     
                     Text("Your Sets")
                         .font(textFont(name: "helvetica-bold", size: 30))
@@ -33,17 +27,18 @@ struct FlashCardSetsView: View {
                     Button {
                         flashCardScreen = .createFlashCardSetView
                     } label: {
-                        Image(systemName: "plus")
+                        Image(systemName: "plus.circle.fill")
                             .resizable()
+                            .frame(width: 40, height: 40)
                             .foregroundColor(Color.white)
-                            .scaledToFit()
-                            .frame(height: 30)
-                            .bold()
+                            .background(Color.orangeA)
+                            .cornerRadius(20)
+                            .shadow(radius: 2, y: 1)
                     }
                     
                 }
                 .padding(20)
-                .background(Color.blueA)
+                .background(Color.orangeA)
                 
                 ScrollView(showsIndicators: false) {
                     

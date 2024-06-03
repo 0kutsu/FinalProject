@@ -22,11 +22,8 @@ struct SignUpTextFieldsBoxView: View {
                             .foregroundColor(Color.orangeA)
                         Spacer()
                     }
-                    TextField("", text: $user.username)
-                        .textFieldStyle(.roundedBorder)
-                        .border(Color.orangeA)
-                        .autocapitalization(.none)
-                        .disableAutocorrection(true)
+                    UnderLineTextFieldView(text: $user.username, secureField: false, defaultLineColor: Color.platinumGrayA, activeLineColor: Color.orangeA, lineThickness: 2)
+                        .animation(.default)
                         .padding(.bottom, 20)
                     
                     
@@ -36,12 +33,10 @@ struct SignUpTextFieldsBoxView: View {
                             .foregroundColor(Color.orangeA)
                         Spacer()
                     }
-                    TextField("", text: $user.email)
-                        .border(Color.orangeA)
-                        .textFieldStyle(.roundedBorder)
-                        .autocapitalization(.none)
-                        .disableAutocorrection(true)
+                    UnderLineTextFieldView(text: $user.email, secureField: false, defaultLineColor: Color.platinumGrayA, activeLineColor: Color.orangeA, lineThickness: 2)
+                        .animation(.default)
                         .padding(.bottom, 20)
+
                     
                     
                     HStack {
@@ -50,18 +45,16 @@ struct SignUpTextFieldsBoxView: View {
                             .foregroundColor(Color.orangeA)
                         Spacer()
                     }
-                    
-                    SecureField("", text: $user.password)
-                        .textFieldStyle(.roundedBorder)
-                        .border(Color.orangeA)
+                    UnderLineTextFieldView(text: $user.password, secureField: true, defaultLineColor: Color.platinumGrayA, activeLineColor: Color.orangeA, lineThickness: 2)
+                        .animation(.default)
                         .padding(.bottom, 40)
-                    
+
+
                 }
                 .padding(.horizontal, 40)
                 
                 
                 Button {
-    //                signUp()
                     screen = .chooseLanguageView
                     
                 } label: {
@@ -87,7 +80,6 @@ struct SignUpTextFieldsBoxView: View {
                         .opacity(0.3)
                 }
                 .padding(20)
-                .padding(.bottom, 20)
                 
                 VStack {
                     Text("Already have an account?")
@@ -100,8 +92,14 @@ struct SignUpTextFieldsBoxView: View {
                     } label: {
                         Text("Log In")
                             .font(textFont(name: "helvetica", size: 20))
-                            .foregroundColor(.orangeA)
+                            .padding(.vertical, 10)
+                            .frame(width: 290)
+                            .foregroundColor(Color.orangeA)
+                            .background(Color.white)
+                            .cornerRadius(30)
                     }
+                    .shadow(radius: 2, y: 1)
+                    .padding(.top, 5)
                 }
             }
             .padding(.vertical, 40)
