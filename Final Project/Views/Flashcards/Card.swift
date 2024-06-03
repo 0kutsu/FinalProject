@@ -8,9 +8,10 @@
 import Foundation
 
 struct Card: Codable, Identifiable {
-    let prompt: String
-    let answer: String
-    var id = UUID()
+    let id = UUID()
+    var prompt: String
+    var answer: String
+ // Add this property
     
     static let example = Card(prompt: "Who is coolest character on the big bang theory?", answer: "Sheldon Cooper")
 }

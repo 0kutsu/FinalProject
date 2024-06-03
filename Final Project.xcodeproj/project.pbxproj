@@ -66,6 +66,7 @@
 		59C7D2B32BAB1C9200AECA61 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7D2B22BAB1C9200AECA61 /* AuthManager.swift */; };
 		59F04D602BDA9B7300FA7094 /* StartMessagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F04D5F2BDA9B7300FA7094 /* StartMessagingView.swift */; };
 		59F04D642BDA9CC800FA7094 /* JoinChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F04D632BDA9CC800FA7094 /* JoinChatView.swift */; };
+		83F7DE162C08BF2E00D60706 /* FlashCardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F7DE152C08BF2E00D60706 /* FlashCardImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		59F04D612BDA9C9C00FA7094 /* CreateChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatView.swift; sourceTree = "<group>"; };
 		59F04D632BDA9CC800FA7094 /* JoinChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinChatView.swift; sourceTree = "<group>"; };
 		60C4565472E78A6CB70FA01B /* Pods-Final Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final Project.debug.xcconfig"; path = "Target Support Files/Pods-Final Project/Pods-Final Project.debug.xcconfig"; sourceTree = "<group>"; };
+		83F7DE152C08BF2E00D60706 /* FlashCardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardImageView.swift; sourceTree = "<group>"; };
 		B4951F07E6E8BEBD3CE25A4E /* Pods_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E174BFF3270C987635601D /* Pods-Final Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final Project.release.xcconfig"; path = "Target Support Files/Pods-Final Project/Pods-Final Project.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -266,6 +268,7 @@
 				044F91F92BD46778004758DA /* FlashCardSet.swift */,
 				044F91F12BD45752004758DA /* EditCardsView.swift */,
 				04A1CEAA2BEA6CDA00178A13 /* CreateFlashCardSetView.swift */,
+				83F7DE152C08BF2E00D60706 /* FlashCardImageView.swift */,
 				044F91ED2BD45751004758DA /* SettingsView.swift */,
 				044F91DE2BAB1C0F004758DA /* FlashCardStudyView.swift */,
 				044F91F72BD45D33004758DA /* FlashCardSetsView.swift */,
@@ -511,6 +514,7 @@
 				04F902062BFD1A02003AF40E /* DailyGoalView.swift in Sources */,
 				59C7D2B12BAB1C7100AECA61 /* DatabaseManager.swift in Sources */,
 				04F9020C2BFF8B97003AF40E /* Search.swift in Sources */,
+				83F7DE162C08BF2E00D60706 /* FlashCardImageView.swift in Sources */,
 				044F91FC2BD7153D004758DA /* ChooseLanguageBoxView.swift in Sources */,
 				044F91DF2BAB1C0F004758DA /* FlashCardStudyView.swift in Sources */,
 				044F91D32BAB1674004758DA /* HomeView.swift in Sources */,
