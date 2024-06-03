@@ -89,11 +89,20 @@ struct FlashCardStudyView: View {
                 .allowsTightening(timeRemaining > 0)
                 
                 if currentFlashCardSet.cards.isEmpty {
-                    Button("Start Again", action: resetCards)
-                        .padding()
-                        .background(Color.white)
-                        .foregroundColor(.black)
-                        .cornerRadius(25)
+                    Spacer()
+                    Button {
+                        resetCards()
+                    } label: {
+                        Text("Start again")
+                            .bold()
+                            .font(textFont(name: "helvetica", size: 20))
+                            .padding(.vertical, 20)
+                            .padding(.horizontal, 40)
+                            .foregroundColor(Color.white)
+                            .background(Color.orangeA)
+                            .cornerRadius(30)
+                    }
+                    .shadow(radius: 2, y: 1)
                 }
                 Spacer()
             }

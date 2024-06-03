@@ -12,5 +12,5 @@ struct Card: Codable, Identifiable {
     let answer: String
     var id = UUID()
     
-    static let example = Card(prompt: "Who is coolest character on the big bang theory?", answer: "Sheldon Cooper")
+    static let example = Card(prompt: "Prompt", answer: "Answer")
 }

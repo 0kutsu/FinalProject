@@ -11,7 +11,7 @@ import SwiftUI
 class FlashCardSet: ObservableObject, Identifiable {
     var name: String
     var description: String
-    var image: Image = Image("")
+    var image: Image = Image("defaultImage")
     var cards: [Card]
     let id = UUID()
     init(name: String, description: String, image: Image, cards: [Card]) {

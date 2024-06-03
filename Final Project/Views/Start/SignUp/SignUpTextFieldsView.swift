@@ -32,7 +32,6 @@ struct SignUpTextFieldsView: View {
                    .ignoresSafeArea(.all)
             VStack {
                 Spacer()
-                    .frame(height: 50)
                 Text("Join Us")
                     .font(.system(size: 50))
                     .fontWeight(.black)

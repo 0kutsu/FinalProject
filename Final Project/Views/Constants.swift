@@ -29,9 +29,7 @@ extension Color {
     static let redA = Color("redA")
     static let grayA = Color("grayA")
     static let lightGrayA = Color("lightGrayA")
-    
-    static let greenAFaded25 = Color("greenAFaded25")
-    
+    static let platinumGrayA = Color("platinumGrayA")
     
     
 
