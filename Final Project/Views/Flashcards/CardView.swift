@@ -35,9 +35,9 @@ struct CardView: View {
                 .background(
                     differentiateWithoutColor ? nil :
                     RoundedRectangle(cornerRadius: 25.0, style: .continuous)
-                        .fill(offset.width > 0 ? Color.green : Color.red)
+                        .fill(offset.width > 0 ? Color.greenA : Color.redA)
                 )
-                .shadow(radius: 10)
+                .shadow(radius: 2, y: 1)
             
             VStack {
                 if accessibilityEnabled {

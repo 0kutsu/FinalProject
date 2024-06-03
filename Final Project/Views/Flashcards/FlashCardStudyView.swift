@@ -36,39 +36,37 @@ struct FlashCardStudyView: View {
     
     var body: some View {
         ZStack {
-            Rectangle()
-                .scaledToFill()
-                .foregroundColor(.blue)
-                .ignoresSafeArea(.all)
-//            LinearGradient(
-//                colors: [
-//                    .orange,
-//                    .blue],
-//                startPoint: startAnimation ? .topLeading : .bottomLeading,
-//                endPoint: startAnimation ? .bottomTrailing : .topTrailing
-//            ).onAppear {
-//                withAnimation(.linear(duration: 5.0).repeatForever()) {
-//                    startAnimation.toggle()
-//                }
-//            }.ignoresSafeArea(.all)
-            Image(decorative: "background")
-                .resizable()
-                .scaledToFill()
-                .edgesIgnoringSafeArea(.all)
-            
             VStack {
-                // timer code
-//                Text("Time: \(timeRemaining)")
-//                    .font(.largeTitle)
-//                    .foregroundColor(.white)
-//                    .padding(.horizontal, 20)
-//                    .padding(.vertical, 5)
-//                    .background(
-//                        Capsule()
-//                            .fill(Color.black)
-//                            .opacity(0.75)
-//                    )
-             
+                ZStack {
+                    Button {
+                        flashCardScreen = .flashCardSetInfoView
+                    } label: {
+                        FlashCardSetView(flashCardSet: currentFlashCardSet)
+                    }
+
+                    HStack {
+                        Spacer()
+                        
+                        Button(action: {
+                            self.showingSettingScreen = true
+                        }) {
+                            Image(systemName: "gear.circle.fill")
+                                .resizable()
+                                .foregroundColor(Color.white)
+                                .frame(width: 40, height: 40)
+                                
+                                .background(Color.orangeA)
+                                .cornerRadius(20)
+                                .shadow(radius: 2, y: 1)
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                }
+                .padding(.top, 20)
+                .padding(.horizontal, 20)
+                
+                
+                
                 ZStack {
                     ForEach(0 ..< currentFlashCardSet.cards.count, id: \.self) {index in
                         CardView(card: currentFlashCardSet.cards[index]) {
@@ -97,62 +95,7 @@ struct FlashCardStudyView: View {
                         .foregroundColor(.black)
                         .cornerRadius(25)
                 }
-            }
-                
-            VStack {
-                HStack {
-              
-
-                    Button(action: {
-                        self.showingEditScreen = true
-                    }) {
-                        Image(systemName: "plus.circle")
-                            .defaultButtonStyle()
-                    }
-               
-                    
-                    Button(action: {
-                        self.showingSettingScreen = true
-                    }) {
-                        Image(systemName: "gear")
-                            .defaultButtonStyle()
-                    }
-                }
-
                 Spacer()
-            }
-            .foregroundColor(.white)
-            .font(.largeTitle)
-            .padding()
-                
-            if differentiateWithoutColor || accessibilityEnabled {
-                VStack {
-                    Spacer()
-                    
-                    HStack {
-                        AccessibilityButton(imageName: "xmark.circle",
-                                            accessibilityLabel: "Wrong",
-                                            accessibilityHint: "Mark your answer as being incorrect") {
-                            if reuseCards {
-                                self.pushCardToBack(at: self.currentFlashCardSet.cards.count - 1)
-                            } else {
-                                self.removeCard(at: self.currentFlashCardSet.cards.count - 1)
-                            }
-                            self.errorHaptic()
-                        }
-                        
-                        Spacer()
-                        
-                        AccessibilityButton(imageName: "checkmark.circle",
-                                            accessibilityLabel: "Correct",
-                                            accessibilityHint: "Mark your answer as being correct") {
-                            self.removeCard(at: self.currentFlashCardSet.cards.count - 1)
-                        }
-                    }
-                    .foregroundColor(.white)
-                    .font(.largeTitle)
-                    .padding()
-                }
             }
         }
         .onReceive(timer) {time in

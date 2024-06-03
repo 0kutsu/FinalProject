@@ -86,23 +86,23 @@ struct HomeScrollView: View {
                     }
                     
                     //stats
-                        Text("Your Stats")
-                            .foregroundColor(Color.greyText)
-                            .font(textFont(name: "Helvetica-Bold", size: 25))
-                            .offset(x: -90)
+//                        Text("Your Stats")
+//                            .foregroundColor(Color.greyText)
+//                            .font(textFont(name: "Helvetica-Bold", size: 25))
+//                            .offset(x: -90)
                         
-                    ZStack {
-                        Rectangle()
-                            .frame(height: 200)
-                            .foregroundColor(.offWhiteA)
-                            .cornerRadius(20)
-                            .padding(.horizontal, 20)
-                        //
-                        ChartView()
-                            .frame(height: 200)
-                            .cornerRadius(20)
-                            .padding(.horizontal, 20)
-                    }
+//                    ZStack {
+//                        Rectangle()
+//                            .frame(height: 200)
+//                            .foregroundColor(.offWhiteA)
+//                            .cornerRadius(20)
+//                            .padding(.horizontal, 20)
+//                        //
+//                        ChartView()
+//                            .frame(height: 200)
+//                            .cornerRadius(20)
+//                            .padding(.horizontal, 20)
+//                    }
                     
                 }
             }
