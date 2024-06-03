@@ -35,6 +35,7 @@ struct StartMessagingView: View {
     @State var selectedTab = 0
     @State var confirmed = false
     @Binding var messagingScreen: MessagingScreen
+    @EnvironmentObject var user: User
     
     var body: some View {
         VStack {
@@ -76,6 +77,7 @@ struct StartMessagingView: View {
                 Spacer()
                 
                 Button {
+                    user.totalChats+=1
                     messagingScreen = .chatView
                 } label: {
                     HStack {
@@ -128,5 +130,6 @@ extension StartMessagingView{
 struct StartMessagingView_Previews: PreviewProvider {
     static var previews: some View {
         StartMessagingView(messagingScreen: Binding.constant(.startMessagingOptionsView))
+            .environmentObject(User())
     }
 }

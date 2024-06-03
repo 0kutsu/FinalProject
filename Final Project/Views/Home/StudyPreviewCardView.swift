@@ -41,6 +41,7 @@ struct StudyPreviewCardView: View {
                         .frame(width: 200, height: 120)
                         .foregroundColor(Color.white)
                         .clipShape(BottomRoundedRectangle(cornerRadius: 20))
+                        .shadow(radius: 2, y: 1)
                     
                     HStack {
                         Text("Queso")
@@ -53,7 +54,7 @@ struct StudyPreviewCardView: View {
                     .offset(x: 30)
                 }
             }
-            .shadow(radius: 2, y: 1)
+            
             
 
            
@@ -74,6 +75,7 @@ struct StudyPreviewCardView: View {
                     .padding(3)
                     .background(Color.orangeA)
                     .cornerRadius(30)
+                    .shadow(radius: 2, y: 1)
                 }
                 Spacer()
             }

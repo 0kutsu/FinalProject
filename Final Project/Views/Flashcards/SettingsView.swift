@@ -11,20 +11,19 @@ struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @Binding var reuseCards: Bool
-  
-    
     
     var body: some View {
    
         NavigationView {
             Form {
-                Toggle("Card should be re-used when answered incorrectly", isOn: $reuseCards)
-                Toggle("Count number of correct and incorrect cards", isOn: $reuseCards)
-                Toggle("Mati is like the coolest leader of all time", isOn: $reuseCards)
-                Toggle("Flash cards are SOOOOOOO COOL", isOn: $reuseCards)
+                Toggle("Show timer", isOn: $reuseCards)
+                Toggle("Count incorrect cards", isOn: $reuseCards)
+                Toggle("Show english definition", isOn: $reuseCards)
+                Toggle("Piture to word", isOn: $reuseCards)
                 
               
                 .navigationBarTitle("Settings")
+                
                 .navigationBarItems(trailing: Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
                 }, label: {

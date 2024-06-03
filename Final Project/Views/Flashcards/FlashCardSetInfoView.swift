@@ -16,18 +16,35 @@ struct FlashCardSetInfoView: View {
                 Button {
                     flashCardScreen = .flashCardSetsView
                 } label: {
-                    Text("Back")
-                }
-                
-                .padding()
-                Button {
-                    flashCardScreen = .flashCardStudyView
-                } label: {
-                    Text("Study")
+                    Image(systemName: "chevron.left")
+                        .resizable()
+                        .frame(width: 20, height: 30)
+                        .foregroundColor(Color.orangeA)
                 }
                 
                 .padding()
                 Spacer()
+                
+                Button {
+                    flashCardScreen = .flashCardStudyView
+                } label: {
+                    HStack {
+                        ZStack {
+                            Text("Study")
+                                .bold()
+                                .font(textFont(name: "helvetica", size: 20))
+                                .padding(.vertical, 10)
+                                .padding(.horizontal, 15)
+                                .foregroundColor(Color.orangeA)
+                                .background(Color.white)
+                                .cornerRadius(30)
+                        }
+                        .shadow(radius: 2, y: 1)
+                    }
+                }
+                
+                .padding()
+               
             }
             ScrollView(showsIndicators: false) {
                 Text("\(currentFlashCardSet.name)")
