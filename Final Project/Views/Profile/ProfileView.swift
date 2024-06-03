@@ -42,10 +42,12 @@ struct ProfileView: View {
                         Image(systemName: "pencil")
                             .foregroundColor(.black)
                             .padding(.all, 4)
-                            .background(Color.orangeMain)
+                            .background(.white)
                             .clipShape(Circle())
-                            .padding(.top, 185)
+                            .padding(.top, 195)
                             .padding(.leading, 95)
+                            .shadow(radius: 2, y: 1)
+                            .font(.title3)
                     }
                     
                 }
