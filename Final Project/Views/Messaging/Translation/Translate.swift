@@ -16,15 +16,17 @@ let spanishToEnglish: [String: String] = [
     "gracias": "thank you",
     "de nada": "you're welcome",
     "me": "I",
+    "tu": "you",
     "si": "yes",
     "no": "no",
     "mi": "my",
     "la": "the",
     "los": "the",
     "el": "the/he",
-    "un poco": "a little",
     "un":"a",
+    "poco":"little",
     "de": "of",
+    "y": "and",
     "espanol": "spanish",
     "bano": "bathroom",
     "donde" : "where",
@@ -183,14 +185,29 @@ let spanishToEnglish: [String: String] = [
     "caliente": "hot",
     "frío": "cold",
     "bonito": "pretty",
-    "feo": "ugly"
+    "feo": "ugly",
+    "ensalada": "salad",
+    "quiero": "I want",
+    "quieres": "You want",
+    "voy a": "I'll",
+    "hacer": "to make, do",
+    "con": "with",
+    "algo": "something"
 ]
 
 func translateSpanishToEnglish(_ spanishText: String) -> String {
-    // Attempt to translate individual words
-    let translatedWords = spanishText
+    // Define a set of characters to ignore (punctuation)
+    let charactersToRemove = CharacterSet.punctuationCharacters.union(.whitespacesAndNewlines)
+    
+    // Clean the input text by removing diacritics, converting to lowercase, and removing punctuation
+    let cleanedText = spanishText
         .folding(options: .diacriticInsensitive, locale: .current)
         .lowercased()
+        .components(separatedBy: charactersToRemove)
+        .joined(separator: " ")
+    
+    // Attempt to translate individual words
+    let translatedWords = cleanedText
         .split(separator: " ")
         .compactMap { spanishWord in
             spanishToEnglish[String(spanishWord)]
@@ -202,9 +219,7 @@ func translateSpanishToEnglish(_ spanishText: String) -> String {
     }
 
     // Attempt to translate the entire input text as a phrase
-    if let translatedPhrase = spanishToEnglish[spanishText
-        .folding(options: .diacriticInsensitive, locale: .current)
-        .lowercased()] {
+    if let translatedPhrase = spanishToEnglish[cleanedText] {
         return translatedPhrase
     }
 
