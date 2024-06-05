@@ -24,6 +24,7 @@ struct SelectLevelView: View {
                 .ignoresSafeArea(.all)
             
             VStack {
+                Spacer()
                 HStack {
                     Image(systemName: "arrow.right.square.fill")
                         .resizable()
@@ -38,28 +39,20 @@ struct SelectLevelView: View {
                 
                 VStack {
                     VStack {
-                        VStack {
-
-                            SelectLevelButtonView(selectedLevel: $selectedLevel, level: "New", image: Image(systemName: "arrow.right.square.fill"))
+                        VStack(spacing: 30) {
+                            SelectLevelButtonView(selectedLevel: $selectedLevel, level: "New", image: Image(systemName: "1.square.fill"))
                             // shadow is done in the button level
                             
-                            Spacer()
                             
-                            SelectLevelButtonView(selectedLevel: $selectedLevel, level: "Familiar", image: Image(systemName: "arrow.right.square.fill"))
+                            SelectLevelButtonView(selectedLevel: $selectedLevel, level: "Familiar", image: Image(systemName: "2.square.fill"))
                             
+                                    
+                            SelectLevelButtonView(selectedLevel: $selectedLevel, level: "Experienced", image: Image(systemName: "3.square.fill"))
+                                                        
                             
-                            Spacer()
+                            SelectLevelButtonView(selectedLevel: $selectedLevel, level: "Advanced", image: Image(systemName: "4.square.fill"))
                             
-                            SelectLevelButtonView(selectedLevel: $selectedLevel, level: "Experienced", image: Image(systemName: "arrow.right.square.fill"))
-                            
-                            Spacer()
-                            
-                            
-                            SelectLevelButtonView(selectedLevel: $selectedLevel, level: "Advanced", image: Image(systemName: "arrow.right.square.fill"))
-                            
-                            
-                            Spacer()
-                            
+                                                        
                             Button {
                                 user.signUp()
                                 screen = .homeView
@@ -74,8 +67,6 @@ struct SelectLevelView: View {
                                     .shadow(radius: 2, y: 1)
                             }
                             .disabled(selectedLevel == "none")
-                            
-          
                         }
                         .padding(20)
                         .padding(.vertical, 20)

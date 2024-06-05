@@ -36,14 +36,17 @@ struct MessageView: View {
     @State private var isPopupVisible = false
     private let pages: [showView] = [.image, .text]
     
+    @Binding var prompt: String
+    @Binding var imageAnswer: Image
     @Binding var showingAddCardToSetView: Bool
     
-    
-    init(message: Message, showingAddCardToSetView: Binding<Bool>) {
+    init(message: Message, prompt: Binding<String>, imageAnswer: Binding<Image>, showingAddCardToSetView: Binding<Bool>) {
         self.message = message
         let words = splitStringByDictionaryKeys(message.text, dictionary: spanishToEnglish)
         self._buttonStates = State(initialValue: words.map { Array(repeating: -1, count: $0.count) })
         self._showingAddCardToSetView = showingAddCardToSetView
+        self._prompt = prompt
+        self._imageAnswer = imageAnswer
     }
     
     var body: some View {
@@ -93,6 +96,7 @@ struct MessageView: View {
                                         var searchQuery = "\(translatedWord)"
                                         
                                         Button(action: {
+                                            prompt = clickedWord
                                             buttonStates[lineIndex][wordIndex] *= -1
                                             serpApiService.fetchImages(query: searchQuery)
                                         }) {
@@ -107,7 +111,7 @@ struct MessageView: View {
                                             TabView {
                                                 ForEach(pages, id: \.self) { page in
                                                     if page == .image {
-                                                        PopupCardView(images: $serpApiService.images, isPresented: $isPopupVisible)
+                                                        PopupCardView(images: $serpApiService.images, isPresented: $isPopupVisible, imageAnswer: $imageAnswer)
                                                     }
                                                     else {
                                                         ZStack{
@@ -207,7 +211,10 @@ struct MessageView: View {
                                     let translatedWord = translateSpanishToEnglish(clickedWord)
                                     let searchQuery = "\(translatedWord)"
                                     
+                                    
                                     Button(action: {
+                                        prompt = clickedWord
+                                        print("prompt = clicked word")
                                         buttonStates[lineIndex][wordIndex] *= -1
                                         serpApiService.fetchImages(query: searchQuery)
                                     }) {
@@ -226,7 +233,7 @@ struct MessageView: View {
                                             ForEach(pages, id: \.self) { page in
                                                 // if it is the image page
                                                 if page == .image {
-                                                    PopupCardView(images: $serpApiService.images, isPresented: $isPopupVisible)
+                                                    PopupCardView(images: $serpApiService.images, isPresented: $isPopupVisible, imageAnswer: $imageAnswer)
                                                         .frame(height: 200)
                                                 }
                                                 // if it is the definition page
@@ -244,8 +251,7 @@ struct MessageView: View {
                                                         
                                                         // favorite button in definition page
                                                         FavoriteButton(showingAddCardToSetView: $showingAddCardToSetView)
-                                                            .offset(x: 109)
-                                                            .padding(.top, -85)
+                                                            .offset(x: 120, y: -60)
                                                     }
                                                 }
                                             }
@@ -275,7 +281,7 @@ struct MessageView: View {
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView(message: Message(userUid: "123", text: "hewo como estas asdf asdf uwu hola hola hola hola", createdAt: Date()), showingAddCardToSetView: Binding.constant(false))
+        MessageView(message: Message(userUid: "123", text: "hewo como estas asdf asdf uwu hola hola hola hola", createdAt: Date()), prompt: Binding.constant(""), imageAnswer: Binding.constant(Image("")), showingAddCardToSetView: Binding.constant(false))
     }
 }
 

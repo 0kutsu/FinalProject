@@ -22,9 +22,6 @@ func isIncluded(flashCardSet: FlashCardSet, selectedFlashCardSets: [FlashCardSet
 
 // adds the flashcardset if it is not selected, unselects it if it is
 func addOrRemoveSet(flashCardSet: FlashCardSet, selectedFlashCardSets: inout [FlashCardSet]) {
-    
-    print(isIncluded(flashCardSet: flashCardSet, selectedFlashCardSets: selectedFlashCardSets))
-    
     if isIncluded(flashCardSet: flashCardSet, selectedFlashCardSets: selectedFlashCardSets) {
         selectedFlashCardSets.removeAll {
             $0.name == flashCardSet.name
@@ -41,6 +38,8 @@ struct AddCardToSetView: View {
     @EnvironmentObject var user: User
     @State var selectedFlashCardSets: [FlashCardSet] = []
     
+    @State var prompt: String
+    @State var imageAnswer: Image
     @Binding var showingAddCardToSetView: Bool
     
     var body: some View {
@@ -94,9 +93,12 @@ struct AddCardToSetView: View {
             }
             
             
-            Button {
-                
-            } label: {
+                Button {
+                    for i in 0..<selectedFlashCardSets.count {
+                        selectedFlashCardSets[i].cards.append(Card(prompt: prompt, imageAnswer: imageAnswer))
+                    }
+                    dismiss()
+                } label: {
                 Text("Add")
                     .font(textFont(name: "helvetica-bold", size: 20))
                     .foregroundColor(Color.white)
@@ -111,7 +113,7 @@ struct AddCardToSetView: View {
 
 struct AddCardToSetView_Previews: PreviewProvider {
     static var previews: some View {
-        AddCardToSetView(showingAddCardToSetView: Binding.constant(true))
+        AddCardToSetView(prompt: "", imageAnswer: Image(""), showingAddCardToSetView: Binding.constant(true))
             .environmentObject(User())
     }
 }

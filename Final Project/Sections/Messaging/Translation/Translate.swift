@@ -8,7 +8,6 @@ import Foundation
 // Define a dictionary mapping Spanish words to English translations: add more/delete some for demo as needed
 let spanishToEnglish: [String: String] = [
         "adios": "goodbye",
-        "agua": "water",
         "aire": "air",
         "algo": "something",
         "amar": "to love",
@@ -77,6 +76,7 @@ let spanishToEnglish: [String: String] = [
         "historia": "history",
         "hijo": "son",
         "hombre": "man",
+        "hola": "waving",
         "hora": "hour",
         "iglesia": "church",
         "idea": "idea",
@@ -164,7 +164,9 @@ let spanishToEnglish: [String: String] = [
         "vino": "wine",
         "vivir": "to live",
         "voz": "voice",
-        "yo": "I"
+        "yo": "I",
+        "queso": "cheese",
+        "agua": "water"
 ]
 
 func translateSpanishToEnglish(_ spanishText: String) -> String {

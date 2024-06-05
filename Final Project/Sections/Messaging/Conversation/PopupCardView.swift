@@ -10,16 +10,29 @@ import SwiftUI
 struct PopupCardView: View {
     @Binding var images: [SerpApiImage]
     @Binding var isPresented: Bool
+    @Binding var imageAnswer: Image
 
     
     var body: some View {
         VStack {
             if let randomImage = images.randomElement(), let url = URL(string: randomImage.original) {
-                AsyncImageView(url: url)
-                    .scaledToFill() // Ensure the image scales to fill the frame
-                    .frame(maxWidth: .infinity, maxHeight: .infinity) // Fill the entire frame
-                    .clipped() // Clip the image to the frame bounds
-                    .edgesIgnoringSafeArea(.all) // Ignore safe area to fill the entire screen
+                AsyncImage(url: url) { phase in
+                    if let phaseImage = phase.image {
+                        phaseImage
+                            .scaledToFill() // Ensure the image scales to fill the frame
+                            .frame(maxWidth: .infinity, maxHeight: .infinity) // Fill the entire frame
+                            .clipped() // Clip the image to the frame bounds
+                            .edgesIgnoringSafeArea(.all) // Ignore safe area to fill the entire screen
+                            .onAppear {
+                                imageAnswer = phaseImage
+                                print("assigned image")
+                            }
+                    }  else {
+                        ProgressView()
+                            .frame(width: 200, height: 200)
+                            .clipShape(TopRoundedRectangle(cornerRadius: 20))
+                    }
+                }
             }
         }
         .background(Color.white.opacity(isPresented ? 0.8 : 0)) // Fade-in background
@@ -28,20 +41,20 @@ struct PopupCardView: View {
 }
 
 struct FavoriteButton: View {
-    @State private var isFavorited: Bool = false
     @Binding var showingAddCardToSetView: Bool
     
     var body: some View {
         Button(action: {
-            isFavorited.toggle()
             showingAddCardToSetView = true
         }) {
-            Image(systemName: isFavorited ? "star.fill" : "star")
+            Image(systemName: "folder.circle.fill")
                 .resizable()
-                .frame(width: 30, height: 30)
-                .foregroundColor(isFavorited ? .yellow : .gray)
+                .frame(width: 40, height: 40)
+                .foregroundColor(Color.white)
+                .background(Color.orangeA)
+                .cornerRadius(20)
+                .shadow(radius: 2, y: 1)
         }
-        .buttonStyle(PlainButtonStyle())
     }
 }
 

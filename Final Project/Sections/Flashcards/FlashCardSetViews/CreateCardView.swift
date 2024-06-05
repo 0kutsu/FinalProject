@@ -49,11 +49,13 @@ struct CreateCardView: View {
             }
                 
             ZStack {
+                
                 Rectangle()
                     .frame(width: 200, height: 80)
                     .foregroundColor(Color.white)
                     .clipShape(BottomRoundedRectangle(cornerRadius: 20))
                     .shadow(radius: 2, y: 1)
+                
                 
                 HStack {
                     UnderLineTextFieldView(text: $prompt, textDescription: "Card prompt", secureField: false, size: 20, defaultLineColor: Color.lightGrayA, activeLineColor: Color.orangeA, lineThickness: 2)
@@ -63,6 +65,7 @@ struct CreateCardView: View {
                             serpApiService.fetchImages(query: query)
                             print("searched")
                         }
+                    
                         
                 }
                 

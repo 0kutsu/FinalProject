@@ -24,6 +24,9 @@ struct ChatView: View {
     @EnvironmentObject var user: User
     @State var showingAddCardToSetView: Bool = false
     
+    @State var prompt: String = ""
+    @State var imageAnswer: Image = Image("")
+    
     var body: some View {
         
         VStack {
@@ -40,7 +43,7 @@ struct ChatView: View {
                         ForEach(chatViewModel.messages) { message in
                         // testing
 //                        ForEach(chatViewModel.mockData) { message in
-                            MessageView(message: message, showingAddCardToSetView: $showingAddCardToSetView)
+                            MessageView(message: message, prompt: $prompt, imageAnswer: $imageAnswer, showingAddCardToSetView: $showingAddCardToSetView)
                         }
                                 
                     }
@@ -74,7 +77,7 @@ struct ChatView: View {
             }
             .background(.white)
             .sheet(isPresented: $showingAddCardToSetView) {
-                AddCardToSetView(showingAddCardToSetView: $showingAddCardToSetView)
+                AddCardToSetView(prompt: prompt, imageAnswer: imageAnswer, showingAddCardToSetView: $showingAddCardToSetView)
             }
         }
     }
