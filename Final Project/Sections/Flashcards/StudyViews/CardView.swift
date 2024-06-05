@@ -40,21 +40,18 @@ struct CardView: View {
                 .shadow(radius: 2, y: 1)
             
             VStack {
-                if accessibilityEnabled {
-                    Text(isShowingAnswer ? card.answer : card.prompt)
-                        .font(.largeTitle)
-                        .foregroundColor(.black)
-                } else {
+                if !isShowingAnswer {
                     Text(card.prompt)
                         .font(.largeTitle)
-                        .foregroundColor(.black)
-                    
-                    if isShowingAnswer {
-                        Text(card.answer)
-                            .font(.title)
-                            .foregroundColor(.gray)
-                    }
+                        .foregroundColor(Color.blackA)
                 }
+                    else {
+                        card.imageAnswer
+                            .resizable()
+                            .scaledToFit()
+                            .cornerRadius(20)
+                            .padding(20)
+                    }
             }
             .padding(20)
             .multilineTextAlignment(.center)

@@ -22,6 +22,8 @@ struct FlashCardStudyView: View {
     @Binding var currentFlashCardSet: FlashCardSet
     @Binding var flashCardScreen: FlashCardScreen
     
+    @State var cardList: [Card]
+    
     @State private var startAnimation: Bool = false
     @State private var isActive = true
     @State private var timeRemaining = 100
@@ -33,6 +35,13 @@ struct FlashCardStudyView: View {
     @State private var reuseCards = false
     
     @State private var engine: CHHapticEngine?
+    
+    init(currentFlashCardSet: Binding<FlashCardSet>, flashCardScreen: Binding<FlashCardScreen>) {
+        self._currentFlashCardSet = currentFlashCardSet
+        self._flashCardScreen = flashCardScreen
+        
+        cardList = currentFlashCardSet.cards.wrappedValue
+        }
     
     var body: some View {
         ZStack {
@@ -68,11 +77,10 @@ struct FlashCardStudyView: View {
                 
                 
                 ZStack {
-                    ForEach(0 ..< currentFlashCardSet.cards.count, id: \.self) {index in
-                        CardView(card: currentFlashCardSet.cards[index]) {
+                    ForEach(0 ..< cardList.count, id: \.self) {index in
+                        CardView(card: cardList[index]) {
                             withAnimation {
                                 if reuseCards {
-                                    
                                     self.pushCardToBack(at: index)
                                     
                                 } else {
@@ -81,14 +89,14 @@ struct FlashCardStudyView: View {
                                 self.errorHaptic()
                             }
                         }
-                        .stacked(at: index, in: self.currentFlashCardSet.cards.count)
-                        .allowsHitTesting(index == self.currentFlashCardSet.cards.count - 1)
-                        .accessibilityHidden(index < self.currentFlashCardSet.cards.count - 1)
+                        .stacked(at: index, in: self.cardList.count)
+                        .allowsHitTesting(index == self.cardList.count - 1)
+                        .accessibilityHidden(index < self.cardList.count - 1)
                     }
                 }
                 .allowsTightening(timeRemaining > 0)
                 
-                if currentFlashCardSet.cards.isEmpty {
+                if cardList.isEmpty {
                     Spacer()
                     Button {
                         resetCards()
@@ -118,7 +126,7 @@ struct FlashCardStudyView: View {
             self.isActive = false
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-            if currentFlashCardSet.cards.isEmpty == false {
+            if cardList.isEmpty == false {
                 self.isActive = true
             }
         }
@@ -173,24 +181,25 @@ struct FlashCardStudyView: View {
     func removeCard(at index: Int) {
         guard index >= 0 else { return }
         
-        currentFlashCardSet.cards.remove(at: index)
+        cardList.remove(at: index)
         
-        if currentFlashCardSet.cards.isEmpty {
+        if cardList.isEmpty {
             isActive = false
         }
     }
     
     func pushCardToBack(at index: Int) {
-        let reuseCard = currentFlashCardSet.cards.remove(at: index)
-        currentFlashCardSet.cards.insert(reuseCard, at: 0)
+        let reuseCard = cardList.remove(at: index)
+        cardList.insert(reuseCard, at: 0)
         
-        if currentFlashCardSet.cards.isEmpty {
+        if cardList.isEmpty {
             isActive = false
         }
     }
     
     func resetCards() {
 //        loadData()
+        cardList = currentFlashCardSet.cards
         timeRemaining = 100
         isActive = true
     }
