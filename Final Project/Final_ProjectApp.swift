@@ -25,10 +25,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct Final_ProjectApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var user: User = User()
+    @StateObject var serpApiService: SerpApiService = SerpApiService()
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(user)
+                .environmentObject(serpApiService)
         }
     }
 }

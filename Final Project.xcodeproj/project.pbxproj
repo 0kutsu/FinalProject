@@ -18,6 +18,9 @@
 		040D00A82C0CF3A500540FE3 /* DailyGoal3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D00A72C0CF3A500540FE3 /* DailyGoal3View.swift */; };
 		040D00AA2C0DE7E100540FE3 /* CardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D00A92C0DE7E100540FE3 /* CardInfoView.swift */; };
 		040D00AD2C0E5A6100540FE3 /* UnderLineTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D00AC2C0E5A6100540FE3 /* UnderLineTextFieldView.swift */; };
+		040D00B42C0E737C00540FE3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D00B32C0E737C00540FE3 /* ImagePicker.swift */; };
+		040D00B62C0E73E900540FE3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D00B52C0E73E900540FE3 /* ProfileView.swift */; };
+		040D00B82C0FC3B200540FE3 /* CreateCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D00B72C0FC3B200540FE3 /* CreateCardView.swift */; };
 		044A6A682BF63FCB00CDCB10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044A6A672BF63FCB00CDCB10 /* GoogleService-Info.plist */; };
 		044A6A6A2BF6C6B200CDCB10 /* CreateChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F04D612BDA9C9C00FA7094 /* CreateChatView.swift */; };
 		044A6A6E2BF6C76300CDCB10 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A6A6D2BF6C76300CDCB10 /* Translate.swift */; };
@@ -88,6 +91,9 @@
 		040D00A72C0CF3A500540FE3 /* DailyGoal3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoal3View.swift; sourceTree = "<group>"; };
 		040D00A92C0DE7E100540FE3 /* CardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoView.swift; sourceTree = "<group>"; };
 		040D00AC2C0E5A6100540FE3 /* UnderLineTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextFieldView.swift; sourceTree = "<group>"; };
+		040D00B32C0E737C00540FE3 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		040D00B52C0E73E900540FE3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		040D00B72C0FC3B200540FE3 /* CreateCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardView.swift; sourceTree = "<group>"; };
 		044A6A672BF63FCB00CDCB10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		044A6A6D2BF6C76300CDCB10 /* Translate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		044A6A702BF77E2100CDCB10 /* MessagingNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingNavigationView.swift; sourceTree = "<group>"; };
@@ -182,9 +188,10 @@
 				040296922B9B3FD700CEC711 /* Final_ProjectApp.swift */,
 				044F91E32BAF9EC0004758DA /* User.swift */,
 				59C7D2AF2BAB1C5000AECA61 /* Managers */,
-				044F91C82BAB1584004758DA /* Views */,
-				040296962B9B3FD800CEC711 /* Assets.xcassets */,
+				044F91C82BAB1584004758DA /* Sections */,
 				044A6A672BF63FCB00CDCB10 /* GoogleService-Info.plist */,
+				040296962B9B3FD800CEC711 /* Assets.xcassets */,
+				59BBDF062BC8064500767958 /* Constants.swift */,
 				040296982B9B3FD800CEC711 /* Preview Content */,
 			);
 			path = "Final Project";
@@ -216,6 +223,54 @@
 				040D00A92C0DE7E100540FE3 /* CardInfoView.swift */,
 			);
 			path = FlashCardInfoViews;
+			sourceTree = "<group>";
+		};
+		040D00AE2C0E6FDD00540FE3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				044F91F02BD45752004758DA /* Card.swift */,
+				044F91F92BD46778004758DA /* FlashCardSet.swift */,
+				044F91EF2BD45751004758DA /* Counting.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		040D00AF2C0E701700540FE3 /* StudyViews */ = {
+			isa = PBXGroup;
+			children = (
+				044F91DE2BAB1C0F004758DA /* FlashCardStudyView.swift */,
+				044F91ED2BD45751004758DA /* SettingsView.swift */,
+				044F91EE2BD45751004758DA /* CardView.swift */,
+			);
+			path = StudyViews;
+			sourceTree = "<group>";
+		};
+		040D00B02C0E70B400540FE3 /* HomeScrollViews */ = {
+			isa = PBXGroup;
+			children = (
+				59BBDF082BC968DC00767958 /* HomeScrollView.swift */,
+				04F136532BF5808B00F9655B /* StudyPreviewCardView.swift */,
+				044F91D02BAB165F004758DA /* Demo?View.swift */,
+			);
+			path = HomeScrollViews;
+			sourceTree = "<group>";
+		};
+		040D00B12C0E711400540FE3 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				04647B1D2BE438FD00D31982 /* GradientBackground.swift */,
+				040D00AC2C0E5A6100540FE3 /* UnderLineTextFieldView.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		040D00B22C0E72E500540FE3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				040D00B32C0E737C00540FE3 /* ImagePicker.swift */,
+				040D00B52C0E73E900540FE3 /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		044A6A692BF6C65900CDCB10 /* Conversation */ = {
@@ -252,31 +307,28 @@
 			path = "Messaging Home";
 			sourceTree = "<group>";
 		};
-		044F91C82BAB1584004758DA /* Views */ = {
+		044F91C82BAB1584004758DA /* Sections */ = {
 			isa = PBXGroup;
 			children = (
 				040296942B9B3FD700CEC711 /* ContentView.swift */,
-				04647B1D2BE438FD00D31982 /* GradientBackground.swift */,
-				59BBDF062BC8064500767958 /* Constants.swift */,
 				044F91E02BAB1C36004758DA /* Start */,
+				040D00B12C0E711400540FE3 /* Tools */,
 				044F91D42BAB1682004758DA /* Home */,
 				044F91D52BAB16A3004758DA /* Messaging */,
 				044F91DD2BAB1BFE004758DA /* Flashcards */,
-				040D00AC2C0E5A6100540FE3 /* UnderLineTextFieldView.swift */,
+				040D00B22C0E72E500540FE3 /* Profile */,
 			);
-			path = Views;
+			path = Sections;
 			sourceTree = "<group>";
 		};
 		044F91D42BAB1682004758DA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				04F901F62BFBBCDF003AF40E /* Statistics */,
-				04F901F32BFBB975003AF40E /* Daily Goals */,
-				044F91D02BAB165F004758DA /* Demo?View.swift */,
 				044F91D22BAB1674004758DA /* HomeView.swift */,
-				59BBDF082BC968DC00767958 /* HomeScrollView.swift */,
-				04F136532BF5808B00F9655B /* StudyPreviewCardView.swift */,
 				04F901F12BF7917A003AF40E /* HomeNavigationBarView.swift */,
+				040D00B02C0E70B400540FE3 /* HomeScrollViews */,
+				04F901F32BFBB975003AF40E /* Daily Goals */,
+				04F901F62BFBBCDF003AF40E /* Statistics */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -296,15 +348,8 @@
 			isa = PBXGroup;
 			children = (
 				04F136512BF5027800F9655B /* FlashCardNavigatorView.swift */,
-				044F91F02BD45752004758DA /* Card.swift */,
-				044F91EF2BD45751004758DA /* Counting.swift */,
-				044F91EE2BD45751004758DA /* CardView.swift */,
-				044F91F92BD46778004758DA /* FlashCardSet.swift */,
-				044F91F12BD45752004758DA /* EditCardsView.swift */,
-				04A1CEAA2BEA6CDA00178A13 /* CreateFlashCardSetView.swift */,
-				044F91ED2BD45751004758DA /* SettingsView.swift */,
-				044F91DE2BAB1C0F004758DA /* FlashCardStudyView.swift */,
-				044F91F72BD45D33004758DA /* FlashCardSetsView.swift */,
+				040D00AE2C0E6FDD00540FE3 /* Models */,
+				040D00AF2C0E701700540FE3 /* StudyViews */,
 				04F902152C07528B003AF40E /* FlashCardSetViews */,
 				040D00AB2C0DE7F300540FE3 /* FlashCardInfoViews */,
 			);
@@ -375,9 +420,13 @@
 		04F902152C07528B003AF40E /* FlashCardSetViews */ = {
 			isa = PBXGroup;
 			children = (
+				044F91F12BD45752004758DA /* EditCardsView.swift */,
+				04A1CEAA2BEA6CDA00178A13 /* CreateFlashCardSetView.swift */,
+				040D00B72C0FC3B200540FE3 /* CreateCardView.swift */,
 				04F902112C00199A003AF40E /* FlashCardSetView.swift */,
 				04F902162C0752BD003AF40E /* UnselectedFlashCardSetView.swift */,
 				04F902182C0752D0003AF40E /* SelectedFlashCardSetView.swift */,
+				044F91F72BD45D33004758DA /* FlashCardSetsView.swift */,
 			);
 			path = FlashCardSetViews;
 			sourceTree = "<group>";
@@ -526,6 +575,7 @@
 				044F91F42BD45752004758DA /* Counting.swift in Sources */,
 				04F136522BF5027800F9655B /* FlashCardNavigatorView.swift in Sources */,
 				59C7D2A82BAB163500AECA61 /* Message.swift in Sources */,
+				040D00B42C0E737C00540FE3 /* ImagePicker.swift in Sources */,
 				044F91F52BD45752004758DA /* Card.swift in Sources */,
 				04F901F22BF7917A003AF40E /* HomeNavigationBarView.swift in Sources */,
 				04647B1C2BE129F400D31982 /* SelectLevelView.swift in Sources */,
@@ -538,6 +588,7 @@
 				040D00A12C0BD83100540FE3 /* ChatToolBarView.swift in Sources */,
 				04F902192C0752D0003AF40E /* SelectedFlashCardSetView.swift in Sources */,
 				040D00A52C0CAD7200540FE3 /* DailyGoal2View.swift in Sources */,
+				040D00B82C0FC3B200540FE3 /* CreateCardView.swift in Sources */,
 				04F902022BFCE17D003AF40E /* DailyGoalsView.swift in Sources */,
 				040296952B9B3FD700CEC711 /* ContentView.swift in Sources */,
 				59C7D2AA2BAB166100AECA61 /* ChatViewModel.swift in Sources */,
@@ -546,6 +597,7 @@
 				044F91FA2BD46778004758DA /* FlashCardSet.swift in Sources */,
 				04F9020E2BFFA6B5003AF40E /* StartMessagingOptionsView.swift in Sources */,
 				04A1CEB02BEAF76700178A13 /* FlashCardSetInfoView.swift in Sources */,
+				040D00B62C0E73E900540FE3 /* ProfileView.swift in Sources */,
 				04F902042BFCE3ED003AF40E /* DailyGoalsList.swift in Sources */,
 				04F902062BFD1A02003AF40E /* DailyGoal1View.swift in Sources */,
 				59C7D2B12BAB1C7100AECA61 /* DatabaseManager.swift in Sources */,
